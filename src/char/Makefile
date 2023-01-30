@@ -1,10 +1,11 @@
-SRCS_CHAR = \
-	ft_char_isalnum.c \
-	ft_char_isalpha.c \
-	ft_char_isascii.c \
-	ft_char_isdigit.c \
-	ft_char_islower.c \
-	ft_char_isprint.c \
-	ft_char_isupper.c \
-	ft_char_tolower.c \
-	ft_char_toupper.c
+CHAR_SRCS = \
+	ft_char_is_alnum.c \
+	ft_char_is_alpha.c \
+	ft_char_is_ascii.c \
+	ft_char_is_digit.c \
+	ft_char_is_lower.c \
+	ft_char_is_print.c \
+	ft_char_is_blank.c \
+	ft_char_is_upper.c \
+	ft_char_to_lower.c \
+	ft_char_to_upper.c \

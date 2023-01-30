@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_copy.c                                      :+:      :+:    :+:   */
+/*   ft_str_slice_array_free.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:41:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/18 15:12:42 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/01/19 09:45:08 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/19 14:07:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_mem.h"
+#include "libft_str.h"
+#include <stdlib.h>
 
-void	ft_mem_copy(void *dest, const void *src, size_t size)
+void	ft_str_slice_array_free(t_str_slice_array *array)
 {
-	size_t	i;
-
-	if (src == dest)
-		return ;
-	i = 0;
-	while (i < size)
-	{
-		((t_byte *) dest)[i] = ((t_byte *) src)[i];
-		i++;
-	}
+	free(array->strs);
 }

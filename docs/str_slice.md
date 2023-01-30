@@ -1,35 +1,28 @@
-# String
+# String slice
 
 ## Introduction
 
-This type represents a string allocated on the heap. It can be converted freely to its non-owning variant, `t_str_slice`.
+This type represents a string borrowed from another source. It is a non-owning variant of `t_str`.
+Because `t_str_slice` doesn't own its data, you don't need to alloc nor to free it.
+Any `t_str` can be converted to a `t_str_slice`. It's recommanded that functions that take a `t_str` as parameter but don't need to resize it take a `t_str_slice` instead.
 
 ## Layout
 
 ```C
-typedef struct s_str
+typedef struct s_str_slice
 {
 	char	*c_str;
 	size_t	len;
-	size_t	capacity;
-}	t_str;
+}	t_str_slice;
 ```
-
-## Ownership
-
-`t_str`s are created through a call to a `dup`.
-Because the data they own is allocated on the heap, the user should call `ft_str_free` when the value isn't used anymore.
 
 ## Methods :
 
-### Lifecycle/Memory
+### Creation
 | Name			| Description
 | -				| -
-| alloc			| Allocates a new string, by duplicating the `char *` over a given length. The starting allocation depends on the given capacity.
-| dup_c_str		| Allocates a new string, by duplicating the given `char *`. Its length and capacity are automatically deduced.
-| from_int		| Allocates a new string, representing the given number in base 10. 
-| reserve		| Reserve space for later, so that appending doesn't realloc. 
-| free			| Frees up the space owned by the string.
+| borrow_c_str	| Creates a `t_str_slice` from a char *
+| slice			| Creates a `t_str_slice` from a char *
 
 ### Accessing
 | Name			| Description
@@ -38,7 +31,7 @@ Because the data they own is allocated on the heap, the user should call `ft_str
 | get_slice		| Returns a slice of the given range.
 | dup			| Duplicates the string over the given range.
 | set_char		| Changes the char at the given index.
-| set_slice		| Changes the chars in a given range.
+| set_slice		| (Unsure?) Changes the chars in a given range.
 | at			| Points to the char at the given index.
 | first			| Points to the first char.
 | last			| Points to the last char.
@@ -46,10 +39,8 @@ Because the data they own is allocated on the heap, the user should call `ft_str
 ### Finding
 | Name			| Description
 | -				| -
-| find_char		| Searches for a char and returns its address in the string.
-| find_str		| Searches for a substring and returns its address in the string.
-| index_char	| Searches for a char and returns its index.
-| index_str		| Searches for a substring and returns its index.
+| find_char		| Searches for a char and returns both its address and a pointer to it.
+| find_str		| Searches for a char and returns both its address and a pointer to it.
 
 ### Comparison
 | Name			| Description
@@ -77,17 +68,6 @@ Because the data they own is allocated on the heap, the user should call `ft_str
 | toupper		| Puts every character in uppercase.
 | capitalize	| Puts every first letter of an alphabetical word in uppercase, and the others in lowercase.
 | map			| 
-
-### Resizing
-| Name
-| -
-| replace		| Replaces all instances of a substring by another.
-| append		| Appends a suffix to the end of the string.
-| insert		| Inserts a substring at a given index in the string.
-| remove		| Removes a part of the string.
-| filter		| Discards characters that don't match the filter's condition.
-| crop			| 
-| adjust
 
 ### Grouping
 | Name

@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_copy.c                                      :+:      :+:    :+:   */
+/*   ft_str_compare.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:41:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/18 15:12:42 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/10/10 22:38:37 by velimir           #+#    #+#             */
+/*   Updated: 2022/12/18 13:56:54 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_mem.h"
+#include "libft_str.h"
+#include "libft_math.h"
 
-void	ft_mem_copy(void *dest, const void *src, size_t size)
+int	ft_str_compare(const t_str str1, const t_str str2)
 {
 	size_t	i;
 
-	if (src == dest)
-		return ;
 	i = 0;
-	while (i < size)
+	while (i < str1.len && i < str2.len)
 	{
-		((t_byte *) dest)[i] = ((t_byte *) src)[i];
+		if (str1.c_str[i] != str2.c_str[i])
+			return (
+				(unsigned char) str1.c_str[i] - (unsigned char) str2.c_str[i]
+			);
 		i++;
 	}
+	return (0);
 }

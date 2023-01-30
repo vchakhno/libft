@@ -8,10 +8,8 @@ bool	ft_type_alloc(t_type *type);
 
 ## Borrowing
 ```C
-t_type	ft_type_borrow(t_type type, t_type *out);
+t_type	ft_type_borrow(t_type type);
 ```
-- The out parameter is the same as the return.
-You can ignore it and use NULL instead.
 
 ## Duplication
 ```C

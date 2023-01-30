@@ -1,38 +1,73 @@
-include src/first_part/Makefile
-include src/second_part/Makefile
+# **************************************************************************** #
+# 	Makefile based on clemedon's Makefile tutorial							   #
+# **************************************************************************** #
 
+NAME		:= libft.a
+
+# **************************************************************************** #
+# 	SOURCES																	   #
+# **************************************************************************** #
+
+include src/math/Makefile
+include src/char/Makefile
+include src/mem/Makefile
+include src/str/Makefile
+include src/str_slice/Makefile
+
+SRC_DIR		:= src
 SRCS = \
-	$(addprefix src/first_part/, ${SRCS_FIRST_PART}) \
-	$(addprefix src/second_part/, ${SRCS_SECOND_PART})
-OBJS = ${SRCS:.c=.o}
-BONUS_SRCS = \
-	$(addprefix src/third_part/, ${SRCS_THIRD_PART})
-BONUS_OBJS = ${BONUS_SRCS:.c=.o}
-INCS = include
-NAME = libft.a
-LIBC = ar rc
-LIBR = ranlib
-CC 	= gcc
-RM 	= rm -f
-CFLAGS = -Wall -Wextra -Werror
+	${addprefix math/,$(MATH_SRCS)} \
+	${addprefix char/,$(CHAR_SRCS)} \
+	${addprefix mem/,$(MEM_SRCS)} \
+	${addprefix str/,$(STR_SRCS)} \
+	${addprefix any_str/,$(ANY_STR_SRCS)} \
+	${addprefix c_str/,$(C_STR_SRCS)}
+SRCS		:= $(addprefix $(SRC_DIR)/,$(SRCS))
 
-all: ${NAME}
+INCS		:= include
 
-.c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${INCS}
+BUILD_DIR	:= .build
+OBJS		:= $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
+DEPS		:= $(OBJS:.o=.d)
 
-${NAME}: ${OBJS}
-	${LIBC} ${NAME} ${OBJS}
-	${LIBR} ${NAME}
+# **************************************************************************** #
+# 	COMPILATION																   #
+# **************************************************************************** #
 
-bonus: ${OBJS} ${BONUS_OBJS}
-	${LIBC} ${NAME} ${OBJS} ${BONUS_OBJS}
-	${LIBR} ${NAME}
+CC			:= cc
+CFLAGS		:= -Wall -Wextra -Werror -g
+CPPFLAGS	:= $(addprefix -I,$(INCS)) -MMD -MP
+AR			= ar -rcs
+
+# **************************************************************************** #
+# 	UTILITIES																   #
+# **************************************************************************** #
+
+RM			:= rm -rf
+MAKEFLAGS   += --no-print-directory
+DIR_DUP		= mkdir -p $(@D)
+
+# **************************************************************************** #
+# 	RECIPIES :D																   #
+# **************************************************************************** #
+
+all: $(NAME)
+
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
+	$(DIR_DUP)
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
+
+-include $(DEPS)
 
 clean:
-	${RM} ${OBJS}
+	$(RM) $(OBJS) $(DEPS)
 
 fclean: clean
-	${RM} ${NAME}
+	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2022/12/08 06:51:06 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/24 20:19:57 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 # include <stdbool.h>
 
-bool	ft_char_isalnum(int c);
-bool	ft_char_isalpha(int c);
-bool	ft_char_isascii(int c);
-bool	ft_char_isdigit(int c);
-bool	ft_char_islower(int c);
-bool	ft_char_isprint(int c);
-bool	ft_char_isupper(int c);
-bool	ft_char_iswhitespace(int c);
-bool	ft_char_tolower(int c);
-bool	ft_char_toupper(int c);
+bool	ft_char_is_alnum(char c);
+bool	ft_char_is_alpha(char c);
+bool	ft_char_is_ascii(char c);
+bool	ft_char_is_digit(char c);
+bool	ft_char_is_lower(char c);
+bool	ft_char_is_print(char c);
+bool	ft_char_is_upper(char c);
+bool	ft_char_is_blank(char c);
+char	ft_char_to_lower(char c);
+char	ft_char_to_upper(char c);
 
 #endif

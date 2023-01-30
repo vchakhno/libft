@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_copy.c                                      :+:      :+:    :+:   */
+/*   libft_c_str.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:41:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/18 15:12:42 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/01/30 07:37:07 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 07:37:43 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_mem.h"
+#ifndef LIBFT_C_STR_H
+# define LIBFT_C_STR_H
 
-void	ft_mem_copy(void *dest, const void *src, size_t size)
-{
-	size_t	i;
+# include <stddef.h>
 
-	if (src == dest)
-		return ;
-	i = 0;
-	while (i < size)
-	{
-		((t_byte *) dest)[i] = ((t_byte *) src)[i];
-		i++;
-	}
-}
+// C str
+size_t	ft_c_str_len(const char *c_str);
+void	ft_c_str_ncopy(char *dest, const char *src, size_t len);
+bool	ft_c_str_ndup__unchecked(char **dest, const char *src,
+			size_t len, size_t capacity);
+
+#endif

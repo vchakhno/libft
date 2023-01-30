@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_copy.c                                      :+:      :+:    :+:   */
+/*   ft_str_at_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:41:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/18 15:12:42 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/12/17 01:07:04 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 08:07:56 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_mem.h"
+#include "libft_str_internal.h"
 
-void	ft_mem_copy(void *dest, const void *src, size_t size)
+char	*ft_str_at_char(t_str_slice *str, size_t index, char **out)
 {
-	size_t	i;
+	char	*ptr;
 
-	if (src == dest)
-		return ;
-	i = 0;
-	while (i < size)
-	{
-		((t_byte *) dest)[i] = ((t_byte *) src)[i];
-		i++;
-	}
+	ptr = NULL;
+	if (index < str.len)
+		ptr = str.c_str + index;
+	if (out)
+		*out = ptr;
+	return (ptr);
 }

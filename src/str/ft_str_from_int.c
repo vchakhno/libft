@@ -6,11 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 10:52:42 by vchakhno          #+#    #+#             */
-/*   Updated: 2022/12/16 11:37:43 by vchakhno         ###   ########.fr       */
+/*   Updated: 2022/12/18 11:58:33 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_str.h"
+#include "libft_mem.h"
 #include "libft_math.h"
 #include <stdlib.h>
 
@@ -54,8 +55,7 @@ bool	ft_str_from_int(t_str *str, int n)
 {
 	str->len = ft_num_len(n);
 	str->capacity = ft_alloc_capacity(str->len + 1);
-	str->c_str = malloc(sizeof(char) * str->capacity);
-	if (!str->c_str)
+	if (!ft_mem_malloc(&str->c_str, sizeof(char) * str->capacity))
 		return (false);
 	ft_fill_number(str, n);
 	return (true);

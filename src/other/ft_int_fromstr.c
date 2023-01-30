@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_int_fromstr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:18:09 by vchakhno          #+#    #+#             */
-/*   Updated: 2022/12/08 06:55:26 by vchakhno         ###   ########.fr       */
+/*   Updated: 2022/12/23 01:52:54 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_int_fromstr(const t_str str)
 	size_t	i;
 
 	i = 0;
-	while (ft_char_iswhitespace(str.c_str[i]))
+	while (ft_char_is_whitespace(str.c_str[i]))
 		i++;
 	sign = 1;
 	if (str.c_str[i] == '+' || str.c_str[i] == '-')

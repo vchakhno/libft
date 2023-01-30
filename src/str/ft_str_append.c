@@ -6,20 +6,25 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 06:56:17 by vchakhno          #+#    #+#             */
-/*   Updated: 2022/12/18 11:25:51 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 07:46:51 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_str.h"
+#include "libft_c_str.h"
+#include <stdio.h>
 
-bool	ft_str_append(t_str *str, const t_str suffix)
+bool	ft_str_append(t_str *str, const void *suffix_str)
 {
-	if (str->len + suffix.len >= str->capacity)
+	t_str_slice	*suffix;
+
+	suffix = (t_str_slice *) suffix_str;
+	if (str->len + suffix->len >= str->capacity)
 	{
-		if (!ft_str_reserve_pow2(&str, str->len + suffix.len))
+		if (!ft_str_reserve_pow2(str, str->len + suffix->len + 1))
 			return (false);
 	}
-	ft_c_str_ncopy(str->c_str + str->len, suffix.c_str, suffix.len);
-	str->len += suffix.len;
+	ft_c_str_ncopy(str->c_str + str->len, suffix->c_str, suffix->len);
+	str->len += suffix->len;
 	return (true);
 }

@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_str.h                                        :+:      :+:    :+:   */
+/*   libft_str_internal.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 07:45:10 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 07:44:33 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_STR_H
-# define LIBFT_STR_H
+#ifndef LIBFT_STR_INTERNAL_H
+# define LIBFT_STR_INTERNAL_H
 
 # include <stddef.h>
 # include <stdbool.h>
-
-typedef void	t_any_str;
 
 typedef struct s_str
 {
@@ -197,6 +195,5 @@ bool				ft_str_is_lower(const t_str str);
 typedef char		(*t_char_functor)(char);
 bool				ft_str_map(const t_str str, t_char_functor f);
 bool				ft_str_apply(const t_str str, t_char_functor f);
-
 
 #endif

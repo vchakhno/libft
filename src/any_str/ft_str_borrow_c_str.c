@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_copy.c                                      :+:      :+:    :+:   */
+/*   ft_str_borrow_c_str.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:41:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/18 15:12:42 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/12/08 06:56:17 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 08:06:50 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_mem.h"
+#include "libft_str_internal.h"
+#include "libft_c_str.h"
 
-void	ft_mem_copy(void *dest, const void *src, size_t size)
+t_str_slice	ft_str_borrow_c_str(const char *c_str)
 {
-	size_t	i;
+	t_str_slice	str;
 
-	if (src == dest)
-		return ;
-	i = 0;
-	while (i < size)
-	{
-		((t_byte *) dest)[i] = ((t_byte *) src)[i];
-		i++;
-	}
+	str.c_str = (char *) c_str;
+	str.len = ft_c_str_len(c_str);
+	return (str);
 }
