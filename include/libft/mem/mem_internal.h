@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_set.c                                       :+:      :+:    :+:   */
+/*   mem_internal.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:41:32 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 11:16:46 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 11:08:25 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem/mem_internal.h"
+#ifndef MEM_INTERNAL_H
+# define MEM_INTERNAL_H
 
-void	ft_mem_set(t_mem *ptr, size_t size, t_byte b)
-{
-	size_t	i;
+# include "mem.h"
 
-	i = 0;
-	while (i < size)
-	{
-		ptr[i] = b;
-		i++;
-	}
-}
+#endif

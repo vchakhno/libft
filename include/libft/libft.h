@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 08:28:43 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:16:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft/text/char.h"
 # include "libft/text/str.h"
-# include "libft/mem.h"
+# include "libft/mem/mem.h"
 
 # include <stddef.h>
 

@@ -6,12 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 10:52:42 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:01 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:16:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/text/str.h"
-#include "libft/mem.h"
+#include "libft/mem/mem.h"
 #include "libft/math.h"
 #include <stdlib.h>
 

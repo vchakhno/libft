@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem.h"
+#include "libft/mem/mem_internal.h"
 
-void	ft_mem_move(void *dest, const void *src, size_t size)
+void	ft_mem_move(t_mem *dest, const t_mem *src, size_t size)
 {
 	size_t	i;
 
@@ -23,7 +23,7 @@ void	ft_mem_move(void *dest, const void *src, size_t size)
 	{
 		while (i < size)
 		{
-			((t_byte *) dest)[size - i - 1] = ((t_byte *) src)[size - i - 1];
+			dest[size - i - 1] = src[size - i - 1];
 			i++;
 		}
 	}
@@ -31,7 +31,7 @@ void	ft_mem_move(void *dest, const void *src, size_t size)
 	{
 		while (i < size)
 		{
-			((t_byte *) dest)[i] = ((t_byte *) src)[i];
+			dest[i] = src[i];
 			i++;
 		}
 	}

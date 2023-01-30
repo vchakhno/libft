@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_set.c                                       :+:      :+:    :+:   */
+/*   mem_def.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:41:32 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 11:16:46 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 11:07:38 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem/mem_internal.h"
+#ifndef MEM_DEF_H
+# define MEM_DEF_H
+# ifdef MEM_INTERNAL_H
 
-void	ft_mem_set(t_mem *ptr, size_t size, t_byte b)
-{
-	size_t	i;
+typedef unsigned char	t_byte;
+typedef t_byte			t_mem;
 
-	i = 0;
-	while (i < size)
-	{
-		ptr[i] = b;
-		i++;
-	}
-}
+# else
+
+typedef unsigned char	t_byte;
+typedef void			t_mem;
+
+# endif
+#endif

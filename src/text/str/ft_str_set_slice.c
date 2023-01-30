@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 13:24:01 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:01 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:16:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/text/str.h"
 #include "libft/math.h"
-#include "libft/mem.h"
+#include "libft/mem/mem.h"
 
 bool	ft_str_set_slice(t_str *str, const void *slice_str,
 	size_t start, size_t len)

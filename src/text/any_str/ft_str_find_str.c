@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:19:16 by velimir           #+#    #+#             */
-/*   Updated: 2023/01/30 10:14:24 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:16:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/text/any_str_internal.h"
 #include "libft/text/borrowed_str.h"
-#include "libft/mem.h"
+#include "libft/mem/mem.h"
 
 static bool	ft_str_find_str_forw(t_any_str *haystack, t_any_str *needle,
 				size_t *index);

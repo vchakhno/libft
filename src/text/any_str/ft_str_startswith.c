@@ -6,12 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:38:37 by velimir           #+#    #+#             */
-/*   Updated: 2023/01/30 10:17:05 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:16:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/text/any_str_internal.h"
-#include "libft/mem.h"
+#include "libft/mem/mem.h"
 
 bool	ft_str_startswith(t_any_str *str, t_any_str *prefix)
 {
