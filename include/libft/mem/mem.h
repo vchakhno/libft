@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 11:09:59 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:21:38 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ t_maybe_byte_pos	*ft_mem_find_byte(const t_mem *ptr, size_t size, t_byte b,
 
 void				ft_mem_copy(t_mem *dest, const t_mem *src, size_t size);
 void				ft_mem_move(t_mem *dest, const t_mem *src, size_t size);
+void				ft_mem_swap(t_mem *ptr1, t_mem *ptr2, size_t size);
 void				ft_mem_set(t_mem *ptr, size_t size, t_byte b);
 void				ft_mem_zero(t_mem *ptr, size_t size);
 
