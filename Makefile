@@ -9,19 +9,14 @@ NAME		:= libft.a
 # **************************************************************************** #
 
 include src/math/Makefile
-include src/char/Makefile
 include src/mem/Makefile
-include src/str/Makefile
-include src/str_slice/Makefile
+include src/text/Makefile
 
 SRC_DIR		:= src
 SRCS = \
 	${addprefix math/,$(MATH_SRCS)} \
-	${addprefix char/,$(CHAR_SRCS)} \
 	${addprefix mem/,$(MEM_SRCS)} \
-	${addprefix str/,$(STR_SRCS)} \
-	${addprefix any_str/,$(ANY_STR_SRCS)} \
-	${addprefix c_str/,$(C_STR_SRCS)}
+	${addprefix text/,$(TEXT_SRCS)}
 SRCS		:= $(addprefix $(SRC_DIR)/,$(SRCS))
 
 INCS		:= include

@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_calloc.c                                    :+:      :+:    :+:   */
+/*   ft_borrowed_str_from_parts.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:38:11 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:37 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/01/30 10:21:04 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 10:22:20 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem.h"
-#include <stdlib.h>
-#include <stdint.h>
+#include "libft/text/borrowed_str_def.h"
+#include <stddef.h>
 
-void	*ft_mem_calloc(size_t count, size_t size)
+t_borrowed_str	ft_borrowed_str_from_parts(const char *c_str, size_t len)
 {
-	void	*ptr;
-
-	if (size != 0 && count > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_mem_zero(ptr, count * size);
-	return (ptr);
+	return ((t_borrowed_str){.c_str = c_str, .len = len});
 }

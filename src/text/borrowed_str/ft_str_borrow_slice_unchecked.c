@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_calloc.c                                    :+:      :+:    :+:   */
+/*   ft_str_borrow_slice_unchecked.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:38:11 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:37 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/12/16 12:00:39 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 10:18:45 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem.h"
-#include <stdlib.h>
-#include <stdint.h>
+#include "libft/text/any_str_internal.h"
+#include "libft/text/borrowed_str.h"
 
-void	*ft_mem_calloc(size_t count, size_t size)
-{
-	void	*ptr;
-
-	if (size != 0 && count > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_mem_zero(ptr, count * size);
-	return (ptr);
+t_borrowed_str	ft_str_borrow_slice__unchecked(t_any_str *str,
+	size_t start, size_t len
+) {
+	return (ft_borrowed_str_from_parts(str->c_str + start, len));
 }

@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_calloc.c                                    :+:      :+:    :+:   */
+/*   ft_str_reserve_exact.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:38:11 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:37 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/12/09 02:00:19 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 10:27:01 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/text/str.h"
 #include "libft/mem.h"
-#include <stdlib.h>
-#include <stdint.h>
+#include "libft_c_str.h"
 
-void	*ft_mem_calloc(size_t count, size_t size)
+bool	ft_str_reserve_exact(t_str *str, size_t capacity)
 {
-	void	*ptr;
+	t_str	old;
 
-	if (size != 0 && count > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_mem_zero(ptr, count * size);
-	return (ptr);
+	if (capacity <= str->capacity)
+		return (true);
+	old = *str;
+	str->capacity = capacity;
+	if (ft_mem_malloc(&str->c_str, sizeof(char) * str->capacity))
+		ft_c_str_ncopy(str->c_str, old.c_str, str->len);
+	ft_str_free(&old);
+	return (str->c_str);
 }

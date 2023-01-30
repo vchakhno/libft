@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_calloc.c                                    :+:      :+:    :+:   */
+/*   ft_str_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:38:11 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:37 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/12/08 06:56:17 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 08:28:21 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem.h"
+#include "libft/text/str.h"
 #include <stdlib.h>
-#include <stdint.h>
 
-void	*ft_mem_calloc(size_t count, size_t size)
+void	ft_str_free(t_str *str)
 {
-	void	*ptr;
-
-	if (size != 0 && count > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_mem_zero(ptr, count * size);
-	return (ptr);
+	str->len = 0;
+	free(str->c_str);
+	str->c_str = NULL;
+	str->capacity = 0;
 }

@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:41:10 by vchakhno          #+#    #+#             */
-/*   Updated: 2022/12/09 03:58:09 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 10:27:01 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_mem.h"
+#include "libft/mem.h"
 
 int	ft_mem_compare(const void *ptr1, const void *ptr2, size_t n)
 {

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_calloc.c                                    :+:      :+:    :+:   */
+/*   any_str_def.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:38:11 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:37 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 10:29:25 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem.h"
-#include <stdlib.h>
-#include <stdint.h>
+#ifndef ANY_STR_DEF_H
+# define ANY_STR_DEF_H
+# ifdef ANY_STR_INTERNAL_H
+#  include "borrowed_str_def.h"
 
-void	*ft_mem_calloc(size_t count, size_t size)
-{
-	void	*ptr;
+typedef t_borrowed_str	t_any_str;
 
-	if (size != 0 && count > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_mem_zero(ptr, count * size);
-	return (ptr);
-}
+# else
+
+typedef void			t_any_str;
+
+# endif
+#endif

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_calloc.c                                    :+:      :+:    :+:   */
+/*   c_str.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:38:11 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:37 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/01/30 07:37:07 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 08:41:58 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem.h"
-#include <stdlib.h>
-#include <stdint.h>
+#ifndef C_STR_H
+# define C_STR_H
 
-void	*ft_mem_calloc(size_t count, size_t size)
-{
-	void	*ptr;
+# include <stddef.h>
+# include <stdbool.h>
 
-	if (size != 0 && count > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_mem_zero(ptr, count * size);
-	return (ptr);
-}
+// C str
+size_t	ft_c_str_len(const char *c_str);
+void	ft_c_str_ncopy(char *dest, const char *src, size_t len);
+bool	ft_c_str_ndup__unchecked(char **dest, const char *src,
+			size_t len, size_t capacity);
+
+
+#endif

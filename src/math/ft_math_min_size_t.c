@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 01:51:30 by vchakhno          #+#    #+#             */
-/*   Updated: 2022/12/16 10:21:36 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 10:26:07 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_math.h"
+#include "libft/math.h"
 
 size_t	ft_math_min_size_t(size_t a, size_t b)
 {

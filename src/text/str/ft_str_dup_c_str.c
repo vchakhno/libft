@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_calloc.c                                    :+:      :+:    :+:   */
+/*   ft_str_dup_c_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:38:11 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:37 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/12/08 06:56:17 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/01/30 10:27:01 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/text/str.h"
 #include "libft/mem.h"
-#include <stdlib.h>
-#include <stdint.h>
+#include "libft/math.h"
+#include "libft_c_str.h"
 
-void	*ft_mem_calloc(size_t count, size_t size)
+bool	ft_str_dup_c_str(t_str *str, const char *c_str)
 {
-	void	*ptr;
-
-	if (size != 0 && count > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_mem_zero(ptr, count * size);
-	return (ptr);
+	str->len = ft_c_str_len(c_str);
+	str->capacity = ft_alloc_capacity(str->len + 1);
+	if (!ft_mem_malloc(&str->c_str, str->capacity))
+		return (false);
+	ft_c_str_ncopy(str->c_str, c_str, str->len);
+	return (true);
 }

@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:41:32 by vchakhno          #+#    #+#             */
-/*   Updated: 2022/12/08 09:25:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 10:27:01 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_mem.h"
+#include "libft/mem.h"
 
 void	ft_mem_set(void *ptr, size_t size, t_byte b)
 {

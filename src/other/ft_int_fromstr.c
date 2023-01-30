@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:18:09 by vchakhno          #+#    #+#             */
-/*   Updated: 2022/12/23 01:52:54 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/01/30 08:27:32 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_str.h"
+#include "libft/text/str.h"
 
 int	ft_int_fromstr(const t_str str)
 {

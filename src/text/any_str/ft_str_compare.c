@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_calloc.c                                    :+:      :+:    :+:   */
+/*   ft_str_compare.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:38:11 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:37 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/10/10 22:38:37 by velimir           #+#    #+#             */
+/*   Updated: 2023/01/30 10:13:23 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem.h"
-#include <stdlib.h>
-#include <stdint.h>
+#include "libft/text/any_str_internal.h"
 
-void	*ft_mem_calloc(size_t count, size_t size)
+int	ft_str_compare(t_any_str *str1, t_any_str *str2)
 {
-	void	*ptr;
+	size_t	i;
 
-	if (size != 0 && count > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_mem_zero(ptr, count * size);
-	return (ptr);
+	i = 0;
+	while (i < str1->len && i < str2->len)
+	{
+		if (str1->c_str[i] != str2->c_str[i])
+			return (
+				(unsigned char) str1->c_str[i] - (unsigned char) str2->c_str[i]
+			);
+		i++;
+	}
+	return (0);
 }
