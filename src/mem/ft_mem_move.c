@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem/mem_internal.h"
+#include "libft/mem/mem_internal_types.h"
+#include <stddef.h>
 
 void	ft_mem_move(t_mem *dest, const t_mem *src, size_t size)
 {

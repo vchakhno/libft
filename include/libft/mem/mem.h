@@ -6,24 +6,39 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 11:21:38 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/18 21:00:31 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MEM_H
 # define MEM_H
 
-# include "mem_def.h"
 # include <stddef.h>
 # include <stdbool.h>
+# ifndef MEM_INTERNAL_TYPES_H
+#  include "mem_types.h"
+# endif
 
 /******************************************************************************/
 /* ALLOCATION																  */
 /******************************************************************************/
 
-bool				ft_mem_malloc(void *dest, size_t size)
+/*
+	WARNING:
+
+	In mem_malloc and mem_calloc, the destination should be **the address**
+	of the pointer.
+	Example:
+	
+	int	*array;
+
+	if (!ft_mem_calloc(&array, 5, sizeof(int)))
+		return (false);
+*/
+
+bool				ft_mem_malloc(t_ptr *ptr, size_t size)
 					__attribute__((warn_unused_result));
-void				*ft_mem_calloc(size_t count, size_t size)
+bool				ft_mem_calloc(t_ptr *ptr, size_t count, size_t size)
 					__attribute__((warn_unused_result));
 
 /******************************************************************************/
@@ -38,19 +53,6 @@ int					ft_mem_compare(const t_mem *ptr1, const t_mem *ptr2,
 /******************************************************************************/
 /* SEARCH																	  */
 /******************************************************************************/
-
-typedef struct s_maybe_byte_pos
-{
-	bool	exists;
-	size_t	index;
-	t_byte	*ptr;
-}	t_maybe_byte_pos;
-
-typedef struct s_find_byte_options
-{
-	size_t	*out_index;
-	t_byte	**out_ptr;
-}	t_find_byte_options;
 
 t_maybe_byte_pos	*ft_mem_find_byte(const t_mem *ptr, size_t size, t_byte b,
 						t_find_byte_options *options);

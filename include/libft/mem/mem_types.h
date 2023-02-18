@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_equal.c                                     :+:      :+:    :+:   */
+/*   mem_types.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:41:10 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/18 20:57:40 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/18 19:35:16 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/18 19:40:53 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem/mem_internal_types.h"
-#include <stddef.h>
-#include <stdbool.h>
+#ifndef MEM_TYPES_H
+# define MEM_TYPES_H
 
-bool	ft_mem_equal(const t_mem *ptr1, const t_mem *ptr2, size_t n)
+# include <stddef.h>
+# include <stdbool.h>
+
+typedef char	t_byte;
+typedef void	t_mem;
+typedef void	t_ptr;
+
+typedef struct s_maybe_byte_pos
 {
-	size_t	i;
+	bool	exists;
+	size_t	index;
+	t_mem	*ptr;
+}	t_maybe_byte_pos;
 
-	i = 0;
-	while (i < n)
-	{
-		if (ptr1[i] != ptr2[i])
-			return (false);
-		i++;
-	}
-	return (true);
-}
+typedef struct s_find_byte_options
+{
+	size_t	*out_index;
+	t_ptr	*out_ptr;
+}	t_find_byte_options;
+
+#endif

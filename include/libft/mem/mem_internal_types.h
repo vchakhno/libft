@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str.c                                              :+:      :+:    :+:   */
+/*   mem_internal_types.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 22:13:40 by vchakhno          #+#    #+#             */
-/*   Updated: 2022/12/18 11:16:53 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/18 19:34:22 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/18 19:46:32 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_str.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
+#ifndef MEM_INTERNAL_TYPES_H
+# define MEM_INTERNAL_TYPES_H
 
-int	main(void)
+# include <stddef.h>
+# include <stdbool.h>
+
+typedef char	t_byte;
+typedef t_byte	t_mem;
+typedef void*	t_ptr;
+
+typedef struct s_maybe_byte_pos
 {
-	t_str	str;
+	bool	exists;
+	size_t	index;
+	t_mem	*ptr;
+}	t_maybe_byte_pos;
 
-	if (!ft_str_dup_c_str(&str, "Bonjour Velimir"))
-	{
-		printf("Dup failed\n");
-		return (0);
-	}
-	if (!ft_str_set_slice(&str, ft_str_borrow_c_str("Sabri", NULL), 8, 4))
-	{
-		printf("Set slice failed\n");
-		return (0);
-	}
-	printf("Str: [%s]\n", str.c_str);
-	ft_str_free(&str);
-}
+typedef struct s_find_byte_options
+{
+	size_t	*out_index;
+	t_ptr	*out_ptr;
+}	t_find_byte_options;
+
+#endif

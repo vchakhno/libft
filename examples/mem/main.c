@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mem_def.h                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 11:07:38 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/18 18:57:43 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/18 19:28:10 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEM_DEF_H
-# define MEM_DEF_H
-# ifdef MEM_INTERNAL_H
+#include "libft/mem/mem.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-typedef unsigned char	t_byte;
-typedef t_byte			t_mem;
+void	ft_mem_calloc_example(void)
+{
+	int	*array;
 
-# else
+	if (!ft_mem_calloc(&array, 3, sizeof(int)))
+	{
+		printf("Allocation failed\n");
+		return ;
+	}
+	array[0] = 5;
+	array[1] = 6;
+	array[2] = 7;
+	printf("[%d, %d, %d]\n", array[0], array[1], array[2]);
+	free(array);
+}
 
-typedef unsigned char	t_byte;
-typedef void			t_mem;
-
-# endif
-#endif
+int	main(void)
+{
+	ft_mem_calloc_example();
+}

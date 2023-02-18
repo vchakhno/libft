@@ -6,11 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:02:39 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 11:16:46 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/18 20:59:40 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem/mem_internal.h"
+#include "libft/mem/mem_internal_types.h"
+#include <stddef.h>
 
 void	ft_mem_swap(t_mem *ptr1, t_mem *ptr2, size_t n)
 {
