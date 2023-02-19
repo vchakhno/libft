@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:39:46 by velimir           #+#    #+#             */
-/*   Updated: 2023/01/30 10:30:47 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/19 01:07:44 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/char.h"
+#include <stdbool.h>
 
 bool	ft_char_is_digit(char c)
 {

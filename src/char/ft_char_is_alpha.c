@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 01:05:07 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:30:47 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/19 01:07:34 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/char.h"
+#include <stdbool.h>
 
 bool	ft_char_is_alpha(char c)
 {

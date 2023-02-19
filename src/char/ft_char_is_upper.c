@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char_is_lower.c                                 :+:      :+:    :+:   */
+/*   ft_char_is_upper.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:39:46 by velimir           #+#    #+#             */
-/*   Updated: 2023/01/30 10:30:47 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/19 01:07:54 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/char.h"
+#include <stdbool.h>
 
-bool	ft_char_is_lower(char c)
+bool	ft_char_is_upper(char c)
 {
-	return ('a' <= c && c <= 'z');
+	return ('A' <= c && c <= 'Z');
 }

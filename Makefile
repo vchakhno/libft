@@ -11,12 +11,14 @@ NAME		:= libft.a
 include src/math/Makefile
 include src/mem/Makefile
 include src/text/Makefile
+include src/char/Makefile
 
 SRC_DIR		:= src
 SRCS = \
 	${addprefix math/,$(MATH_SRCS)} \
 	${addprefix mem/,$(MEM_SRCS)} \
-	${addprefix text/,$(TEXT_SRCS)}
+	${addprefix text/,$(TEXT_SRCS)} \
+	${addprefix char/,$(CHAR_SRCS)}
 SRCS		:= $(addprefix $(SRC_DIR)/,$(SRCS))
 
 INCS		:= include

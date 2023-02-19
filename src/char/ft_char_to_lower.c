@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char_is_ascii.c                                 :+:      :+:    :+:   */
+/*   ft_char_to_lower.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:39:46 by velimir           #+#    #+#             */
-/*   Updated: 2023/01/30 10:30:47 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/19 01:08:06 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/char.h"
-
-bool	ft_char_is_ascii(char c)
+char	ft_char_to_lower(char c)
 {
-	return (0 <= c);
+	if ('A' <= c && c <= 'Z')
+		return (c - 'A' + 'a');
+	return (c);
 }

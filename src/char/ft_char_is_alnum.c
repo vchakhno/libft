@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char_is_upper.c                                 :+:      :+:    :+:   */
+/*   ft_char_is_alnum.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 21:39:46 by velimir           #+#    #+#             */
-/*   Updated: 2023/01/30 10:30:47 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/12/08 01:03:14 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/19 01:07:27 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/char.h"
+#include "libft/char.h"
+#include <stdbool.h>
 
-bool	ft_char_is_upper(char c)
+bool	ft_char_is_alnum(char c)
 {
-	return ('A' <= c && c <= 'Z');
+	return (ft_char_is_alpha(c) || ft_char_is_digit(c));
 }
