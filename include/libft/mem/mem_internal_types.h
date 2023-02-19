@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 19:34:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/18 19:46:32 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/18 21:54:06 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <stddef.h>
 # include <stdbool.h>
 
-typedef char	t_byte;
-typedef t_byte	t_mem;
-typedef void*	t_ptr;
+typedef unsigned char	t_byte;
+typedef t_byte			t_mem;
+typedef void*			t_ptr;
 
 typedef struct s_maybe_byte_pos
 {
