@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/19 23:38:16 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/20 00:19:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@
 
 size_t			ft_c_str_len(const char *c_str);
 void			ft_c_str_ncopy(char *dest, const char *src, size_t len);
-bool			ft_c_str_ndup__unchecked(char **dest, const char *src,
-					size_t len, size_t capacity);
 
 /******************************************************************************/
 /* BORROWING																  */

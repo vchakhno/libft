@@ -1,4 +1,5 @@
-STR_SRCS = \
+ALLOCATED_STR_SRCS = \
+	#\
 	ft_str_dup_c_str.c \
 	ft_str_from_int.c \
 	ft_str_reserve_exact.c \
