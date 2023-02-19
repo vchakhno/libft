@@ -6,9 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 02:42:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 08:41:27 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/18 21:37:45 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 size_t	ft_c_str_len(const char *c_str)
 {
