@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_c_str_borrow.c                                  :+:      :+:    :+:   */
+/*   ft_str_borrow_slice.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 06:56:17 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/18 21:36:42 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/12/16 12:00:39 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/19 03:12:04 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/borrowed_str.h"
-#include "libft/text/c_str.h"
+#include "libft/str/str_internal_types.h"
+#include "libft/str/str.h"
+#include "libft/math.h"
 
-t_borrowed_str	ft_c_str_borrow(char *c_str)
-{
-	t_borrowed_str	str;
-
-	str.c_str = c_str;
-	str.len = ft_c_str_len(c_str);
-	return (str);
+t_borrowed_str	ft_str_borrow_slice(t_any_str *str, size_t start, size_t len
+) {
+	start = ft_math_min_size_t(start, str->len);
+	len = ft_math_min_size_t(len, str->len - start);
+	return (ft_borrowed_str_from_parts(str->c_str + start, len));
 }

@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   any_str_def.h                                      :+:      :+:    :+:   */
+/*   str_types.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:29:25 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/19 01:19:18 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/19 01:21:56 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANY_STR_DEF_H
-# define ANY_STR_DEF_H
-# ifdef ANY_STR_INTERNAL_H
-#  include "borrowed_str_def.h"
+#ifndef STR_TYPES_H
+# define STR_TYPES_H
 
-typedef t_borrowed_str	t_any_str;
+# include <stddef.h>
 
-# else
+typedef struct s_borrowed_str
+{
+	char	*c_str;
+	size_t	len;
+}	t_borrowed_str;
 
-typedef void			t_any_str;
+typedef struct s_allocated_str
+{
+	char	*c_str;
+	size_t	len;
+	size_t	capacity;
+}	t_allocated_str;
 
-# endif
+typedef t_allocated_str		t_str;
+typedef t_borrowed_str		t_str_slice;
+typedef void				t_any_str;
+
 #endif

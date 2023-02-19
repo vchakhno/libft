@@ -1,48 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   any_str.h                                          :+:      :+:    :+:   */
+/*   str.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/18 23:10:48 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/19 03:03:34 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANY_STR_H
-# define ANY_STR_H
+#ifndef STR_H
+# define STR_H
 
-# include "any_str_def.h"
-# include "borrowed_str_def.h"
 # include <stddef.h>
 # include <stdbool.h>
+
+# ifndef STR_INTERNAL_TYPES_H
+#  include "str_types.h"
+# endif
+
+// C str
+size_t			ft_c_str_len(const char *c_str);
+void			ft_c_str_ncopy(char *dest, const char *src, size_t len);
+bool			ft_c_str_ndup__unchecked(char **dest, const char *src,
+					size_t len, size_t capacity);
+
+// borrowed str
+t_borrowed_str	ft_borrowed_str_from_parts(char *c_str, size_t len);
+t_borrowed_str	ft_c_str_borrow(char *c_str);
+t_borrowed_str	ft_c_str_borrow_slice__unchecked(char *c_str,
+					size_t start, size_t len);
+t_borrowed_str	ft_str_borrow(t_any_str *str);
+t_borrowed_str	ft_str_borrow_slice__unchecked(t_any_str *str,
+					size_t start, size_t len);
+t_borrowed_str	ft_str_borrow_slice(t_any_str *str,
+					size_t start, size_t len);
 
 /******************************************************************************/
 /* COMPARISON																  */
 /******************************************************************************/
 
-int					ft_str_compare(t_any_str *str1, t_any_str *str2);
-bool				ft_str_equal(t_any_str *str1, t_any_str *str2);
-bool				ft_str_startswith(t_any_str *str, t_any_str *prefix);
+int				ft_str_compare(t_any_str *str1, t_any_str *str2);
+bool			ft_str_equal(t_any_str *str1, t_any_str *str2);
+bool			ft_str_startswith(t_any_str *str, t_any_str *prefix);
 
 /******************************************************************************/
 /* SEARCH																	  */
 /******************************************************************************/
-
-typedef struct s_maybe_char_pos
-{
-	bool	exists;
-	size_t	index;
-	char	*ptr;
-}	t_maybe_char_pos;
-
-typedef struct s_find_char_options
-{
-	size_t	*out_index;
-	char	**out_ptr;
-	bool	reversed;
-}	t_find_char_options;
 
 /*
 	Could be prototyped in a lot of ways:
@@ -108,28 +113,14 @@ typedef struct s_find_char_options
 	(?) Callback that takes an int
 */
 
-bool				ft_str_find_char(t_any_str *haystack, char c,
-						size_t *index);
-bool				ft_str_find_char_rev(t_any_str *haystack, char c,
-						size_t *index);
-
-typedef struct s_maybe_str_pos
-{
-	bool			exists;
-	size_t			index;
-	t_borrowed_str	str;
-}	t_maybe_str_pos;
-
-typedef struct s_find_str_options
-{
-	size_t			*out_index;
-	t_borrowed_str	*out_str;
-	bool			reversed;
-}	t_find_str_options;
-
-t_maybe_str_pos		ft_str_find_str(
-						t_any_str *haystack, t_any_str *needle,
-						t_find_str_options *options);
+bool			ft_str_find_char(t_any_str *haystack, char c,
+					size_t *index);
+bool			ft_str_find_char_rev(t_any_str *haystack, char c,
+					size_t *index);
+bool			ft_str_find_str(t_any_str *haystack, t_any_str *needle,
+					size_t *index);
+bool			ft_str_find_str_rev(t_any_str *haystack, t_any_str *needle,
+					size_t *index);
 
 /******************************************************************************/
 /* TODO																		  */

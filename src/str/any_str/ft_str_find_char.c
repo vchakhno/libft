@@ -6,11 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:19:16 by velimir           #+#    #+#             */
-/*   Updated: 2023/02/18 23:11:50 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/19 03:02:34 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/any_str_internal.h"
+#include "libft/str/str_internal_types.h"
+#include <stdbool.h>
 
 bool	ft_str_find_char(t_any_str *haystack, char c, size_t *index)
 {

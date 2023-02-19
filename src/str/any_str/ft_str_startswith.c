@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_borrowed_str_from_parts.c                       :+:      :+:    :+:   */
+/*   ft_str_startswith.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 10:21:04 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/18 21:36:15 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/10/10 22:38:37 by velimir           #+#    #+#             */
+/*   Updated: 2023/02/19 03:10:37 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/borrowed_str_def.h"
-#include <stddef.h>
+#include "libft/str/str_internal_types.h"
+#include "libft/mem/mem.h"
 
-t_borrowed_str	ft_borrowed_str_from_parts(char *c_str, size_t len)
+bool	ft_str_startswith(t_any_str *str, t_any_str *prefix)
 {
-	return ((t_borrowed_str){.c_str = c_str, .len = len});
+	if (prefix->len > str->len)
+		return (false);
+	return (ft_mem_equal(str->c_str, prefix->c_str, prefix->len));
 }

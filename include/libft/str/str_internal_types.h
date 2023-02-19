@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c_str.h                                            :+:      :+:    :+:   */
+/*   str_internal_types.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 07:37:07 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 08:41:58 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/19 01:19:39 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/19 01:51:00 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_STR_H
-# define C_STR_H
+#ifndef STR_INTERNAL_TYPES_H
+# define STR_INTERNAL_TYPES_H
 
 # include <stddef.h>
-# include <stdbool.h>
 
-// C str
-size_t	ft_c_str_len(const char *c_str);
-void	ft_c_str_ncopy(char *dest, const char *src, size_t len);
-bool	ft_c_str_ndup__unchecked(char **dest, const char *src,
-			size_t len, size_t capacity);
+typedef struct s_borrowed_str
+{
+	char	*c_str;
+	size_t	len;
+}	t_borrowed_str;
 
+typedef struct s_allocated_str
+{
+	char	*c_str;
+	size_t	len;
+	size_t	capacity;
+}	t_allocated_str;
+
+typedef t_allocated_str		t_str;
+typedef t_borrowed_str		t_str_slice;
+typedef t_borrowed_str		t_any_str;
 
 #endif

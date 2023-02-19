@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_equal.c                                     :+:      :+:    :+:   */
+/*   ft_borrowed_str_from_parts.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 22:38:37 by velimir           #+#    #+#             */
-/*   Updated: 2023/01/30 11:16:46 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/01/30 10:21:04 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/19 03:10:47 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/any_str_internal.h"
-#include "libft/mem/mem.h"
+#include "libft/str/str_internal_types.h"
+#include <stddef.h>
 
-bool	ft_str_equal(t_any_str *str1, t_any_str *str2)
+t_borrowed_str	ft_borrowed_str_from_parts(char *c_str, size_t len)
 {
-	if (str1->len != str2->len)
-		return (false);
-	return (ft_mem_equal(str1->c_str, str2->c_str, str1->len));
+	return ((t_borrowed_str){.c_str = c_str, .len = len});
 }

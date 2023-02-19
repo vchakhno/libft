@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:38:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/18 20:57:47 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/19 03:08:16 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-t_maybe_byte_pos	*ft_mem_find_byte(const t_mem *ptr, size_t size, t_byte b,
-	t_find_byte_options *options)
-{
+bool	ft_mem_find_byte(
+	const t_mem *ptr, size_t size, t_byte b,
+	size_t *index
+) {
 	size_t	i;
 
 	i = 0;
@@ -24,13 +25,10 @@ t_maybe_byte_pos	*ft_mem_find_byte(const t_mem *ptr, size_t size, t_byte b,
 	{
 		if (ptr[i] == b)
 		{
-			if (options && options->out_index)
-				*options->out_index = i;
-			if (options && options->out_ptr)
-				*options->out_ptr = (t_byte *) ptr + i;
-			return ((void *) ptr + i);
+			*index = i;
+			return (true);
 		}
 		i++;
 	}
-	return (NULL);
+	return (false);
 }

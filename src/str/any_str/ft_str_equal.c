@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_borrow_slice.c                              :+:      :+:    :+:   */
+/*   ft_str_equal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 12:00:39 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 10:17:50 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/10/10 22:38:37 by velimir           #+#    #+#             */
+/*   Updated: 2023/02/19 02:47:28 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/any_str_internal.h"
-#include "libft/text/borrowed_str.h"
-#include "libft/math.h"
+#include "libft/str/str_internal_types.h"
+#include "libft/mem/mem.h"
 
-t_borrowed_str	ft_str_borrow_slice(t_any_str *str, size_t start, size_t len
-) {
-	start = ft_math_min_size_t(start, str->len);
-	len = ft_math_min_size_t(len, str->len - start);
-	return (ft_borrowed_str_from_parts(str->c_str + start, len));
+bool	ft_str_equal(t_any_str *str1, t_any_str *str2)
+{
+	if (str1->len != str2->len)
+		return (false);
+	return (ft_mem_equal(str1->c_str, str2->c_str, str1->len));
 }

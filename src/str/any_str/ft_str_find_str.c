@@ -6,45 +6,15 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:19:16 by velimir           #+#    #+#             */
-/*   Updated: 2023/01/30 11:16:46 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/19 03:08:33 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/any_str_internal.h"
-#include "libft/text/borrowed_str.h"
+#include "libft/str/str_internal_types.h"
 #include "libft/mem/mem.h"
+#include <stdbool.h>
 
-static bool	ft_str_find_str_forw(t_any_str *haystack, t_any_str *needle,
-				size_t *index);
-static bool	ft_str_find_str_backw(t_any_str *haystack, t_any_str *needle,
-				size_t *index);
-
-typedef bool	(*t_str_finder)(t_any_str *haystack, t_any_str *needle,
-	size_t *index);
-
-t_maybe_str_pos	ft_str_find_str(
-	t_any_str *haystack, t_any_str *needle,
-	t_find_str_options *options
-) {
-	size_t			index;
-	t_borrowed_str	str;
-
-	if (needle->len > haystack->len
-		|| !(t_str_finder []){
-		ft_str_find_str_forw, ft_str_find_str_backw
-	}[options && options->reversed](haystack, needle, &index))
-		return ((t_maybe_str_pos){.exists = false});
-	str = ft_borrowed_str_from_parts(haystack->c_str + index, needle->len);
-	if (options && options->out_index)
-		*options->out_index = index;
-	if (options && options->out_str)
-		*options->out_str = str;
-	return ((t_maybe_str_pos){
-		.exists = true, .index = index, .str = str
-	});
-}
-
-static bool	ft_str_find_str_forw(
+bool	ft_str_find_str(
 	t_any_str *haystack, t_any_str *needle,
 	size_t *index
 ) {
@@ -63,7 +33,7 @@ static bool	ft_str_find_str_forw(
 	return (false);
 }
 
-static bool	ft_str_find_str_backw(
+bool	ft_str_find_str_rev(
 	t_any_str *haystack, t_any_str *needle,
 	size_t *index
 ) {
