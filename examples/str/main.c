@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:13:40 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/19 00:41:00 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:03:28 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/text/str.h"
+#include "libft/str/str.h"
 #include <stdio.h>
 #include <stdlib.h>
 
