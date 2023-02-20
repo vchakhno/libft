@@ -5,25 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 22:38:37 by velimir           #+#    #+#             */
-/*   Updated: 2023/02/19 02:47:12 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/20 01:13:29 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/20 01:19:11 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/str/str_internal_types.h"
+#include "libft/str/str.h"
+#include "libft/mem/mem.h"
+#include "libft/math.h"
 
-int	ft_str_compare(t_any_str *str1, t_any_str *str2)
+int	ft_str_compare_str(t_any_str *str1, t_any_str *str2)
 {
-	size_t	i;
+	return (
+		ft_mem_compare(
+			str1->c_str, str2->c_str,
+			ft_math_min_size_t(str1->len, str2->len)
+		)
+	);
+}
 
-	i = 0;
-	while (i < str1->len && i < str2->len)
-	{
-		if (str1->c_str[i] != str2->c_str[i])
-			return (
-				(unsigned char) str1->c_str[i] - (unsigned char) str2->c_str[i]
-			);
-		i++;
-	}
-	return (0);
+int	ft_str_compare_c_str(t_any_str *str1, char *str2)
+{
+	return (
+		ft_mem_compare(
+			str1->c_str, str2,
+			ft_math_min_size_t(str1->len, ft_c_str_len(str2))
+		)
+	);
 }

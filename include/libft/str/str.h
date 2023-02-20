@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/20 00:19:59 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/20 01:33:43 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ t_borrowed_str	ft_str_borrow_slice(t_any_str *str,
 /* CHECKING																	  */
 /******************************************************************************/
 
-/* Todo */
 bool			ft_str_is_alnum(t_any_str *str);
 bool			ft_str_is_alpha(t_any_str *str);
 bool			ft_str_is_ascii(t_any_str *str);
@@ -54,18 +53,20 @@ bool			ft_str_is_digit(t_any_str *str);
 bool			ft_str_is_lower(t_any_str *str);
 bool			ft_str_is_print(t_any_str *str);
 bool			ft_str_is_upper(t_any_str *str);
-/* ---- */
 
 /******************************************************************************/
 /* COMPARISON																  */
 /******************************************************************************/
 
-int				ft_str_compare(t_any_str *str1, t_any_str *str2);
-bool			ft_str_equal(t_any_str *str1, t_any_str *str2);
-bool			ft_str_startswith(t_any_str *str, t_any_str *prefix);
-/* Todo */
-bool			ft_str_endswith(t_any_str *str, t_any_str *suffix);
-/* ---- */
+int				ft_str_compare_c_str(t_any_str *str1, char *str2);
+bool			ft_str_equal_c_str(t_any_str *str1, char *str2);
+bool			ft_str_starts_with_c_str(t_any_str *str, char *prefix);
+bool			ft_str_ends_with_c_str(t_any_str *str, char *suffix);
+
+int				ft_str_compare_str(t_any_str *str1, t_any_str *str2);
+bool			ft_str_equal_str(t_any_str *str1, t_any_str *str2);
+bool			ft_str_starts_with_str(t_any_str *str, t_any_str *prefix);
+bool			ft_str_ends_with_str(t_any_str *str, t_any_str *suffix);
 
 /******************************************************************************/
 /* SEARCH																	  */
