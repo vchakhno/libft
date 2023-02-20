@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/20 01:33:43 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:21:43 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,27 +136,26 @@ bool			ft_str_ends_with_str(t_any_str *str, t_any_str *suffix);
 	(?) Callback that takes an int
 */
 
-/* Todo */
 bool			ft_str_contains_char(t_any_str *haystack, char c);
-/* ---- */
 bool			ft_str_find_char(t_any_str *haystack, char c,
 					size_t *index);
 bool			ft_str_rfind_char(t_any_str *haystack, char c,
 					size_t *index);
-/* Todo */
-int				ft_str_count_char(t_any_str *haystack, char c);
-/* ---- */
+size_t			ft_str_count_char(t_any_str *haystack, char c);
 
-/* Todo */
 bool			ft_str_contains_str(t_any_str *haystack, t_any_str *needle);
-/* ---- */
 bool			ft_str_find_str(t_any_str *haystack, t_any_str *needle,
 					size_t *index);
 bool			ft_str_rfind_str(t_any_str *haystack, t_any_str *needle,
 					size_t *index);
-/* Todo */
-int				ft_str_count_str(t_any_str *haystack, t_any_str *needle);
-/* ---- */
+size_t			ft_str_count_str(t_any_str *haystack, t_any_str *needle);
+
+bool			ft_str_contains_c_str(t_any_str *haystack, char *needle);
+bool			ft_str_find_c_str(t_any_str *haystack, char *needle,
+					size_t *index);
+bool			ft_str_rfind_c_str(t_any_str *haystack, char *needle,
+					size_t *index);
+size_t			ft_str_count_c_str(t_any_str *haystack, char *needle);
 
 /******************************************************************************/
 /* SPLITTING																  */
