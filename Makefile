@@ -9,6 +9,7 @@ NAME		:= libft.a
 # **************************************************************************** #
 
 include src/math/Makefile
+include src/iterator/Makefile
 include src/mem/Makefile
 include src/str/Makefile
 include src/char/Makefile
@@ -16,6 +17,7 @@ include src/char/Makefile
 SRC_DIR		:= src
 SRCS = \
 	${addprefix math/,$(MATH_SRCS)} \
+	${addprefix iterator/,$(ITERATOR_SRCS)} \
 	${addprefix mem/,$(MEM_SRCS)} \
 	${addprefix str/,$(STR_SRCS)} \
 	${addprefix char/,$(CHAR_SRCS)}

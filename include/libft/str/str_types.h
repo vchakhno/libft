@@ -6,13 +6,14 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 01:19:18 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/19 01:21:56 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:58:57 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_TYPES_H
 # define STR_TYPES_H
 
+# include "libft/iterator/iterator_types.h"
 # include <stddef.h>
 
 typedef struct s_borrowed_str
@@ -31,5 +32,17 @@ typedef struct s_allocated_str
 typedef t_allocated_str		t_str;
 typedef t_borrowed_str		t_str_slice;
 typedef void				t_any_str;
+
+typedef struct s_str_split_iterator
+{
+	t_iterator_base	base;
+	t_any_str		*str;
+}	t_str_split_iterator;
+
+typedef struct s_str_rsplit_iterator
+{
+	t_iterator_base	base;
+	t_any_str		*str;
+}	t_str_rsplit_iterator;
 
 #endif

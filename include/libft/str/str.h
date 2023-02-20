@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/20 12:21:43 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:01:27 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,36 +162,12 @@ size_t			ft_str_count_c_str(t_any_str *haystack, char *needle);
 /******************************************************************************/
 
 /* Todo */
-//	(t_any_iter	*iter)
-typedef bool	(*t_iterator_next)();
-typedef struct s_iterator_base
-{
-	t_iterator_next	next;	
-}	t_iterator_base;
-
-void			ft_iterator_base_init(t_iterator_base *iterator,
-					t_iterator_next next);
-
-typedef void	t_any_iterator;
-
-void			ft_iterator_next(t_any_iterator *iterator, void *dest);
-
-typedef struct s_str_split_iterator
-{
-	t_iterator_base	base;
-	t_any_str		*str;
-}	t_str_split_iterator;
-
 void			ft_str_split_by_str(t_any_str *str, t_any_str *delim,
 					t_str_split_iterator *iterator);
 void			ft_str_split_by_c_str(t_any_str *str, char *delim,
 					t_str_split_iterator *iterator);
 
-typedef struct s_str_rsplit_iterator
-{
-	t_iterator_base	base;
-	t_any_str		*str;
-}	t_str_rsplit_iterator;
+
 
 void			ft_str_rsplit_str(t_any_str *str, t_any_str *delim,
 					t_str_rsplit_iterator *iterator);
