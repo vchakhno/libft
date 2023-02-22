@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/20 13:01:27 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/22 06:14:10 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,9 +167,9 @@ void			ft_str_split_by_str(t_any_str *str, t_any_str *delim,
 void			ft_str_split_by_c_str(t_any_str *str, char *delim,
 					t_str_split_iterator *iterator);
 
-
-
-void			ft_str_rsplit_str(t_any_str *str, t_any_str *delim,
+void			ft_str_rsplit_by_str(t_any_str *str, t_any_str *delim,
+					t_str_rsplit_iterator *iterator);
+void			ft_str_rsplit_by_c_str(t_any_str *str, char *delim,
 					t_str_rsplit_iterator *iterator);
 /* ---- */
 

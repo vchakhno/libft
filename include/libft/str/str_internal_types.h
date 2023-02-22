@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 01:19:39 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/20 12:59:58 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:18:18 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,17 @@ typedef t_borrowed_str		t_any_str;
 typedef struct s_str_split_iterator
 {
 	t_iterator_base	base;
-	t_any_str		*str;
+	t_borrowed_str	haystack;
+	t_borrowed_str	delim;
+	size_t			pos;
 }	t_str_split_iterator;
 
 typedef struct s_str_rsplit_iterator
 {
 	t_iterator_base	base;
-	t_any_str		*str;
+	t_borrowed_str	haystack;
+	t_borrowed_str	delim;
+	size_t			pos;
 }	t_str_rsplit_iterator;
 
 #endif
