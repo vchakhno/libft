@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 07:32:01 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/22 07:49:26 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,29 +216,6 @@ bool			ft_str_dup_str(t_allocated_str *dest, t_any_str *src);
 void			ft_str_free(t_allocated_str *str);
 
 /******************************************************************************/
-/* POSITIONNING																  */
-/******************************************************************************/
-
-bool			ft_str_center(t_allocated_str *str, char filler);
-bool			ft_str_ljust(t_allocated_str *str, char filler);
-bool			ft_str_rjust(t_allocated_str *str, char filler);
-
-/******************************************************************************/
-/* STRIPPING																  */
-/******************************************************************************/
-
-/* Todo */
-bool			ft_str_lstrip(t_allocated_str *str, char *stripped);
-bool			ft_str_rstrip(t_allocated_str *str, char *stripped);
-bool			ft_str_strip(t_allocated_str *str, char *stripped);
-/* ---- */
-
-/* Todo */
-bool			ft_str_remove_prefix(t_allocated_str *str, char *prefix);
-bool			ft_str_remove_suffix(t_allocated_str *str, char *suffix);
-/* ---- */
-
-/******************************************************************************/
 /* ADDING																	  */
 /******************************************************************************/
 
@@ -265,6 +242,29 @@ bool			ft_str_remove_slice(t_allocated_str *str,
 					size_t from, size_t len);
 bool			ft_str_select_slice(t_allocated_str *str,
 					size_t from, size_t len);
+/* ---- */
+
+/******************************************************************************/
+/* POSITIONNING																  */
+/******************************************************************************/
+
+bool			ft_str_center(t_allocated_str *str, char filler);
+bool			ft_str_ljust(t_allocated_str *str, char filler);
+bool			ft_str_rjust(t_allocated_str *str, char filler);
+
+/******************************************************************************/
+/* STRIPPING																  */
+/******************************************************************************/
+
+/* Todo */
+bool			ft_str_lstrip(t_allocated_str *str, char *stripped);
+bool			ft_str_rstrip(t_allocated_str *str, char *stripped);
+bool			ft_str_strip(t_allocated_str *str, char *stripped);
+/* ---- */
+
+/* Todo */
+bool			ft_str_remove_prefix(t_allocated_str *str, char *prefix);
+bool			ft_str_remove_suffix(t_allocated_str *str, char *suffix);
 /* ---- */
 
 /******************************************************************************/

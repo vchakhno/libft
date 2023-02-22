@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:13:40 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 06:44:39 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:31:05 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,23 @@ void	ft_str_rsplit_example(void)
 	printf("\n");
 }
 
+void	ft_str_insert_example(void)
+{
+	t_allocated_str	str;
+
+	if (!ft_str_dup_c_str(&str, "Bonjour, comment ça va ?"))
+		return ;
+	ft_str_insert_c_str(&str, 7, " Vélimir");
+	printf("%.*s\n", (int) str.len, str.c_str);
+	ft_str_free(&str);
+}
+
 int	main(void)
 {
 	// ft_str_compare_example();
 	// ft_str_equal_example();
 	// ft_str_find_char_example();
-	ft_str_split_example();
-	ft_str_rsplit_example();
+	// ft_str_split_example();
+	// ft_str_rsplit_example();
+	ft_str_insert_example();
 }

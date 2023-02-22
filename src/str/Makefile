@@ -1,3 +1,4 @@
+include src/str/adding/Makefile
 include src/str/allocation/Makefile
 include src/str/borrowing/Makefile
 include src/str/c_str/Makefile
@@ -8,6 +9,7 @@ include src/str/search/Makefile
 include src/str/splitting/Makefile
 
 STR_SRCS = \
+	${addprefix adding/,$(STR_ADDING_SRCS)} \
 	${addprefix allocation/,$(STR_ALLOCATION_SRCS)} \
 	${addprefix borrowing/,$(STR_BORROWING_SRCS)} \
 	${addprefix casing/,$(STR_CASING_SRCS)} \
