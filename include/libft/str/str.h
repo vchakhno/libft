@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 06:14:10 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/22 07:10:26 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,6 @@ size_t			ft_str_count_c_str(t_any_str *haystack, char *needle);
 /* SPLITTING																  */
 /******************************************************************************/
 
-/* Todo */
 void			ft_str_split_by_str(t_any_str *str, t_any_str *delim,
 					t_str_split_iterator *iterator);
 void			ft_str_split_by_c_str(t_any_str *str, char *delim,
@@ -171,7 +170,6 @@ void			ft_str_rsplit_by_str(t_any_str *str, t_any_str *delim,
 					t_str_rsplit_iterator *iterator);
 void			ft_str_rsplit_by_c_str(t_any_str *str, char *delim,
 					t_str_rsplit_iterator *iterator);
-/* ---- */
 
 /*
 	Example usage:
@@ -203,12 +201,10 @@ void			ft_str_rsplit_by_c_str(t_any_str *str, char *delim,
 /* CASING																	  */
 /******************************************************************************/
 
-/* Todo */
 void			ft_str_to_upper(t_any_str *str);
 void			ft_str_to_lower(t_any_str *str);
 void			ft_str_title(t_any_str *str);
-void			ft_str_swapcase(t_any_str *str);
-/* ---- */
+void			ft_str_swap_case(t_any_str *str);
 
 /******************************************************************************/
 /* POSITIONNING																  */
