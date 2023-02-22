@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 07:10:26 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/22 07:32:01 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,14 +207,21 @@ void			ft_str_title(t_any_str *str);
 void			ft_str_swap_case(t_any_str *str);
 
 /******************************************************************************/
+/* ALLOCATION																  */
+/******************************************************************************/
+
+bool			ft_str_alloc_empty(t_allocated_str *str);
+bool			ft_str_dup_c_str(t_allocated_str *str, char *c_str);
+bool			ft_str_dup_str(t_allocated_str *dest, t_any_str *src);
+void			ft_str_free(t_allocated_str *str);
+
+/******************************************************************************/
 /* POSITIONNING																  */
 /******************************************************************************/
 
-/* Todo */
-bool			ft_str_center(t_any_str *str, char filler);
-bool			ft_str_ljust(t_any_str *str, char filler);
-bool			ft_str_rjust(t_any_str *str, char filler);
-/* ---- */
+bool			ft_str_center(t_allocated_str *str, char filler);
+bool			ft_str_ljust(t_allocated_str *str, char filler);
+bool			ft_str_rjust(t_allocated_str *str, char filler);
 
 /******************************************************************************/
 /* STRIPPING																  */
