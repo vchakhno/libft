@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:59:53 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 10:30:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/24 00:50:29 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-bool	ft_str_insert_str(t_allocated_str *str, size_t index, t_any_str *inserted)
+bool	ft_str_insert_str(t_allocated_str *str,
+	size_t index, t_any_str *inserted)
 {
 	t_allocated_str	old;
 

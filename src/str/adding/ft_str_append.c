@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:59:53 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 10:29:11 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/24 00:50:15 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ bool	ft_str_append_str(t_allocated_str *str, t_any_str *suffix)
 			return (false);
 		ft_mem_copy(str->c_str, old.c_str, old.len);
 		free(old.c_str);
-		
 	}
 	ft_mem_copy(str->c_str + old.len, suffix->c_str, suffix->len);
 	return (true);

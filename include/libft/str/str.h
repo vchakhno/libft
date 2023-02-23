@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 07:49:26 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/24 00:47:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,30 +219,24 @@ void			ft_str_free(t_allocated_str *str);
 /* ADDING																	  */
 /******************************************************************************/
 
-/* Todo */
 bool			ft_str_append_c_str(t_allocated_str *str, char *suffix);
 bool			ft_str_prepend_c_str(t_allocated_str *str, char *prefix);
 bool			ft_str_insert_c_str(t_allocated_str *str,
 					size_t index, char *inserted);
-/* ---- */
 
-/* Todo */
 bool			ft_str_append_str(t_allocated_str *str, t_any_str *suffix);
 bool			ft_str_prepend_str(t_allocated_str *str, t_any_str *prefix);
 bool			ft_str_insert_str(t_allocated_str *str,
 					size_t index, t_any_str *inserted);
-/* ---- */
 
 /******************************************************************************/
 /* CROPPING																	  */
 /******************************************************************************/
 
-/* Todo */
 bool			ft_str_remove_slice(t_allocated_str *str,
 					size_t from, size_t len);
 bool			ft_str_select_slice(t_allocated_str *str,
 					size_t from, size_t len);
-/* ---- */
 
 /******************************************************************************/
 /* POSITIONNING																  */
