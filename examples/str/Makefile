@@ -15,7 +15,8 @@ SRCS = \
 	ft_test_str_comparison.c \
 	ft_test_str_search.c \
 	ft_test_str_adding.c \
-	ft_test_str_cropping.c
+	ft_test_str_cropping.c \
+	ft_test_str_positionning.c
 SRCS		:= $(addprefix $(SRC_DIR)/,$(SRCS))
 
 INCS		:= ../../include

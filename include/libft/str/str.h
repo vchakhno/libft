@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/24 01:39:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/28 04:48:54 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,9 +242,9 @@ void			ft_str_select_slice(t_allocated_str *str,
 /* POSITIONNING																  */
 /******************************************************************************/
 
-bool			ft_str_center(t_allocated_str *str, char filler);
-bool			ft_str_ljust(t_allocated_str *str, char filler);
-bool			ft_str_rjust(t_allocated_str *str, char filler);
+bool			ft_str_center(t_allocated_str *str, size_t size, char filler);
+bool			ft_str_ljust(t_allocated_str *str, size_t size, char filler);
+bool			ft_str_rjust(t_allocated_str *str, size_t size, char filler);
 
 /******************************************************************************/
 /* STRIPPING																  */
