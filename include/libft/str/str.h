@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/24 00:47:14 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/24 01:39:28 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,10 +233,10 @@ bool			ft_str_insert_str(t_allocated_str *str,
 /* CROPPING																	  */
 /******************************************************************************/
 
-bool			ft_str_remove_slice(t_allocated_str *str,
-					size_t from, size_t len);
-bool			ft_str_select_slice(t_allocated_str *str,
-					size_t from, size_t len);
+void			ft_str_remove_slice(t_allocated_str *str,
+					size_t start, size_t len);
+void			ft_str_select_slice(t_allocated_str *str,
+					size_t start, size_t len);
 
 /******************************************************************************/
 /* POSITIONNING																  */

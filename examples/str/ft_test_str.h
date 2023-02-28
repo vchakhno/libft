@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_test_str.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 22:13:40 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 04:31:40 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/28 04:23:52 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/28 04:29:11 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_test_str.h"
+#ifndef FT_TEST_STR_H
+# define FT_TEST_STR_H
 
-int	main(void)
-{
-	ft_test_str_splitting();
-	ft_test_str_comparison();
-	ft_test_str_search();
-	ft_test_str_adding();
-	ft_test_str_cropping();
-}
+void	ft_test_str_splitting(void);
+void	ft_test_str_comparison(void);
+void	ft_test_str_search(void);
+void	ft_test_str_adding(void);
+void	ft_test_str_cropping(void);
+
+#endif

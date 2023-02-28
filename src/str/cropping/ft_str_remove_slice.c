@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_remove_slice.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 22:13:40 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 04:31:40 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/24 01:02:00 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/24 01:57:22 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_test_str.h"
+#include "libft/str/str_internal_types.h"
+#include "libft/mem/mem.h"
 
-int	main(void)
+void	ft_str_remove_slice(t_allocated_str *str, size_t start, size_t len)
 {
-	ft_test_str_splitting();
-	ft_test_str_comparison();
-	ft_test_str_search();
-	ft_test_str_adding();
-	ft_test_str_cropping();
+	ft_mem_move(str->c_str + start, str->c_str + start + len,
+		str->len - start - len);
+	str->len -= len;
 }
