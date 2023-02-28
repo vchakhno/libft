@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_rstrip.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 22:13:40 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 07:31:44 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/28 06:35:00 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/28 07:39:49 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_test_str.h"
+#include "libft/str/str_internal_types.h"
+#include "libft/str/str.h"
+#include "libft/mem/mem.h"
 
-int	main(void)
+bool	ft_str_rstrip(t_allocated_str *str, char *stripped)
 {
-	ft_test_str_splitting();
-	ft_test_str_comparison();
-	ft_test_str_search();
-	ft_test_str_adding();
-	ft_test_str_cropping();
-	ft_test_str_positionning();
-	ft_test_str_stripping();
+	t_borrowed_str	stripped_str;
+	size_t			end;
+
+	stripped_str = ft_c_str_borrow(stripped);
+	end = str->len;
+	while (end > 0)
+	{
+		if (!ft_str_contains_char(&stripped_str, str->c_str[end - 1]))
+			break ;
+		end--;
+	}
+	str->len = end;
+	return (true);
 }

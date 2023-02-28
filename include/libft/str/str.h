@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 04:48:54 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/02/28 08:00:39 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -250,16 +250,16 @@ bool			ft_str_rjust(t_allocated_str *str, size_t size, char filler);
 /* STRIPPING																  */
 /******************************************************************************/
 
-/* Todo */
 bool			ft_str_lstrip(t_allocated_str *str, char *stripped);
 bool			ft_str_rstrip(t_allocated_str *str, char *stripped);
 bool			ft_str_strip(t_allocated_str *str, char *stripped);
-/* ---- */
 
-/* Todo */
-bool			ft_str_remove_prefix(t_allocated_str *str, char *prefix);
-bool			ft_str_remove_suffix(t_allocated_str *str, char *suffix);
-/* ---- */
+bool			ft_str_remove_c_str_prefix(t_allocated_str *str, char *prefix);
+bool			ft_str_remove_str_prefix(t_allocated_str *str,
+					t_any_str *prefix);
+bool			ft_str_remove_c_str_suffix(t_allocated_str *str, char *suffix);
+bool			ft_str_remove_str_suffix(t_allocated_str *str,
+					t_any_str *suffix);
 
 /******************************************************************************/
 /* FORMATTING																  */

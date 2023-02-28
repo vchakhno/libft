@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_select_slice.c                              :+:      :+:    :+:   */
+/*   ft_str_remove_suffix.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/24 01:02:00 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 07:54:27 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/28 06:35:00 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/02/28 08:18:18 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/str/str_internal_types.h"
+#include "libft/str/str.h"
 #include "libft/mem/mem.h"
 
-void	ft_str_select_slice(t_allocated_str *str, size_t start, size_t len)
+bool	ft_str_remove_c_str_suffix(t_allocated_str *str, char *suffix)
 {
-	ft_mem_copy(str->c_str, str->c_str + start, len);
-	str->len = len;
+	if (ft_str_ends_with_c_str((t_any_str *) str, suffix))
+		str->len -= ft_c_str_len(suffix);
+	return (true);
+}
+
+bool	ft_str_remove_str_suffix(t_allocated_str *str, t_any_str *suffix)
+{
+	if (ft_str_ends_with_str((t_any_str *) str, suffix))
+		str->len -= suffix->len;
+	return (true);
 }

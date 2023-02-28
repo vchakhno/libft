@@ -9,6 +9,7 @@ include src/str/cropping/Makefile
 include src/str/search/Makefile
 include src/str/splitting/Makefile
 include src/str/positionning/Makefile
+include src/str/stripping/Makefile
 
 STR_SRCS = \
 	${addprefix adding/,$(STR_ADDING_SRCS)} \
@@ -22,3 +23,4 @@ STR_SRCS = \
 	${addprefix search/,$(STR_SEARCH_SRCS)} \
 	${addprefix splitting/,$(STR_SPLITTING_SRCS)} \
 	${addprefix positionning/,$(STR_POSITIONNING_SRCS)} \
+	${addprefix stripping/,$(STR_STRIPPING_SRCS)} \
