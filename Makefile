@@ -44,7 +44,7 @@ AR			= ar -rcs
 
 RM			:= rm -rf
 MAKEFLAGS   += --no-print-directory
-DIR_DUP		= mkdir -p $(@D)
+DIR_DUP		= @mkdir -p $(@D)
 
 # **************************************************************************** #
 # 	RECIPIES :D																   #
