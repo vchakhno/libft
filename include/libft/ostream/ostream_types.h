@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:56:54 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/03/06 14:24:52 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/03/06 15:20:01 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,14 @@ typedef struct s_array_ostream
 	size_t			capacity;
 	size_t			pos;
 }	t_array_ostream;
+
+typedef struct s_buffered_ostream
+{
+	t_ostream_base	base;
+	void			*buffer;
+	size_t			buffer_size;
+	size_t			pos;
+	t_any_ostream	*destination;
+}	t_buffered_ostream;
 
 #endif

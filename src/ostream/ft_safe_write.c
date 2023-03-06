@@ -6,31 +6,32 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:08:48 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/03/06 14:33:59 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:04:27 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 #include <sys/types.h>
 
 #define FT_WRITE_MAX_RETRY 3
 
 size_t	ft_safe_write(int fd, void *ptr, size_t size)
 {
-	size_t	total_write;
-	ssize_t	last_write;
+	size_t	total_written;
+	ssize_t	last_written;
 	int		retry;
 
 	retry = 0;
-	total_write = 0;
-	while (total_write < size && retry < FT_WRITE_MAX_RETRY)
+	total_written = 0;
+	while (total_written < size && retry < FT_WRITE_MAX_RETRY)
 	{
-		last_write = write(fd, ptr, size - total_write);
-		if (last_write == -1)
-			return (total_write);
-		if (last_write == 0)
+		last_written = write(fd, ptr, size - total_written);
+		if (last_written == -1)
+			return (total_written);
+		if (last_written == 0)
 			retry++;
-		total_write += last_write;
+		total_written += last_written;
 	}
-	return (total_write);
+	return (total_written);
 }

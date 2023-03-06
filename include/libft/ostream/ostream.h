@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:27 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/03/06 14:32:47 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/03/06 15:45:56 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,11 @@ void	ft_array_ostream_init(t_array_ostream *stream,
 			void *array, size_t elem_size, size_t array_capacity);
 size_t	ft_array_ostream_write(t_array_ostream *stream,
 			void *elems, size_t count);
+
+void	ft_buffered_ostream_init(t_buffered_ostream *stream,
+			void *buffer, size_t buffer_size, t_any_ostream *destination);
+size_t	ft_buffered_ostream_write(t_buffered_ostream *stream,
+			void *ptr, size_t size);
+bool	ft_buffered_ostream_flush(t_buffered_ostream *stream);
 
 #endif

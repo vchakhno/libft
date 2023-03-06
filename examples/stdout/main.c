@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fd_ostream.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:32:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/03/06 16:04:34 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/18 18:57:43 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/03/06 15:57:58 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/ostream/ostream.h"
-#include <stdio.h>
+#include "libft/printf.h"
 
-void	ft_fd_ostream_init(t_fd_ostream *stream, int fd)
+int	main(void)
 {
-	ft_ostream_base_init(&stream->base, ft_fd_ostream_write);
-	stream->fd = fd;
-}
-
-size_t	ft_fd_ostream_write(t_fd_ostream *stream, char *str, size_t n)
-{
-	return (ft_safe_write(stream->fd, str, n));
+	ft_ostream_write_c_str(ft_stdout(), "Hello World!\n");
 }
