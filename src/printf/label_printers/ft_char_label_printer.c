@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_char_label_printer.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 18:57:43 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/03/06 20:23:03 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/03/06 20:27:02 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/03/06 20:27:56 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/printf.h"
 
-int	main(void)
+void	ft_char_label_printer(t_any_ostream *output, va_list args)
 {
-	ft_printf("Bienvenue {c_str}!\n", "Vélimir");
+	ft_ostream_write(output, &(char){va_arg(args, int)}, 1);
 }

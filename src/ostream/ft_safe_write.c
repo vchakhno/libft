@@ -6,12 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:08:48 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/03/06 16:04:27 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:17:55 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 #include <sys/types.h>
 
 #define FT_WRITE_MAX_RETRY 3
