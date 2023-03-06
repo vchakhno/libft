@@ -13,6 +13,7 @@ include src/iterator/Makefile
 include src/mem/Makefile
 include src/str/Makefile
 include src/char/Makefile
+include src/ostream/Makefile
 
 SRC_DIR		:= src
 SRCS = \
@@ -20,7 +21,8 @@ SRCS = \
 	${addprefix iterator/,$(ITERATOR_SRCS)} \
 	${addprefix mem/,$(MEM_SRCS)} \
 	${addprefix str/,$(STR_SRCS)} \
-	${addprefix char/,$(CHAR_SRCS)}
+	${addprefix char/,$(CHAR_SRCS)} \
+	${addprefix ostream/,$(OSTREAM_SRCS)}
 SRCS		:= $(addprefix $(SRC_DIR)/,$(SRCS))
 
 INCS		:= include
