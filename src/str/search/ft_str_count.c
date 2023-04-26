@@ -63,4 +63,3 @@ size_t	ft_str_count_c_str(t_any_str *haystack, char *needle)
 	}
 	return (count);
 }
-

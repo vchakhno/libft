@@ -58,4 +58,3 @@ bool	ft_str_contains_c_str(t_any_str *haystack, char *needle)
 	}
 	return (false);
 }
-

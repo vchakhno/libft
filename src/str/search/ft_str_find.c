@@ -67,4 +67,3 @@ bool	ft_str_find_c_str(t_any_str *haystack, char *needle, size_t *index)
 	}
 	return (false);
 }
-
