@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 10:20:48 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/04/30 10:34:49 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/02 09:47:24 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/bounds.h>
+#include "libft/bounds.h"
 
 t_i8	ft_i8_max(t_i8 a, t_i8 b)
 {

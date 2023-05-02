@@ -6,14 +6,14 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 10:21:17 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/04/30 10:36:46 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/02 09:47:06 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BOUNDS_H
 # define BOUNDS_H
 
-# include <libft/fixed_types.h>
+# include "libft/fixed_types.h"
 
 /******************************************************************************/
 /* MIN																		  */
@@ -77,5 +77,20 @@ t_i64	ft_i64_clamp(t_i64 min, t_i64 value, t_i64 max);
 t_f32	ft_f32_clamp(t_f32 min, t_f32 value, t_f32 max);
 t_f64	ft_f64_clamp(t_f64 min, t_f64 value, t_f64 max);
 t_f128	ft_f128_clamp(t_f128 min, t_f128 value, t_f128 max);
+
+/******************************************************************************/
+/* ABS																		  */
+/******************************************************************************/
+
+// Signed
+t_u8	ft_i8_abs(t_i8 value);
+t_u16	ft_i16_abs(t_i16 value);
+t_u32	ft_i32_abs(t_i32 value);
+t_u64	ft_i64_abs(t_i64 value);
+
+// Floating
+t_f32	ft_f32_abs(t_f32 value);
+t_f64	ft_f64_abs(t_f64 value);
+t_f128	ft_f128_abs(t_f128 value);
 
 #endif

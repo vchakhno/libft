@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 10:20:48 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/04/30 10:48:09 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/02 09:47:12 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/bounds.h>
+#include "libft/bounds.h"
 
 t_f32	ft_f32_clamp(t_f32 min, t_f32 value, t_f32 max)
 {
