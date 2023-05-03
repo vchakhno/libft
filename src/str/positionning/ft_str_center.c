@@ -6,35 +6,40 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 04:47:55 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 05:30:35 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:03:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
 #include "libft/str/str.h"
+#include "libft/fixed_types.h"
 #include "libft/mem/mem.h"
-#include "libft/math.h"
 #include <stdlib.h>
 
-bool	ft_str_center(t_allocated_str *str, size_t size, char filler)
+bool	ft_str_center(t_allocated_str *str, t_u32 size, char filler)
 {
-	t_allocated_str	old;
-	size_t			margin;
+	char	*new_c_str;
+	t_u32	left_margin;
+	t_u32	right_margin;
 
 	if (str->len >= size)
 		return (true);
-	old = *str;
-	str->len = size;
-	str->capacity = ft_alloc_capacity(str->len);
-	if (str->capacity > old.capacity)
-		if (!ft_mem_malloc(&str->c_str, str->capacity))
+	left_margin = (size - str->len) / 2;
+	if (size > str->capacity)
+	{
+		if (!ft_mem_malloc(&new_c_str, size))
 			return (false);
-	margin = (size - old.len) / 2;
-	ft_mem_move(str->c_str + margin, old.c_str, old.len);
-	if (str->capacity > old.capacity)
-		free(old.c_str);
-	ft_mem_set(str->c_str, margin, filler);
-	margin = (size - old.len + 1) / 2;
-	ft_mem_set(str->c_str + str->len - margin, margin, filler);
+		str->capacity = size;
+		ft_mem_copy(new_c_str + left_margin, str->c_str, str->len);
+		free(str->c_str);
+		str->c_str = new_c_str;
+	}
+	else
+	{
+		ft_mem_move(str->c_str + left_margin, str->c_str, str->len);
+	}
+	ft_mem_set(str->c_str, left_margin, filler);
+	right_margin = (size - str->len + 1) / 2;
+	ft_mem_set(str->c_str + size - right_margin, right_margin, filler);
+	str->len = size;
 	return (true);
 }

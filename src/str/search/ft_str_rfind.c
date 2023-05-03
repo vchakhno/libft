@@ -6,65 +6,72 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:53:33 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/20 12:13:13 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:23:00 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
-#include "libft/str/str.h"
+#include "libft/str/str_internals.h"
+#include "libft/fixed_types.h"
 #include "libft/mem/mem.h"
 #include <stdbool.h>
 
-bool	ft_str_rfind_char(t_any_str *haystack, char c, size_t *index)
+bool	ft_str_rfind_char(t_any_str *haystack, char c, t_u32 *index)
 {
-	size_t	i;
+	t_u32	i;
 
-	i = haystack->len;
-	while (i > 0)
+	i = 0;
+	while (i < haystack->len)
 	{
-		i--;
-		if (haystack->c_str[i] == c)
+		if (haystack->c_str[haystack->len - 1 - i] == c)
 		{
-			*index = i;
+			*index = haystack->len - 1 - i;
 			return (true);
 		}
+		i++;
 	}
 	return (false);
 }
 
-bool	ft_str_rfind_str(t_any_str *haystack, t_any_str *needle, size_t *index)
+bool	ft_str_rfind_str(t_any_str *haystack, t_any_str *needle, t_u32 *index)
 {
-	size_t	i;
+	t_u32	i;
 
-	i = haystack->len - needle->len + 1;
-	while (i > 0)
+	i = 0;
+	while (i + needle->len < haystack->len + 1)
 	{
-		i--;
-		if (ft_mem_equal(haystack->c_str + i, needle->c_str, needle->len))
+		if (ft_mem_equal(
+				haystack->c_str + haystack->len - i - needle->len,
+				needle->c_str,
+				needle->len
+			))
 		{
-			*index = i;
+			*index = haystack->len - i - needle->len;
 			return (true);
 		}
+		i++;
 	}
 	return (false);
 }
 
-bool	ft_str_rfind_c_str(t_any_str *haystack, char *needle, size_t *index)
+bool	ft_str_rfind_c_str(t_any_str *haystack, char *needle, t_u32 *index)
 {
-	size_t	needle_len;
-	size_t	i;
+	t_u32	needle_len;
+	t_u32	i;
 
 	needle_len = ft_c_str_len(needle);
-	i = haystack->len - needle_len + 1;
-	while (i > 0)
+	i = 0;
+	while (i + needle_len < haystack->len + 1)
 	{
-		i--;
-		if (ft_mem_equal(haystack->c_str + i, needle, needle_len))
+		if (ft_mem_equal(
+				haystack->c_str + haystack->len - i - needle_len,
+				needle,
+				needle_len
+			))
 		{
-			*index = i;
+			*index = haystack->len - i - needle_len;
 			return (true);
 		}
+		i++;
 	}
 	return (false);
 }
-

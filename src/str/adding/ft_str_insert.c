@@ -6,40 +6,48 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:59:53 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/24 00:50:29 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:10:41 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
-#include "libft/str/str.h"
+#include "libft/str/str_internals.h"
+#include "libft/fixed_types.h"
 #include "libft/math.h"
 #include "libft/mem/mem.h"
 #include <stdlib.h>
 #include <stdbool.h>
 
-bool	ft_str_insert_str(t_allocated_str *str,
-	size_t index, t_any_str *inserted)
-{
-	t_allocated_str	old;
+bool	ft_str_insert_str(
+	t_allocated_str *str, t_u32 index, t_any_str *inserted
+) {
+	char	*new_c_str;
 
-	old = *str;
-	str->len += inserted->len;
-	str->capacity = ft_alloc_capacity(str->len);
-	if (str->capacity > old.capacity)
+	if (str->len + inserted->len > str->capacity)
 	{
-		if (!ft_mem_malloc(&str->c_str, str->capacity))
+		if (!ft_mem_malloc(&new_c_str, str->len + inserted->len))
 			return (false);
-		ft_mem_move(str->c_str, old.c_str, index);
+		str->capacity = str->len + inserted->len;
+		ft_mem_copy(new_c_str, str->c_str, index);
+		ft_mem_copy(
+			new_c_str + index + inserted->len,
+			str->c_str + index,
+			str->len - index);
+		free(str->c_str);
+		str->c_str = new_c_str;
 	}
-	ft_mem_move(str->c_str + index + inserted->len,
-		old.c_str + index, str->len - (index + inserted->len));
-	if (str->capacity > old.capacity)
-		free(old.c_str);
+	else
+	{
+		ft_mem_move(
+			str->c_str + index + inserted->len,
+			str->c_str + index,
+			str->len - index);
+	}
 	ft_mem_copy(str->c_str + index, inserted->c_str, inserted->len);
+	str->len += inserted->len;
 	return (true);
 }
 
-bool	ft_str_insert_c_str(t_allocated_str *str, size_t index, char *inserted)
+bool	ft_str_insert_c_str(t_allocated_str *str, t_u32 index, char *inserted)
 {
 	t_borrowed_str	inserted_str;
 

@@ -6,12 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 06:35:00 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 08:18:18 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 13:39:08 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
-#include "libft/str/str.h"
+#include "libft/str/str_internals.h"
 #include "libft/mem/mem.h"
 
 bool	ft_str_remove_c_str_suffix(t_allocated_str *str, char *suffix)

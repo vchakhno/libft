@@ -6,18 +6,17 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:53:33 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/20 11:58:51 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:12:09 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
-#include "libft/str/str.h"
+#include "libft/str/str_internals.h"
+#include "libft/fixed_types.h"
 #include "libft/mem/mem.h"
-#include <stdbool.h>
 
 bool	ft_str_contains_char(t_any_str *haystack, char c)
 {
-	size_t	i;
+	t_u32	i;
 
 	i = 0;
 	while (i < haystack->len)
@@ -31,10 +30,10 @@ bool	ft_str_contains_char(t_any_str *haystack, char c)
 
 bool	ft_str_contains_str(t_any_str *haystack, t_any_str *needle)
 {
-	size_t	i;
+	t_u32	i;
 
 	i = 0;
-	while (i < haystack->len - needle->len + 1)
+	while (i + needle->len < haystack->len + 1)
 	{
 		if (ft_mem_equal(haystack->c_str + i, needle->c_str, needle->len))
 			return (true);
@@ -45,12 +44,12 @@ bool	ft_str_contains_str(t_any_str *haystack, t_any_str *needle)
 
 bool	ft_str_contains_c_str(t_any_str *haystack, char *needle)
 {
-	size_t	needle_len;
-	size_t	i;
+	t_u32	needle_len;
+	t_u32	i;
 
 	needle_len = ft_c_str_len(needle);
 	i = 0;
-	while (i < haystack->len - needle_len + 1)
+	while (i + needle_len < haystack->len + 1)
 	{
 		if (ft_mem_equal(haystack->c_str + i, needle, needle_len))
 			return (true);

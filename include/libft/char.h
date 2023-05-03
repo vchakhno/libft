@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/01/30 08:23:25 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:58:13 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ bool	ft_char_is_lower(char c);
 bool	ft_char_is_print(char c);
 bool	ft_char_is_upper(char c);
 bool	ft_char_is_blank(char c);
+char	ft_char_swap_case(char c);
 char	ft_char_to_lower(char c);
 char	ft_char_to_upper(char c);
 

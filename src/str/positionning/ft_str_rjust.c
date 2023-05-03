@@ -6,31 +6,34 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 04:47:55 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 05:38:26 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:39:57 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
 #include "libft/str/str.h"
 #include "libft/mem/mem.h"
-#include "libft/math.h"
 #include <stdlib.h>
 
-bool	ft_str_rjust(t_allocated_str *str, size_t size, char filler)
+bool	ft_str_rjust(t_allocated_str *str, t_u32 size, char filler)
 {
-	t_allocated_str	old;
+	char	*new_c_str;
 
 	if (str->len >= size)
 		return (true);
-	old = *str;
-	str->len = size;
-	str->capacity = ft_alloc_capacity(str->len);
-	if (str->capacity > old.capacity)
-		if (!ft_mem_malloc(&str->c_str, str->capacity))
+	if (size > str->capacity)
+	{
+		if (!ft_mem_malloc(&new_c_str, size))
 			return (false);
-	ft_mem_move(str->c_str + size - old.len, old.c_str, old.len);
-	if (str->capacity > old.capacity)
-		free(old.c_str);
-	ft_mem_set(str->c_str, size - old.len, filler);
+		str->capacity = size;
+		ft_mem_copy(new_c_str + size - str->len, str->c_str, str->len);
+		free(str->c_str);
+		str->c_str = new_c_str;
+	}
+	else
+	{
+		ft_mem_move(str->c_str + size - str->len, str->c_str, str->len);
+	}
+	ft_mem_set(str->c_str, size - str->len, filler);
+	str->len = size;
 	return (true);
 }

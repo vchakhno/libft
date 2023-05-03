@@ -6,16 +6,17 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:00:48 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 07:02:33 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:06:44 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
+#include "libft/str/str_internals.h"
+#include "libft/fixed_types.h"
 #include "libft/char.h"
 
 void	ft_str_to_upper(t_any_str *str)
 {
-	size_t	i;
+	t_u32	i;
 
 	i = 0;
 	while (i < str->len)

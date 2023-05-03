@@ -6,40 +6,65 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 08:00:39 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:49:01 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_H
 # define STR_H
 
-# include <stddef.h>
 # include <stdbool.h>
+# include "libft/fixed_types.h"
+# include "libft/iterator/iterator.h"
 
-# ifndef STR_INTERNAL_TYPES_H
-#  include "str_types.h"
+typedef struct s_borrowed_str
+{
+	char	*c_str;
+	t_u32	len;
+}	t_borrowed_str;
+
+typedef struct s_allocated_str
+{
+	char	*c_str;
+	t_u32	len;
+	t_u32	capacity;
+}	t_allocated_str;
+
+typedef t_allocated_str		t_str;
+typedef t_borrowed_str		t_str_slice;
+
+# ifndef STR_INTERNALS_H
+
+typedef void				t_any_str;
+
+# else
+
+typedef t_borrowed_str		t_any_str;
+
 # endif
 
 /******************************************************************************/
 /* C_STR																	  */
 /******************************************************************************/
 
-size_t			ft_c_str_len(const char *c_str);
-void			ft_c_str_ncopy(char *dest, const char *src, size_t len);
+t_u32			ft_c_str_len(const char *c_str);
+void			ft_c_str_ncopy(char *dest, const char *src, t_u32 len);
 
 /******************************************************************************/
 /* BORROWING																  */
 /******************************************************************************/
 
-t_borrowed_str	ft_borrowed_str_from_parts(char *c_str, size_t len);
+t_borrowed_str	ft_borrowed_str_from_parts(char *c_str, t_u32 len);
 t_borrowed_str	ft_c_str_borrow(char *c_str);
 t_borrowed_str	ft_c_str_borrow_slice__unchecked(char *c_str,
-					size_t start, size_t len);
+					t_u32 start, t_u32 len);
+t_borrowed_str	ft_c_str_borrow_slice(char *c_str,
+					t_u32 start, t_u32 len);
 t_borrowed_str	ft_str_borrow(t_any_str *str);
 t_borrowed_str	ft_str_borrow_slice__unchecked(t_any_str *str,
-					size_t start, size_t len);
+					t_u32 start, t_u32 len);
 t_borrowed_str	ft_str_borrow_slice(t_any_str *str,
-					size_t start, size_t len);
+					t_u32 start, t_u32 len);
 
 /******************************************************************************/
 /* CHECKING																	  */
@@ -58,12 +83,12 @@ bool			ft_str_is_upper(t_any_str *str);
 /* COMPARISON																  */
 /******************************************************************************/
 
-int				ft_str_compare_c_str(t_any_str *str1, char *str2);
+t_i32			ft_str_compare_c_str(t_any_str *str1, char *str2);
 bool			ft_str_equal_c_str(t_any_str *str1, char *str2);
 bool			ft_str_starts_with_c_str(t_any_str *str, char *prefix);
 bool			ft_str_ends_with_c_str(t_any_str *str, char *suffix);
 
-int				ft_str_compare_str(t_any_str *str1, t_any_str *str2);
+t_i32			ft_str_compare_str(t_any_str *str1, t_any_str *str2);
 bool			ft_str_equal_str(t_any_str *str1, t_any_str *str2);
 bool			ft_str_starts_with_str(t_any_str *str, t_any_str *prefix);
 bool			ft_str_ends_with_str(t_any_str *str, t_any_str *suffix);
@@ -77,10 +102,10 @@ bool			ft_str_ends_with_str(t_any_str *str, t_any_str *suffix);
 	
 	1)
 	Prototype:
-		ssize_t	ft_str_find_char(t_any_str *haystack, char c);
+		st_u32	ft_str_find_char(t_any_str *haystack, char c);
 
 	Usage:
-		ssize_t	index;
+		st_u32	index;
 
 		index = ft_str_find_char(str, c);
 		if (index == -1)
@@ -115,10 +140,10 @@ bool			ft_str_ends_with_str(t_any_str *str, t_any_str *suffix);
 
 	3) (Best one for now)
 	Prototype:
-		bool	ft_str_find_char(t_any_str *haystack, char c, size_t *index);
+		bool	ft_str_find_char(t_any_str *haystack, char c, t_u32 *index);
 	
 	Usage:
-		size_t	index;
+		t_u32	index;
 		
 		if (!ft_str_find_char(str, c, &index))
 		{
@@ -138,28 +163,35 @@ bool			ft_str_ends_with_str(t_any_str *str, t_any_str *suffix);
 
 bool			ft_str_contains_char(t_any_str *haystack, char c);
 bool			ft_str_find_char(t_any_str *haystack, char c,
-					size_t *index);
+					t_u32 *index);
 bool			ft_str_rfind_char(t_any_str *haystack, char c,
-					size_t *index);
-size_t			ft_str_count_char(t_any_str *haystack, char c);
+					t_u32 *index);
+t_u32			ft_str_count_char(t_any_str *haystack, char c);
 
 bool			ft_str_contains_str(t_any_str *haystack, t_any_str *needle);
 bool			ft_str_find_str(t_any_str *haystack, t_any_str *needle,
-					size_t *index);
+					t_u32 *index);
 bool			ft_str_rfind_str(t_any_str *haystack, t_any_str *needle,
-					size_t *index);
-size_t			ft_str_count_str(t_any_str *haystack, t_any_str *needle);
+					t_u32 *index);
+t_u32			ft_str_count_str(t_any_str *haystack, t_any_str *needle);
 
 bool			ft_str_contains_c_str(t_any_str *haystack, char *needle);
 bool			ft_str_find_c_str(t_any_str *haystack, char *needle,
-					size_t *index);
+					t_u32 *index);
 bool			ft_str_rfind_c_str(t_any_str *haystack, char *needle,
-					size_t *index);
-size_t			ft_str_count_c_str(t_any_str *haystack, char *needle);
+					t_u32 *index);
+t_u32			ft_str_count_c_str(t_any_str *haystack, char *needle);
 
 /******************************************************************************/
 /* SPLITTING																  */
 /******************************************************************************/
+
+typedef struct s_str_split_iterator
+{
+	t_iterator_base	base;
+	t_borrowed_str	remaining;
+	t_borrowed_str	delim;
+}	t_str_split_iterator;
 
 void			ft_str_split_by_str(t_any_str *str, t_any_str *delim,
 					t_str_split_iterator *iterator);
@@ -167,9 +199,9 @@ void			ft_str_split_by_c_str(t_any_str *str, char *delim,
 					t_str_split_iterator *iterator);
 
 void			ft_str_rsplit_by_str(t_any_str *str, t_any_str *delim,
-					t_str_rsplit_iterator *iterator);
+					t_str_split_iterator *iterator);
 void			ft_str_rsplit_by_c_str(t_any_str *str, char *delim,
-					t_str_rsplit_iterator *iterator);
+					t_str_split_iterator *iterator);
 
 /*
 	Example usage:
@@ -210,10 +242,17 @@ void			ft_str_swap_case(t_any_str *str);
 /* ALLOCATION																  */
 /******************************************************************************/
 
-bool			ft_str_alloc_empty(t_allocated_str *str);
+void			ft_str_alloc_empty(t_allocated_str *str);
 bool			ft_str_dup_c_str(t_allocated_str *str, char *c_str);
 bool			ft_str_dup_str(t_allocated_str *dest, t_any_str *src);
 void			ft_str_free(t_allocated_str *str);
+
+/******************************************************************************/
+/* CAPACITY																	  */
+/******************************************************************************/
+
+bool			ft_str_reserve(t_allocated_str *str, t_u32 additionnal);
+bool			ft_str_compact(t_allocated_str *str);
 
 /******************************************************************************/
 /* ADDING																	  */
@@ -222,37 +261,37 @@ void			ft_str_free(t_allocated_str *str);
 bool			ft_str_append_c_str(t_allocated_str *str, char *suffix);
 bool			ft_str_prepend_c_str(t_allocated_str *str, char *prefix);
 bool			ft_str_insert_c_str(t_allocated_str *str,
-					size_t index, char *inserted);
+					t_u32 index, char *inserted);
 
 bool			ft_str_append_str(t_allocated_str *str, t_any_str *suffix);
 bool			ft_str_prepend_str(t_allocated_str *str, t_any_str *prefix);
 bool			ft_str_insert_str(t_allocated_str *str,
-					size_t index, t_any_str *inserted);
+					t_u32 index, t_any_str *inserted);
 
 /******************************************************************************/
 /* CROPPING																	  */
 /******************************************************************************/
 
 void			ft_str_remove_slice(t_allocated_str *str,
-					size_t start, size_t len);
+					t_u32 start, t_u32 len);
 void			ft_str_select_slice(t_allocated_str *str,
-					size_t start, size_t len);
+					t_u32 start, t_u32 len);
 
 /******************************************************************************/
 /* POSITIONNING																  */
 /******************************************************************************/
 
-bool			ft_str_center(t_allocated_str *str, size_t size, char filler);
-bool			ft_str_ljust(t_allocated_str *str, size_t size, char filler);
-bool			ft_str_rjust(t_allocated_str *str, size_t size, char filler);
+bool			ft_str_center(t_allocated_str *str, t_u32 size, char filler);
+bool			ft_str_ljust(t_allocated_str *str, t_u32 size, char filler);
+bool			ft_str_rjust(t_allocated_str *str, t_u32 size, char filler);
 
 /******************************************************************************/
 /* STRIPPING																  */
 /******************************************************************************/
 
-bool			ft_str_lstrip(t_allocated_str *str, char *stripped);
-bool			ft_str_rstrip(t_allocated_str *str, char *stripped);
-bool			ft_str_strip(t_allocated_str *str, char *stripped);
+bool			ft_str_lstrip(t_allocated_str *str, char *set);
+bool			ft_str_rstrip(t_allocated_str *str, char *set);
+bool			ft_str_strip(t_allocated_str *str, char *set);
 
 bool			ft_str_remove_c_str_prefix(t_allocated_str *str, char *prefix);
 bool			ft_str_remove_str_prefix(t_allocated_str *str,
@@ -341,7 +380,7 @@ bool			ft_str_format(t_allocated_str *str);
 /* JOINING																	  */
 /******************************************************************************/
 
-typedef void	t_any_str_iterator;
+typedef t_any_iterator		t_any_str_iterator;
 
 /* Todo */
 bool			ft_str_join_with_str(t_allocated_str *dest,

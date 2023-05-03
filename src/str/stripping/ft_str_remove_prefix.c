@@ -6,17 +6,17 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 06:35:00 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 08:17:42 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:32:19 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
-#include "libft/str/str.h"
+#include "libft/str/str_internals.h"
+#include "libft/fixed_types.h"
 #include "libft/mem/mem.h"
 
 bool	ft_str_remove_c_str_prefix(t_allocated_str *str, char *prefix)
 {
-	size_t	prefix_len;
+	t_u32	prefix_len;
 
 	if (ft_str_starts_with_c_str((t_any_str *) str, prefix))
 	{

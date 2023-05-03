@@ -6,12 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:59:53 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 10:30:35 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:07:56 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
-#include "libft/str/str.h"
+#include "libft/str/str_internals.h"
 #include "libft/math.h"
 #include "libft/mem/mem.h"
 #include <stdlib.h>
@@ -19,18 +18,22 @@
 
 bool	ft_str_prepend_str(t_allocated_str *str, t_any_str *prefix)
 {
-	t_allocated_str	old;
+	char	*new_c_str;
 
-	old = *str;
-	str->len += prefix->len;
-	str->capacity = ft_alloc_capacity(str->len);
-	if (str->capacity > old.capacity)
-		if (!ft_mem_malloc(&str->c_str, str->capacity))
+	if (str->len + prefix->len > str->capacity)
+	{
+		if (!ft_mem_malloc(&new_c_str, str->len + prefix->len))
 			return (false);
-	ft_mem_move(str->c_str + prefix->len, old.c_str, old.len);
-	if (str->capacity > old.capacity) 
-		free(old.c_str);
+		ft_mem_copy(new_c_str + prefix->len, str->c_str, str->len);
+		free(str->c_str);
+		str->c_str = new_c_str;
+	}
+	else
+	{
+		ft_mem_move(str->c_str + prefix->len, str->c_str, str->len);
+	}
 	ft_mem_copy(str->c_str, prefix->c_str, prefix->len);
+	str->len += prefix->len;
 	return (true);
 }
 

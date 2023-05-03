@@ -6,17 +6,18 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 00:25:44 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/20 00:27:53 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:07:04 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
+#include "libft/str/str_internals.h"
+#include "libft/fixed_types.h"
 #include "libft/char.h"
 #include <stdbool.h>
 
 bool	ft_str_is_alpha(t_any_str *str)
 {
-	size_t	i;
+	t_u32	i;
 
 	i = 0;
 	while (i < str->len)

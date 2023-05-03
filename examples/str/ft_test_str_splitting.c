@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:13:40 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/28 04:31:57 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:41:00 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_test_str_rsplit(void)
 {
 	t_borrowed_str			sentence;
 	t_borrowed_str			word;
-	t_str_rsplit_iterator	iterator;
+	t_str_split_iterator	iterator;
 
 	sentence = ft_c_str_borrow("Bonjour Vélimir, comment ça va ?");
 	ft_str_rsplit_by_c_str(&sentence, " ", &iterator);

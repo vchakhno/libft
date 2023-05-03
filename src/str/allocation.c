@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_dup.c                                       :+:      :+:    :+:   */
+/*   allocation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 07:25:51 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 07:59:34 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/05/03 13:57:19 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/05/03 16:37:11 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
-#include "libft/str/str.h"
-#include "libft/mem/mem.h"
-#include "libft/math.h"
+#include "libft/str/str_internals.h"
+#include <stdlib.h>
+
+void	ft_str_alloc_empty(t_allocated_str *str)
+{
+	str->c_str = NULL;
+	str->len = 0;
+	str->capacity = 0;
+}
 
 bool	ft_str_dup_str(t_allocated_str *dest, t_any_str *src)
 {
-	dest->len = src->len;
-	dest->capacity = ft_alloc_capacity(dest->len);
-	if (!ft_mem_malloc(&dest->c_str, dest->capacity))
-		return (false);
-	ft_mem_copy(dest->c_str, src->c_str, src->len);
-	return (true);
+	ft_str_alloc_empty(dest);
+	return (ft_str_append_str(dest, src));
 }
 
 bool	ft_str_dup_c_str(t_allocated_str *str, char *c_str)
 {
-	str->len = ft_c_str_len(c_str);
-	str->capacity = ft_alloc_capacity(str->len);
-	if (!ft_mem_malloc(&str->c_str, str->capacity))
-		return (false);
-	ft_mem_copy(str->c_str, c_str, str->len);
-	return (true);
+	ft_str_alloc_empty(str);
+	return (ft_str_append_c_str(str, c_str));
+}
+
+void	ft_str_free(t_allocated_str *str)
+{
+	free(str->c_str);
 }

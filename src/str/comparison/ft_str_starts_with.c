@@ -6,12 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 01:26:05 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/20 01:31:17 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:10:56 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/str/str_internal_types.h"
-#include "libft/str/str.h"
+#include "libft/str/str_internals.h"
+#include "libft/fixed_types.h"
 #include "libft/mem/mem.h"
 #include <stdbool.h>
 
@@ -25,7 +25,7 @@ bool	ft_str_starts_with_str(t_any_str *str, t_any_str *prefix)
 
 bool	ft_str_starts_with_c_str(t_any_str *str, char *prefix)
 {
-	size_t	prefix_len;
+	t_u32	prefix_len;
 
 	prefix_len = ft_c_str_len(prefix);
 	return (

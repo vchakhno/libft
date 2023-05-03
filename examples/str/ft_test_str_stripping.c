@@ -108,7 +108,6 @@ void	ft_test_str_remove_suffix(void)
 	ft_str_free(&str);
 }
 
-
 void	ft_test_str_stripping(void)
 {
 	ft_test_str_strip();
