@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:27 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/03 12:53:59 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 13:16:31 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@
 # include "libft/str/str.h"
 # include "libft/fixed_types.h"
 # include <stdbool.h>
+
+/*
+	Ostreams are an abstraction over output.
+	They can be useful to generalize fd & str.
+	It's like a nice way to wrap output side effects.
+	It's pretty convenient for functions like printf, or array_print.
+	Otherwise it's just weird and not that useful.
+	Half the ostream types in this header are experimental,
+	probably never needed and will be wiped out in the future.
+*/
 
 /******************************************************************************/
 /* OSTREAM_BASE																  */
@@ -55,6 +65,11 @@ t_u32	ft_ostream_write_str(t_any_str_ostream *stream, t_any_str *str);
 /* FD_OSTREAM																  */
 /******************************************************************************/
 
+/*
+	The simplest of ostream types. Writes to a fd (unbuffered !).
+	Maybe I should make it buffered by default?
+*/
+
 typedef struct s_fd_ostream
 {
 	t_ostream_base	base;
@@ -70,6 +85,12 @@ t_u32	ft_fd_ostream_write(t_fd_ostream *stream, char *str, t_u32 n);
 /******************************************************************************/
 /* FIXED_STR_OSTREAM														  */
 /******************************************************************************/
+
+/*
+	Writes to a string buffer, terminated by \0.
+	I'm not sure I'll ever get to use this one.
+	It *seems* useful but in reality I might never need it.
+*/
 
 typedef struct s_fixed_str_ostream
 {
@@ -88,6 +109,12 @@ t_u32	ft_fixed_str_ostream_write(t_fixed_str_ostream *stream,
 /* ARRAY_OSTREAM															  */
 /******************************************************************************/
 
+/*
+	Writes to uuh, an array. Should probably be updated to t_any_array?
+	It's like vector_push_multiple but without reallocation and in ostream form.
+	A bit weird actually. I probably will never use the ostream form...
+*/
+
 typedef struct s_array_ostream
 {
 	t_ostream_base	base;
@@ -105,6 +132,16 @@ t_u32	ft_array_ostream_write(t_array_ostream *stream,
 /******************************************************************************/
 /* BUFFERED_OSTREAM															  */
 /******************************************************************************/
+
+/*
+	This one is really useful, but I'm afraid multiple will ever get in a row,
+	which would just cause unnecessary copies. It's pretty dumb, because only
+	files should get a buffer for now. So there are no n-buffered ostream.
+
+	I should probably change the write so that if the data exceeds the buffer
+	size, it is written directly to the underlying ostream instead of copying
+	by chunks.
+*/
 
 typedef struct s_buffered_ostream
 {
