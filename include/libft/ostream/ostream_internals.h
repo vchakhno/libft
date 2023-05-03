@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fd_ostream.c                                    :+:      :+:    :+:   */
+/*   ostream_internals.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:32:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/03 12:51:02 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/03/06 13:56:54 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/05/03 12:44:20 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/ostream/ostream.h"
+#ifndef OSTREAM_INTERNALS_H
+# define OSTREAM_INTERNALS_H
 
-void	ft_fd_ostream_init(t_fd_ostream *stream, int fd)
-{
-	ft_ostream_base_init(&stream->base, ft_fd_ostream_write);
-	stream->fd = fd;
-}
+# include "libft/ostream/ostream.h"
 
-t_u32	ft_fd_ostream_write(t_fd_ostream *stream, char *str, t_u32 n)
-{
-	return (ft_safe_write(stream->fd, str, n));
-}
+#endif

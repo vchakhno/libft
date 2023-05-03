@@ -6,17 +6,17 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:33:04 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/03/06 14:33:39 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:49:51 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/ostream/ostream.h"
 #include "libft/mem/mem.h"
-#include "libft/math.h"
+#include "libft/bounds.h"
 
-void	ft_array_ostream_init(t_array_ostream *stream,
-			void *array, size_t elem_size, size_t array_capacity)
-{
+void	ft_array_ostream_init(
+	t_array_ostream *stream, void *array, t_u32 elem_size, t_u32 array_capacity
+) {
 	ft_ostream_base_init(&stream->base, ft_array_ostream_write);
 	stream->array = array;
 	stream->elem_size = elem_size;
@@ -24,10 +24,10 @@ void	ft_array_ostream_init(t_array_ostream *stream,
 	stream->capacity = array_capacity;
 }
 
-size_t	ft_array_ostream_write(t_array_ostream *stream,
-	void *elems, size_t count)
-{
-	count = ft_math_min_size_t(count, stream->capacity - stream->pos);
+t_u32	ft_array_ostream_write(
+	t_array_ostream *stream, void *elems, t_u32 count
+) {
+	count = ft_u32_min(count, stream->capacity - stream->pos);
 	ft_mem_copy(stream->array + stream->pos * stream->elem_size,
 		elems, count * stream->elem_size);
 	stream->pos += count;

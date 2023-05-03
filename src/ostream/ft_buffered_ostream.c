@@ -6,16 +6,17 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/03/06 16:17:50 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:50:37 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/ostream/ostream.h"
 #include "libft/mem/mem.h"
 
-void	ft_buffered_ostream_init(t_buffered_ostream *stream,
-	void *buffer, size_t buffer_size, t_any_ostream *destination)
-{
+void	ft_buffered_ostream_init(
+	t_buffered_ostream *stream,
+	void *buffer, t_u32 buffer_size, t_any_ostream *destination
+) {
 	ft_ostream_base_init(&stream->base, ft_buffered_ostream_write);
 	stream->buffer = buffer;
 	stream->buffer_size = buffer_size;
@@ -23,11 +24,11 @@ void	ft_buffered_ostream_init(t_buffered_ostream *stream,
 	stream->destination = destination;
 }
 
-size_t	ft_buffered_ostream_write(t_buffered_ostream *stream,
-	void *ptr, size_t size)
-{
-	size_t	total_written;
-	size_t	last_written;
+t_u32	ft_buffered_ostream_write(
+	t_buffered_ostream *stream, void *ptr, t_u32 size
+) {
+	t_u32	total_written;
+	t_u32	last_written;
 
 	total_written = 0;
 	while (size - total_written > stream->buffer_size - stream->pos)
