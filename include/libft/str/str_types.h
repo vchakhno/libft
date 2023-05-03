@@ -6,14 +6,14 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 01:19:18 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/20 13:15:40 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 13:23:01 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_TYPES_H
 # define STR_TYPES_H
 
-# include "libft/iterator/iterator_types.h"
+# include "libft/iterator/iterator.h"
 # include <stddef.h>
 
 typedef struct s_borrowed_str
