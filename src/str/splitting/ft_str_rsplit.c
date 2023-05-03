@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 13:04:46 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/22 06:54:20 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 13:25:47 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ bool	ft_str_rsplit_iterator_next(t_str_rsplit_iterator *iterator,
 	if (ft_str_rfind_str(&to_search, &iterator->delim, &index))
 		iterator->pos += iterator->delim.len;
 	else
-		index = (size_t) -1;
+		index = (size_t) - 1;
 	word = ft_str_borrow_slice__unchecked(&iterator->haystack,
 			index + iterator->delim.len,
 			to_search.len - index - iterator->delim.len);
