@@ -6,19 +6,16 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:38:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/19 03:08:16 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 23:12:45 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem/mem_internal_types.h"
-#include <stddef.h>
-#include <stdbool.h>
+#include "libft/mem/mem_internals.h"
 
 bool	ft_mem_find_byte(
-	const t_mem *ptr, size_t size, t_byte b,
-	size_t *index
+	const t_mem *ptr, t_u32 size, t_byte b, t_u32 *index
 ) {
-	size_t	i;
+	t_u32	i;
 
 	i = 0;
 	while (i < size)

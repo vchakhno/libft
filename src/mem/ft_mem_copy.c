@@ -6,16 +6,15 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:41:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/18 20:57:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 23:12:26 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem/mem_internal_types.h"
-#include <stddef.h>
+#include "libft/mem/mem_internals.h"
 
-void	ft_mem_copy(t_mem *dest, const t_mem *src, size_t size)
+void	ft_mem_copy(t_mem *dest, const t_mem *src, t_u32 size)
 {
-	size_t	i;
+	t_u32	i;
 
 	if (src == dest)
 		return ;

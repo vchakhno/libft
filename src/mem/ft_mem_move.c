@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_move.c                                   :+:      :+:    :+:   */
+/*   ft_mem_move.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 05:38:38 by vchakhno          #+#    #+#             */
-/*   Updated: 2022/12/08 05:39:29 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/05/03 05:38:38 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/05/03 23:13:51 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem/mem_internal_types.h"
-#include <stddef.h>
+#include "libft/mem/mem_internals.h"
 
-void	ft_mem_move(t_mem *dest, const t_mem *src, size_t size)
+void	ft_mem_move(t_mem *dest, const t_mem *src, t_u32 size)
 {
-	size_t	i;
+	t_u32	i;
 
 	if (src == dest)
 		return ;

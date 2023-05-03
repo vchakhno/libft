@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/03 16:49:01 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 23:05:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,10 +305,9 @@ bool			ft_str_remove_str_suffix(t_allocated_str *str,
 /******************************************************************************/
 
 /* Todo */
-bool			ft_str_expand_tabs(t_allocated_str *str, int spaces_count);
 bool			ft_str_replace(t_allocated_str *str,
 					t_any_str *old, t_any_str *new);
-bool			ft_str_format(t_allocated_str *str);
+bool			ft_str_format(t_allocated_str *str, ...);
 /* ---- */
 
 /*

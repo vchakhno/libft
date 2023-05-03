@@ -6,16 +6,15 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:40:36 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/18 20:59:47 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 23:14:13 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem/mem_internal_types.h"
-#include <stddef.h>
+#include "libft/mem/mem_internals.h"
 
-void	ft_mem_zero(t_mem *ptr, size_t size)
+void	ft_mem_zero(t_mem *ptr, t_u32 size)
 {
-	size_t	i;
+	t_u32	i;
 
 	i = 0;
 	while (i < size)

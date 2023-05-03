@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   math.h                                             :+:      :+:    :+:   */
+/*   mem_internals.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 01:50:01 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/19 01:17:54 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/18 19:34:22 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/05/03 23:01:19 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATH_H
-# define MATH_H
+#ifndef MEM_INTERNALS_H
+# define MEM_INTERNALS_H
 
-# include <stddef.h>
-
-size_t	ft_math_ceil_pow2(size_t n);
-size_t	ft_math_min_size_t(size_t a, size_t b);
-size_t	ft_math_max_size_t(size_t a, size_t b);
-size_t	ft_alloc_capacity(size_t capacity);
+# include "libft/mem/mem.h"
 
 #endif

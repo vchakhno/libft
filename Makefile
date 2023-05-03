@@ -8,7 +8,6 @@ NAME		:= libft.a
 # 	SOURCES																	   #
 # **************************************************************************** #
 
-include src/math/Makefile
 include src/bounds/Makefile
 include src/iterator/Makefile
 include src/mem/Makefile
@@ -19,7 +18,6 @@ include src/printf/Makefile
 
 SRC_DIR		:= src
 SRCS = \
-	${addprefix math/,$(MATH_SRCS)} \
 	${addprefix bounds/,$(BOUNDS_SRCS)} \
 	${addprefix iterator/,$(ITERATOR_SRCS)} \
 	${addprefix mem/,$(MEM_SRCS)} \

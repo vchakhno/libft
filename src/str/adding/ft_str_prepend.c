@@ -6,12 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:59:53 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/03 17:07:56 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/03 23:14:35 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/str/str_internals.h"
-#include "libft/math.h"
 #include "libft/mem/mem.h"
 #include <stdlib.h>
 #include <stdbool.h>
