@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/03 23:05:46 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:16:42 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,16 +243,20 @@ void			ft_str_swap_case(t_any_str *str);
 /******************************************************************************/
 
 void			ft_str_alloc_empty(t_allocated_str *str);
-bool			ft_str_dup_c_str(t_allocated_str *str, char *c_str);
-bool			ft_str_dup_str(t_allocated_str *dest, t_any_str *src);
+bool			ft_str_dup_c_str(t_allocated_str *str, char *c_str)
+				__attribute__((warn_unused_result));
+bool			ft_str_dup_str(t_allocated_str *dest, t_any_str *src)
+				__attribute__((warn_unused_result));
 void			ft_str_free(t_allocated_str *str);
 
 /******************************************************************************/
 /* CAPACITY																	  */
 /******************************************************************************/
 
-bool			ft_str_reserve(t_allocated_str *str, t_u32 additionnal);
-bool			ft_str_compact(t_allocated_str *str);
+bool			ft_str_reserve(t_allocated_str *str, t_u32 additionnal)
+				__attribute__((warn_unused_result));
+bool			ft_str_compact(t_allocated_str *str)
+				__attribute__((warn_unused_result));
 
 /******************************************************************************/
 /* ADDING																	  */
