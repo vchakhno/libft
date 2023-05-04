@@ -6,14 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:27 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/03 13:16:31 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:01:32 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OSTREAM_H
 # define OSTREAM_H
 
-# include "libft/str/str.h"
 # include "libft/fixed_types.h"
 # include <stdbool.h>
 
@@ -48,18 +47,18 @@ void	ft_ostream_base_init(t_ostream_base *stream, t_ostream_write write);
 
 typedef void			t_any_ostream;
 typedef void			t_any_str_ostream;
+typedef void			t_any_mem_ostream;
 
 # else
 
 typedef t_ostream_base	t_any_ostream;
 typedef t_ostream_base	t_any_str_ostream;
+typedef t_ostream_base	t_any_mem_ostream;
 
 # endif
 
 bool	ft_ostream_has_ended(t_any_ostream *stream);
 t_u32	ft_ostream_write(t_any_ostream *stream, void *elems, t_u32 count);
-t_u32	ft_ostream_write_c_str(t_any_str_ostream *stream, char *c_str);
-t_u32	ft_ostream_write_str(t_any_str_ostream *stream, t_any_str *str);
 
 /******************************************************************************/
 /* FD_OSTREAM																  */
@@ -157,5 +156,83 @@ void	ft_buffered_ostream_init(t_buffered_ostream *stream,
 t_u32	ft_buffered_ostream_write(t_buffered_ostream *stream,
 			void *ptr, t_u32 size);
 bool	ft_buffered_ostream_flush(t_buffered_ostream *stream);
+
+/******************************************************************************/
+/* PRINTING FIXED TYPES														  */
+/******************************************************************************/
+
+// Unsigned
+bool	ft_u8_print(t_u8 value);
+bool	ft_u8_println(t_u8 value);
+bool	ft_u8_oprint(t_u8 value, t_any_str_ostream *stream);
+bool	ft_u8_oprintln(t_u8 value, t_any_str_ostream *stream);
+
+bool	ft_u16_print(t_u16 value);
+bool	ft_u16_println(t_u16 value);
+bool	ft_u16_oprint(t_u16 value, t_any_str_ostream *stream);
+bool	ft_u16_oprintln(t_u16 value, t_any_str_ostream *stream);
+
+bool	ft_u32_print(t_u32 value);
+bool	ft_u32_println(t_u32 value);
+bool	ft_u32_oprint(t_u32 value, t_any_str_ostream *stream);
+bool	ft_u32_oprintln(t_u32 value, t_any_str_ostream *stream);
+
+bool	ft_u64_print(t_u64 value);
+bool	ft_u64_println(t_u64 value);
+bool	ft_u64_oprint(t_u64 value, t_any_str_ostream *stream);
+bool	ft_u64_oprintln(t_u64 value, t_any_str_ostream *stream);
+
+// Signed
+bool	ft_i8_print(t_i8 value);
+bool	ft_i8_println(t_i8 value);
+bool	ft_i8_oprint(t_i8 value, t_any_str_ostream *stream);
+bool	ft_i8_oprintln(t_i8 value, t_any_str_ostream *stream);
+
+bool	ft_i16_print(t_i16 value);
+bool	ft_i16_println(t_i16 value);
+bool	ft_i16_oprint(t_i16 value, t_any_str_ostream *stream);
+bool	ft_i16_oprintln(t_i16 value, t_any_str_ostream *stream);
+
+bool	ft_i32_print(t_i32 value);
+bool	ft_i32_println(t_i32 value);
+bool	ft_i32_oprint(t_i32 value, t_any_str_ostream *stream);
+bool	ft_i32_oprintln(t_i32 value, t_any_str_ostream *stream);
+
+bool	ft_i64_print(t_i64 value);
+bool	ft_i64_println(t_i64 value);
+bool	ft_i64_oprint(t_i64 value, t_any_str_ostream *stream);
+bool	ft_i64_oprintln(t_i64 value, t_any_str_ostream *stream);
+
+// Floating
+bool	ft_f32_print(t_f32 value);
+bool	ft_f32_println(t_f32 value);
+bool	ft_f32_oprint(t_f32 value, t_any_str_ostream *stream);
+bool	ft_f32_oprintln(t_f32 value, t_any_str_ostream *stream);
+
+bool	ft_f64_print(t_f64 value);
+bool	ft_f64_println(t_f64 value);
+bool	ft_f64_oprint(t_f64 value, t_any_str_ostream *stream);
+bool	ft_f64_oprintln(t_f64 value, t_any_str_ostream *stream);
+
+bool	ft_f128_print(t_f128 value);
+bool	ft_f128_println(t_f128 value);
+bool	ft_f128_oprint(t_f128 value, t_any_str_ostream *stream);
+bool	ft_f128_oprintln(t_f128 value, t_any_str_ostream *stream);
+
+// Complex
+bool	ft_cf32_print(t_cf32 value);
+bool	ft_cf32_println(t_cf32 value);
+bool	ft_cf32_oprint(t_cf32 value, t_any_str_ostream *stream);
+bool	ft_cf32_oprint(t_cf32 value, t_any_str_ostream *stream);
+
+bool	ft_cf64_print(t_cf64 value);
+bool	ft_cf64_println(t_cf64 value);
+bool	ft_cf64_oprint(t_cf64 value, t_any_str_ostream *stream);
+bool	ft_cf64_oprint(t_cf64 value, t_any_str_ostream *stream);
+
+bool	ft_cf128_print(t_cf128 value);
+bool	ft_cf128_println(t_cf128 value);
+bool	ft_cf128_oprint(t_cf128 value, t_any_str_ostream *stream);
+bool	ft_cf128_oprint(t_cf128 value, t_any_str_ostream *stream);
 
 #endif

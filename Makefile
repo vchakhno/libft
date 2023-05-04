@@ -13,7 +13,7 @@ include src/iterator/Makefile
 include src/mem/Makefile
 include src/str/Makefile
 include src/char/Makefile
-include src/ostream/Makefile
+include src/printing/Makefile
 include src/printf/Makefile
 
 SRC_DIR		:= src
@@ -23,7 +23,7 @@ SRCS = \
 	${addprefix mem/,$(MEM_SRCS)} \
 	${addprefix str/,$(STR_SRCS)} \
 	${addprefix char/,$(CHAR_SRCS)} \
-	${addprefix ostream/,$(OSTREAM_SRCS)} \
+	${addprefix printing/,$(PRINTING_SRCS)} \
 	${addprefix printf/,$(PRINTF_SRCS)}
 SRCS		:= $(addprefix $(SRC_DIR)/,$(SRCS))
 

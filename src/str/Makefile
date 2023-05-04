@@ -9,6 +9,7 @@ include src/str/search/Makefile
 include src/str/splitting/Makefile
 include src/str/positionning/Makefile
 include src/str/stripping/Makefile
+include src/str/printing/Makefile
 
 STR_SRCS = \
 	allocation.c \
@@ -24,3 +25,4 @@ STR_SRCS = \
 	${addprefix splitting/,$(STR_SPLITTING_SRCS)} \
 	${addprefix positionning/,$(STR_POSITIONNING_SRCS)} \
 	${addprefix stripping/,$(STR_STRIPPING_SRCS)} \
+	${addprefix printing/,$(STR_PRINTING_SRCS)} \
