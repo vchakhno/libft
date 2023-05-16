@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_max_floating.c                                  :+:      :+:    :+:   */
+/*   fract.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 10:20:48 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/02 09:47:38 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/05/08 01:05:17 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/05/08 04:54:09 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/bounds.h"
+#include "libft/float_math.h"
 
-t_f32	ft_f32_max(t_f32 a, t_f32 b)
+t_f32	ft_f32_fract(t_f32 value)
 {
-	if (a > b)
-		return (a);
-	return (b);
+	return (value - ft_f32_trunc(value));
 }
 
-t_f64	ft_f64_max(t_f64 a, t_f64 b)
+t_f64	ft_f64_fract(t_f64 value)
 {
-	if (a > b)
-		return (a);
-	return (b);
+	return (value - ft_f64_trunc(value));
 }
 
-t_f80	ft_f80_max(t_f80 a, t_f80 b)
+t_f80	ft_f80_fract(t_f80 value)
 {
-	if (a > b)
-		return (a);
-	return (b);
+	return (value - ft_f80_trunc(value));
 }
 
-t_f128	ft_f128_max(t_f128 a, t_f128 b)
+t_f128	ft_f128_fract(t_f128 value)
 {
-	if (a > b)
-		return (a);
-	return (b);
+	return (value - ft_f128_trunc(value));
 }

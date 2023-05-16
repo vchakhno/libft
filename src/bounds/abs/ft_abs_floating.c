@@ -26,6 +26,13 @@ t_f64	ft_f64_abs(t_f64 value)
 	return (value);
 }
 
+t_f80	ft_f80_abs(t_f80 value)
+{
+	if (value < 0)
+		return (-value);
+	return (value);
+}
+
 t_f128	ft_f128_abs(t_f128 value)
 {
 	if (value < 0)

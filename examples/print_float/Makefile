@@ -2,34 +2,21 @@
 # 	Makefile based on clemedon's Makefile tutorial							   #
 # **************************************************************************** #
 
-NAME		:= libft.a
+NAME		:= a.out
 
 # **************************************************************************** #
 # 	SOURCES																	   #
 # **************************************************************************** #
 
-include src/bounds/Makefile
-include src/iterator/Makefile
-include src/mem/Makefile
-include src/str/Makefile
-include src/char/Makefile
-include src/printing/Makefile
-include src/printf/Makefile
-include src/float_math/Makefile
-
-SRC_DIR		:= src
+SRC_DIR		:= .
 SRCS = \
-	${addprefix bounds/,$(BOUNDS_SRCS)} \
-	${addprefix iterator/,$(ITERATOR_SRCS)} \
-	${addprefix mem/,$(MEM_SRCS)} \
-	${addprefix str/,$(STR_SRCS)} \
-	${addprefix char/,$(CHAR_SRCS)} \
-	${addprefix printing/,$(PRINTING_SRCS)} \
-	${addprefix printf/,$(PRINTF_SRCS)} \
-	${addprefix float_math/,$(FLOAT_MATH_SRCS)}
+	main.c
 SRCS		:= $(addprefix $(SRC_DIR)/,$(SRCS))
 
-INCS		:= include
+INCS		:= ../../include
+LIBS		:= ft
+LIBS_TARGET	:= \
+	../../libft.a
 
 BUILD_DIR	:= .build
 OBJS		:= $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
@@ -42,7 +29,9 @@ DEPS		:= $(OBJS:.o=.d)
 CC			:= cc
 CFLAGS		:= -Wall -Wextra -Werror -g
 CPPFLAGS	:= $(addprefix -I,$(INCS)) -MMD -MP
-AR			= ar -rcs
+LDFLAGS		:= $(addprefix -L,$(dir $(LIBS_TARGET)))
+LDLIBS		:= $(addprefix -l,$(LIBS))
+AR			:= ar -rcs
 
 # **************************************************************************** #
 # 	UTILITIES																   #
@@ -50,7 +39,7 @@ AR			= ar -rcs
 
 RM			:= rm -rf
 MAKEFLAGS   += --no-print-directory
-DIR_DUP		= @mkdir -p $(@D)
+DIR_DUP		= mkdir -p $(@D)
 
 # **************************************************************************** #
 # 	RECIPIES :D																   #
@@ -62,8 +51,11 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	$(DIR_DUP)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(LIBS_TARGET)
+	$(CC) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $(NAME)
+
+%.a:
+	make -C $(@D)
 
 -include $(DEPS)
 

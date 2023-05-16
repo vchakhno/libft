@@ -34,6 +34,7 @@ t_i64	ft_i64_min(t_i64 a, t_i64 b);
 // Floating
 t_f32	ft_f32_min(t_f32 a, t_f32 b);
 t_f64	ft_f64_min(t_f64 a, t_f64 b);
+t_f80	ft_f80_min(t_f80 a, t_f80 b);
 t_f128	ft_f128_min(t_f128 a, t_f128 b);
 
 /******************************************************************************/
@@ -55,6 +56,7 @@ t_i64	ft_i64_max(t_i64 a, t_i64 b);
 // Floating
 t_f32	ft_f32_max(t_f32 a, t_f32 b);
 t_f64	ft_f64_max(t_f64 a, t_f64 b);
+t_f80	ft_f80_max(t_f80 a, t_f80 b);
 t_f128	ft_f128_max(t_f128 a, t_f128 b);
 
 /******************************************************************************/
@@ -76,6 +78,7 @@ t_i64	ft_i64_clamp(t_i64 min, t_i64 value, t_i64 max);
 // Floating
 t_f32	ft_f32_clamp(t_f32 min, t_f32 value, t_f32 max);
 t_f64	ft_f64_clamp(t_f64 min, t_f64 value, t_f64 max);
+t_f80	ft_f80_clamp(t_f80 min, t_f80 value, t_f80 max);
 t_f128	ft_f128_clamp(t_f128 min, t_f128 value, t_f128 max);
 
 /******************************************************************************/
@@ -91,6 +94,7 @@ t_u64	ft_i64_abs(t_i64 value);
 // Floating
 t_f32	ft_f32_abs(t_f32 value);
 t_f64	ft_f64_abs(t_f64 value);
+t_f80	ft_f80_abs(t_f80 value);
 t_f128	ft_f128_abs(t_f128 value);
 
 #endif

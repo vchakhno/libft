@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_max_floating.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 10:20:48 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/02 09:47:38 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/05/04 19:38:23 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/05/15 01:41:19 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/bounds.h"
+#include <libft/fixed_types.h>
+#include <libft/ostream/ostream.h>
+#include <libft/float_math.h>
+#include <stdio.h>
 
-t_f32	ft_f32_max(t_f32 a, t_f32 b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
+#include <stdint.h>
 
-t_f64	ft_f64_max(t_f64 a, t_f64 b)
+int	main(void)
 {
-	if (a > b)
-		return (a);
-	return (b);
-}
+	t_f128	v;
 
-t_f80	ft_f80_max(t_f80 a, t_f80 b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
-
-t_f128	ft_f128_max(t_f128 a, t_f128 b)
-{
-	if (a > b)
-		return (a);
-	return (b);
+	// v = 0.0001001q;
+	// v = 1.q/0.q;
+	v = 0.l/(1.il - 1.il);
+	ft_f80_println(v);
 }

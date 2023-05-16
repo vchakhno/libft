@@ -26,6 +26,13 @@ t_f64	ft_f64_min(t_f64 a, t_f64 b)
 	return (b);
 }
 
+t_f80	ft_f80_min(t_f80 a, t_f80 b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
 t_f128	ft_f128_min(t_f128 a, t_f128 b)
 {
 	if (a < b)

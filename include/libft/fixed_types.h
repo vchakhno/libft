@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 13:31:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/04 11:50:33 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/15 01:34:17 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ typedef int64_t						t_i64;
 
 typedef float						t_f32;
 typedef double						t_f64;
-typedef long double					t_f128;
+typedef long double					t_f80;
+typedef __float128					t_f128;
 
 typedef _Complex float				t_cf32;
 typedef _Complex double				t_cf64;
-typedef _Complex long double		t_cf128;
+typedef _Complex long double		t_cf80;
+typedef _Complex __float128			t_cf128;
 
 #endif

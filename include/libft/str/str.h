@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/04 11:46:20 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/08 03:34:06 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ void			ft_c_str_ncopy(char *dest, const char *src, t_u32 len);
 
 bool			ft_c_str_print(char *c_str);
 bool			ft_c_str_println(char *c_str);
-bool			ft_c_str_oprint(char *c_str, t_any_str_ostream *stream);
-bool			ft_c_str_oprintln(char *c_str, t_any_str_ostream *stream);
+bool			ft_c_str_oprint(t_any_str_ostream *stream, char *c_str);
+bool			ft_c_str_oprintln(t_any_str_ostream *stream, char *c_str);
 
 bool			ft_str_print(t_any_str *str);
 bool			ft_str_println(t_any_str *str);
-bool			ft_str_oprint(t_any_str *str, t_any_str_ostream *stream);
-bool			ft_str_oprintln(t_any_str *str, t_any_str_ostream *stream);
+bool			ft_str_oprint(t_any_str_ostream *stream, t_any_str *str);
+bool			ft_str_oprintln(t_any_str_ostream *stream, t_any_str *str);
 
 /******************************************************************************/
 /* BORROWING																  */
