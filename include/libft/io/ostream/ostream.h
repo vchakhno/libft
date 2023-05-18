@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:27 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:45:31 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 10:02:08 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 /* OSTREAM_BASE																  */
 /******************************************************************************/
 
-typedef t_u32			(*t_ostream_write)();
+typedef bool			(*t_ostream_write)();
 typedef struct s_ostream_base
 {
 	t_ostream_write	write;
@@ -58,7 +58,7 @@ typedef t_ostream_base	t_any_mem_ostream;
 # endif
 
 bool	ft_ostream_has_ended(t_any_ostream *stream);
-t_u32	ft_ostream_write(t_any_ostream *stream, void *elems, t_u32 count);
+bool	ft_ostream_write(t_any_ostream *stream, void *elems, t_u32 count);
 bool	ft_ostream_write_byte(t_any_ostream *stream, t_u8 byte);
 
 /******************************************************************************/
@@ -77,7 +77,7 @@ typedef struct s_fd_ostream
 }	t_fd_ostream;
 
 void	ft_fd_ostream_init(t_fd_ostream *stream, int fd);
-t_u32	ft_fd_ostream_write(t_fd_ostream *stream, char *str, t_u32 n);
+bool	ft_fd_ostream_write(t_fd_ostream *stream, char *str, t_u32 n);
 
 /******************************************************************************/
 /* FIXED_STR_OSTREAM														  */
@@ -99,7 +99,7 @@ typedef struct s_fixed_str_ostream
 
 void	ft_fixed_str_ostream_init(t_fixed_str_ostream *stream,
 			char *dest, t_u32 size);
-t_u32	ft_fixed_str_ostream_write(t_fixed_str_ostream *stream,
+bool	ft_fixed_str_ostream_write(t_fixed_str_ostream *stream,
 			char *str, t_u32 n);
 
 /******************************************************************************/
@@ -123,7 +123,7 @@ typedef struct s_array_ostream
 
 void	ft_array_ostream_init(t_array_ostream *stream,
 			void *array, t_u32 elem_size, t_u32 array_capacity);
-t_u32	ft_array_ostream_write(t_array_ostream *stream,
+bool	ft_array_ostream_write(t_array_ostream *stream,
 			void *elems, t_u32 count);
 
 /******************************************************************************/
@@ -151,7 +151,7 @@ typedef struct s_buffered_ostream
 
 void	ft_buffered_ostream_init(t_buffered_ostream *stream,
 			void *buffer, t_u32 buffer_size, t_any_ostream *destination);
-t_u32	ft_buffered_ostream_write(t_buffered_ostream *stream,
+bool	ft_buffered_ostream_write(t_buffered_ostream *stream,
 			void *ptr, t_u32 size);
 bool	ft_buffered_ostream_flush(t_buffered_ostream *stream);
 

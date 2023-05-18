@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:14:13 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 10:09:25 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,37 +24,35 @@ void	ft_buffered_ostream_init(
 	stream->destination = destination;
 }
 
-t_u32	ft_buffered_ostream_write(
+bool	ft_buffered_ostream_write(
 	t_buffered_ostream *stream, void *ptr, t_u32 size
 ) {
-	t_u32	total_written;
-	t_u32	last_written;
+	t_u32	written;
 
-	total_written = 0;
-	while (size - total_written > stream->buffer_size - stream->pos)
+	written = 0;
+	while (size - written > stream->buffer_size - stream->pos)
 	{
 		ft_mem_copy(stream->buffer + stream->pos,
-			ptr + total_written,
+			ptr + written,
 			stream->buffer_size - stream->pos);
-		last_written = ft_ostream_write(stream->destination,
-				stream->buffer, stream->buffer_size);
-		total_written += last_written;
-		if (last_written < stream->buffer_size)
-			return (total_written);
+		if (!ft_ostream_write(stream->destination,
+				stream->buffer, stream->buffer_size))
+			return (false);
+		written += stream->buffer_size - stream->pos;
 		stream->pos = 0;
 	}
-	ft_mem_copy(stream->buffer + stream->pos, ptr + total_written,
-		size - total_written);
-	stream->pos += size - total_written;
-	return (size);
+	ft_mem_copy(stream->buffer + stream->pos, ptr + written,
+		size - written);
+	stream->pos += size - written;
+	return (true);
 }
 
 bool	ft_buffered_ostream_flush(t_buffered_ostream *stream)
 {
-	if (ft_ostream_write(
+	if (!ft_ostream_write(
 			stream->destination,
 			stream->buffer, stream->pos
-		) != stream->pos)
+		))
 		return (false);
 	stream->pos = 0;
 	return (true);

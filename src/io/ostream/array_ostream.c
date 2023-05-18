@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:33:04 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:14:13 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 10:10:55 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ void	ft_array_ostream_init(
 	stream->capacity = array_capacity;
 }
 
-t_u32	ft_array_ostream_write(
+bool	ft_array_ostream_write(
 	t_array_ostream *stream, void *elems, t_u32 count
 ) {
-	count = ft_u32_min(count, stream->capacity - stream->pos);
+	t_u32	capped_count;
+
+	capped_count = ft_u32_min(count, stream->capacity - stream->pos);
 	ft_mem_copy(stream->array + stream->pos * stream->elem_size,
-		elems, count * stream->elem_size);
-	stream->pos += count;
-	return (count);
+		elems, capped_count * stream->elem_size);
+	stream->pos += capped_count;
+	return (capped_count == count);
 }
