@@ -2,9 +2,9 @@
 
 The libft is the first project of [42](https://42.fr/en/homepage/)'s common core. It is a collection of C functions, supposed to serve as a foundation for other projects, and it aims to replace functions of C's standard library.
 
-Once the libft has been evaluated, students are free to customize it will, as long as they follow the [Norme](https://github.com/42School/norminette). This is my own personnal, customized libft, meant to be used in 42's projects.
+Once the libft has been evaluated, students are free to customize it at will, as long as they follow the [Norme](https://github.com/42School/norminette). This is my own personnal, customized libft, meant to be used in 42's projects.
 
-Of course, as it is public, you're free to take inspiration or use it in your own projects. Although if you plan to have it in your own 42 projects, be sure to understand everything you're using. In an evaluation, you should be able to explain properly the intrinsics of your code.
+Of course, as it is public, you're free to take inspiration or use it in your own projects. Although if you plan to have it in your own 42 projects, be sure to understand everything you're using. In an evaluation, you should be able to explain properly the intricacies of your code.
 
 ## Features
 
