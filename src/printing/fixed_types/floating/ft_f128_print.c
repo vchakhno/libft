@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_f128_print.c                                     :+:      :+:    :+:   */
+/*   ft_f128_print.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/08 03:37:41 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 03:42:52 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static bool	ft_f128_print_numerical_part(
 		if (log - i == snapped_log)
 			if (!ft_ostream_write(stream, ".", 1))
 				return (false);
-		mask /= 10;
+		mask /= 10.000001q;
 		i++;
 	}
 	return (true);

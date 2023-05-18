@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:08:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/15 01:46:26 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 03:41:07 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ t_f128	ft_f128_trunc(t_f128 value)
 	exponent = (((t_i16 *)&value)[7] & 0x7FFF) - 0x3FFF;
 	if (exponent > 112)
 		return (value);
+	if (exponent < 0)
+		return (0);
 	shift = 112 - exponent;
 	if (shift < 64)
 	{

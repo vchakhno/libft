@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:27 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/08 03:25:57 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/17 18:30:34 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,21 +236,21 @@ bool	ft_f128_oprintln(t_any_str_ostream *stream, t_f128 value);
 bool	ft_cf32_print(t_cf32 value);
 bool	ft_cf32_println(t_cf32 value);
 bool	ft_cf32_oprint(t_any_str_ostream *stream, t_cf32 value);
-bool	ft_cf32_oprint(t_any_str_ostream *stream, t_cf32 value);
+bool	ft_cf32_oprintln(t_any_str_ostream *stream, t_cf32 value);
 
 bool	ft_cf64_print(t_cf64 value);
 bool	ft_cf64_println(t_cf64 value);
 bool	ft_cf64_oprint(t_any_str_ostream *stream, t_cf64 value);
-bool	ft_cf64_oprint(t_any_str_ostream *stream, t_cf64 value);
+bool	ft_cf64_oprintln(t_any_str_ostream *stream, t_cf64 value);
 
 bool	ft_cf80_print(t_cf80 value);
 bool	ft_cf80_println(t_cf80 value);
 bool	ft_cf80_oprint(t_any_str_ostream *stream, t_cf80 value);
-bool	ft_cf80_oprint(t_any_str_ostream *stream, t_cf80 value);
+bool	ft_cf80_oprintln(t_any_str_ostream *stream, t_cf80 value);
 
 bool	ft_cf128_print(t_cf128 value);
 bool	ft_cf128_println(t_cf128 value);
 bool	ft_cf128_oprint(t_any_str_ostream *stream, t_cf128 value);
-bool	ft_cf128_oprint(t_any_str_ostream *stream, t_cf128 value);
+bool	ft_cf128_oprintln(t_any_str_ostream *stream, t_cf128 value);
 
 #endif

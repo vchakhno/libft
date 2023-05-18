@@ -11,6 +11,7 @@ PRINTING_FIXED_TYPES_SRCS = \
 	floating/ft_f64_print.c \
 	floating/ft_f80_print.c \
 	floating/ft_f128_print.c \
-	# complex/ft_cf32_print.c \
+	complex/ft_cf32_print.c \
 	complex/ft_cf64_print.c \
+	complex/ft_cf80_print.c \
 	complex/ft_cf128_print.c \
