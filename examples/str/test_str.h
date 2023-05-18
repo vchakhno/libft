@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_test_str.h                                      :+:      :+:    :+:   */
+/*   test_str.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 04:23:52 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/03/01 00:38:51 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 08:18:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_TEST_STR_H
-# define FT_TEST_STR_H
+#ifndef TEST_STR_H
+# define TEST_STR_H
 
 void	ft_test_str_splitting(void);
 void	ft_test_str_comparison(void);

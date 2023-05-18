@@ -6,12 +6,14 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 07:40:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:41:54 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 08:20:00 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSING_H
 # define PARSING_H
+
+# include "libft/arithmetic/fixed_types.h"
 
 t_u32	ft_safe_read(int fd, void *ptr, t_u32 size);
 
