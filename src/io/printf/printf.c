@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_print.c                                        :+:      :+:    :+:   */
+/*   printf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 12:07:24 by vchakhno          #+#    #+#             */
+/*   Created: 2022/11/12 04:30:22 by vchakhno          #+#    #+#             */
 /*   Updated: 2023/05/18 09:16:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str_internals.h"
-#include "libft/io/ostream/ostream.h"
 #include "libft/io/printf.h"
 
-bool	ft_str_print(t_any_str *str)
+static void	ft_printf_impl(
+	t_any_ostream *output, t_str_scanner *scanner, va_list args)
 {
-	return (ft_str_oprint(ft_stdout(), str));
+	while (!ft_str_scanner_has_ended(scanner) && !ft_ostream_has_ended(output))
+	{
+		if (ft_str_scanner_match(scanner, '{'))
+		{
+			ft_try_print_label(output, scanner, args);
+		}
+		else
+		{
+			ft_str_scanner_advance(scanner);
+			ft_str_scanner_write(scanner, output);
+		}
+	}
 }
 
-bool	ft_str_println(t_any_str *str)
+void	ft_printf(char *format, ...)
 {
-	return (ft_str_oprintln(ft_stdout(), str));
-}
+	va_list			args;
+	t_str_scanner	scanner;
 
-bool	ft_str_oprint(t_any_str_ostream *stream, t_any_str *str)
-{
-	return (ft_ostream_write(stream, str->c_str, str->len));
-}
-
-bool	ft_str_oprintln(t_any_str_ostream *stream, t_any_str *str)
-{
-	if (!ft_str_oprint(stream, str))
-		return (false);
-	return (ft_ostream_write(stream, "\n", 1));
+	va_start(args, format);
+	ft_str_scanner_init(&scanner, format);
+	ft_printf_impl(ft_stdout(), &scanner, args);
+	va_end(args);
 }

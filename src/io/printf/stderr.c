@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stderr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 19:38:23 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:52:40 by vchakhno         ###   ########.fr       */
+/*   Created: 2022/11/12 04:30:22 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/05/18 09:16:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/io/printing.h>
+#include "libft/io/printf.h"
+#include "libft/io/ostream/ostream.h"
+#include <unistd.h>
 
-int	main(void)
+__attribute__((constructor))
+static void	ft_init_stderr(void)
 {
-	ft_f128_println(0.f);
-	ft_f128_println(1.f);
-	ft_f128_println(0.99f);
-	ft_f128_println(1.01f);
-	ft_f128_println(8.9f);
-	ft_f128_println(0.001f);
-	ft_f128_println(0.0012f);
-	ft_f128_println(0.012f);
-	ft_f128_println(1.f / 0.f);
-	ft_f128_println(0.f / 0.f);
+	ft_fd_ostream_init(ft_stderr(), STDERR_FILENO);
+}
+
+t_fd_ostream	*ft_stderr(void)
+{
+	static t_fd_ostream	raw_err;
+
+	return (&raw_err);
 }

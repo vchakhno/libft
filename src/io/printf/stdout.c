@@ -1,18 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stdout.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 18:57:43 by vchakhno          #+#    #+#             */
+/*   Created: 2022/11/12 04:30:22 by vchakhno          #+#    #+#             */
 /*   Updated: 2023/05/18 09:16:13 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/io/printf.h"
+#include "libft/io/ostream/ostream.h"
+#include <unistd.h>
 
-int	main(void)
+#define FT_STDOUT_BUFFER_SIZE	1024
+
+__attribute__((constructor))
+static void	ft_init_stdout(void)
 {
-	ft_printf("Bienvenue {c_str}!\n", "Vélimir");
+	static t_fd_ostream	raw_out;
+	static char			buffer[FT_STDOUT_BUFFER_SIZE];
+
+	ft_fd_ostream_init(&raw_out, STDOUT_FILENO);
+	ft_buffered_ostream_init(ft_stdout(),
+		buffer, FT_STDOUT_BUFFER_SIZE, &raw_out);
+}
+
+__attribute__((destructor))
+static void	ft_flush_stdout(void)
+{
+	ft_buffered_ostream_flush(ft_stdout());
+}
+
+t_buffered_ostream	*ft_stdout(void)
+{
+	static t_buffered_ostream	buffered_out;
+
+	return (&buffered_out);
 }

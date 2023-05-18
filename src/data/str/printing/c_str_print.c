@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 12:10:42 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:47:47 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 09:16:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/io/printing/ostream/ostream.h"
+#include "libft/io/ostream/ostream.h"
 #include "libft/data/str/str.h"
-#include "libft/io/printing/printf.h"
+#include "libft/io/printf.h"
 
 bool	ft_c_str_print(char *c_str)
 {

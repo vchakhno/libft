@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:47:25 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 09:14:13 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdbool.h>
 # include "libft/arithmetic/fixed_types.h"
 # include "libft/data/iterator/iterator.h"
-# include "libft/io/printing/ostream/ostream.h"
+# include "libft/io/ostream/ostream.h"
 
 typedef struct s_borrowed_str
 {

@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ostream_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 19:38:23 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:52:40 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/01/25 18:32:15 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/05/18 09:14:13 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/io/printing.h>
+#include "libft/io/ostream/ostream.h"
 
-int	main(void)
+void	ft_ostream_base_init(t_ostream_base *stream, t_ostream_write write)
 {
-	ft_f128_println(0.f);
-	ft_f128_println(1.f);
-	ft_f128_println(0.99f);
-	ft_f128_println(1.01f);
-	ft_f128_println(8.9f);
-	ft_f128_println(0.001f);
-	ft_f128_println(0.0012f);
-	ft_f128_println(0.012f);
-	ft_f128_println(1.f / 0.f);
-	ft_f128_println(0.f / 0.f);
+	stream->write = write;
+	stream->ended = false;
 }

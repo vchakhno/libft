@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 19:38:23 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:59:56 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 09:52:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/io/printing/printing_fixed_types.h>
+#include <libft/io/printing.h>
 #include <libft/data/str/str.h>
 
 int	main(void)

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fd_ostream.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 19:38:23 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:52:40 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/01/25 18:32:15 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/05/18 09:50:49 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/io/printing.h>
+#include "libft/io/ostream/ostream.h"
+#include "libft/io/printing.h"
 
-int	main(void)
+void	ft_fd_ostream_init(t_fd_ostream *stream, int fd)
 {
-	ft_f128_println(0.f);
-	ft_f128_println(1.f);
-	ft_f128_println(0.99f);
-	ft_f128_println(1.01f);
-	ft_f128_println(8.9f);
-	ft_f128_println(0.001f);
-	ft_f128_println(0.0012f);
-	ft_f128_println(0.012f);
-	ft_f128_println(1.f / 0.f);
-	ft_f128_println(0.f / 0.f);
+	ft_ostream_base_init(&stream->base, ft_fd_ostream_write);
+	stream->fd = fd;
+}
+
+t_u32	ft_fd_ostream_write(t_fd_ostream *stream, char *str, t_u32 n)
+{
+	return (ft_safe_write(stream->fd, str, n));
 }

@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   char_label_printer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 19:38:23 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:52:40 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/03/06 20:27:02 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/05/18 09:16:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/io/printing.h>
+#include "libft/io/printf.h"
 
-int	main(void)
+void	ft_char_label_printer(t_any_ostream *output, va_list args)
 {
-	ft_f128_println(0.f);
-	ft_f128_println(1.f);
-	ft_f128_println(0.99f);
-	ft_f128_println(1.01f);
-	ft_f128_println(8.9f);
-	ft_f128_println(0.001f);
-	ft_f128_println(0.0012f);
-	ft_f128_println(0.012f);
-	ft_f128_println(1.f / 0.f);
-	ft_f128_println(0.f / 0.f);
+	ft_ostream_write_byte(output, va_arg(args, int));
 }
