@@ -11,14 +11,14 @@ NAME		:= a.out
 SRC_DIR		:= .
 SRCS = \
 	main.c \
-	ft_test_str_splitting.c \
-	ft_test_str_comparison.c \
-	ft_test_str_search.c \
-	ft_test_str_adding.c \
-	ft_test_str_cropping.c \
-	ft_test_str_positionning.c \
-	ft_test_str_stripping.c \
-	# ft_test_str_formatting.c
+	splitting.c \
+	comparison.c \
+	search.c \
+	adding.c \
+	cropping.c \
+	positionning.c \
+	stripping.c \
+	# formatting.c
 SRCS		:= $(addprefix $(SRC_DIR)/,$(SRCS))
 
 INCS		:= ../../include

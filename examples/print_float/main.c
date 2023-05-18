@@ -6,16 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 19:38:23 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 03:42:12 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 08:05:53 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft/fixed_types.h>
-#include <libft/ostream/ostream.h>
-#include <libft/float_math.h>
-#include <stdio.h>
-
-#include <stdint.h>
+#include <libft/io/printing/printing_fixed_types.h>
 
 int	main(void)
 {

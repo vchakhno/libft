@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:57:43 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/02/18 19:28:10 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 07:58:55 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/mem/mem.h"
+#include "libft/data/mem/mem.h"
 #include <stdlib.h>
 #include <stdio.h>
 

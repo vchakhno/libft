@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:57:43 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/03/06 20:23:03 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/18 07:56:18 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/printf.h"
+#include "libft/io/printing/printf.h"
 
 int	main(void)
 {

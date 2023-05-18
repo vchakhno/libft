@@ -8,25 +8,15 @@ NAME		:= libft.a
 # 	SOURCES																	   #
 # **************************************************************************** #
 
-include src/bounds/Makefile
-include src/iterator/Makefile
-include src/mem/Makefile
-include src/str/Makefile
-include src/char/Makefile
-include src/printing/Makefile
-include src/printf/Makefile
-include src/float_math/Makefile
+include src/arithmetic/Makefile
+include src/data/Makefile
+include src/io/Makefile
 
 SRC_DIR		:= src
 SRCS = \
-	${addprefix bounds/,$(BOUNDS_SRCS)} \
-	${addprefix iterator/,$(ITERATOR_SRCS)} \
-	${addprefix mem/,$(MEM_SRCS)} \
-	${addprefix str/,$(STR_SRCS)} \
-	${addprefix char/,$(CHAR_SRCS)} \
-	${addprefix printing/,$(PRINTING_SRCS)} \
-	${addprefix printf/,$(PRINTF_SRCS)} \
-	${addprefix float_math/,$(FLOAT_MATH_SRCS)}
+	${addprefix arithmetic/,$(ARITHMETIC_SRCS)} \
+	${addprefix data/,$(DATA_SRCS)} \
+	${addprefix io/,$(IO_SRCS)}
 SRCS		:= $(addprefix $(SRC_DIR)/,$(SRCS))
 
 INCS		:= include
