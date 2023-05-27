@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:16:34 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 11:18:14 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/27 10:33:19 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <libft/io/ostream/ostream.h>
 #include <libft/data/str/str.h>
 #include <libft/io/printf.h>
-#include <stdio.h>
 
 bool	ft_array_print(
 	t_any_array *array, t_print_func func, char *sep
