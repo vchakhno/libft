@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 21:30:44 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 11:11:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/05/31 08:49:30 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 bool	_ft_array_elem_equal(t_any_array *array,
 			t_u32 i, void *data, t_equality_func func);
 
-bool	ft_array_find(
+bool	ft_array_rfind(
 	t_any_array *array, void *data, t_equality_func func, t_u32 *index
 ) {
 	t_u32	i;
