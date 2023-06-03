@@ -6,18 +6,19 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:53:33 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:29:27 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:15:18 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str_internals.h"
+#include "libft/data/str/str.h"
 #include "libft/arithmetic/fixed_types.h"
 #include "libft/data/mem/mem.h"
 
-t_u32	ft_str_count_char(t_any_str *haystack, char c)
+t_u32	ft_str_count_char(t_any_str *any_haystack, char c)
 {
-	t_u32	count;
-	t_u32	i;
+	t_borrowed_str *const	haystack = any_haystack;
+	t_u32					count;
+	t_u32					i;
 
 	count = 0;
 	i = 0;
@@ -30,10 +31,12 @@ t_u32	ft_str_count_char(t_any_str *haystack, char c)
 	return (count);
 }
 
-t_u32	ft_str_count_str(t_any_str *haystack, t_any_str *needle)
+t_u32	ft_str_count_str(t_any_str *any_haystack, t_any_str *any_needle)
 {
-	t_u32	count;
-	t_u32	i;
+	t_borrowed_str *const	haystack = any_haystack;
+	t_borrowed_str *const	needle = any_needle;
+	t_u32					count;
+	t_u32					i;
 
 	count = 0;
 	i = 0;
@@ -46,11 +49,12 @@ t_u32	ft_str_count_str(t_any_str *haystack, t_any_str *needle)
 	return (count);
 }
 
-t_u32	ft_str_count_c_str(t_any_str *haystack, char *needle)
+t_u32	ft_str_count_c_str(t_any_str *any_haystack, char *needle)
 {
-	t_u32	needle_len;
-	t_u32	count;
-	t_u32	i;
+	t_borrowed_str *const	haystack = any_haystack;
+	t_u32					needle_len;
+	t_u32					count;
+	t_u32					i;
 
 	needle_len = ft_c_str_len(needle);
 	count = 0;

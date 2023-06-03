@@ -6,18 +6,19 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:59:53 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:24:42 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 19:56:38 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str_internals.h"
+#include "libft/data/str/str.h"
 #include "libft/data/mem/mem.h"
 #include <stdlib.h>
 #include <stdbool.h>
 
-bool	ft_str_prepend_str(t_allocated_str *str, t_any_str *prefix)
+bool	ft_str_prepend_str(t_allocated_str *str, t_any_str *any_prefix)
 {
-	char	*new_c_str;
+	t_borrowed_str *const	prefix = any_prefix;
+	char					*new_c_str;
 
 	if (str->len + prefix->len > str->capacity)
 	{

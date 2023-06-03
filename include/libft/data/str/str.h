@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:14:13 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:40:31 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,7 @@ typedef struct s_allocated_str
 
 typedef t_allocated_str		t_str;
 typedef t_borrowed_str		t_str_slice;
-
-# ifndef STR_INTERNALS_H
-
 typedef void				t_any_str;
-
-# else
-
-typedef t_borrowed_str		t_any_str;
-
-# endif
 
 /******************************************************************************/
 /* C_STR																	  */
@@ -60,10 +51,10 @@ bool			ft_c_str_println(char *c_str);
 bool			ft_c_str_oprint(t_any_str_ostream *stream, char *c_str);
 bool			ft_c_str_oprintln(t_any_str_ostream *stream, char *c_str);
 
-bool			ft_str_print(t_any_str *str);
-bool			ft_str_println(t_any_str *str);
-bool			ft_str_oprint(t_any_str_ostream *stream, t_any_str *str);
-bool			ft_str_oprintln(t_any_str_ostream *stream, t_any_str *str);
+bool			ft_str_print(t_any_str *any_str);
+bool			ft_str_println(t_any_str *any_str);
+bool			ft_str_oprint(t_any_str_ostream *stream, t_any_str *any_str);
+bool			ft_str_oprintln(t_any_str_ostream *stream, t_any_str *any_str);
 
 /******************************************************************************/
 /* BORROWING																  */
@@ -75,38 +66,39 @@ t_borrowed_str	ft_c_str_borrow_slice__unchecked(char *c_str,
 					t_u32 start, t_u32 len);
 t_borrowed_str	ft_c_str_borrow_slice(char *c_str,
 					t_u32 start, t_u32 len);
-t_borrowed_str	ft_str_borrow(t_any_str *str);
-t_borrowed_str	ft_str_borrow_slice__unchecked(t_any_str *str,
+t_borrowed_str	ft_str_borrow(t_any_str *any_str);
+t_borrowed_str	ft_str_borrow_slice__unchecked(t_any_str *any_str,
 					t_u32 start, t_u32 len);
-t_borrowed_str	ft_str_borrow_slice(t_any_str *str,
+t_borrowed_str	ft_str_borrow_slice(t_any_str *any_str,
 					t_u32 start, t_u32 len);
 
 /******************************************************************************/
 /* CHECKING																	  */
 /******************************************************************************/
 
-bool			ft_str_is_alnum(t_any_str *str);
-bool			ft_str_is_alpha(t_any_str *str);
-bool			ft_str_is_ascii(t_any_str *str);
-bool			ft_str_is_blank(t_any_str *str);
-bool			ft_str_is_digit(t_any_str *str);
-bool			ft_str_is_lower(t_any_str *str);
-bool			ft_str_is_print(t_any_str *str);
-bool			ft_str_is_upper(t_any_str *str);
+bool			ft_str_is_alnum(t_any_str *any_str);
+bool			ft_str_is_alpha(t_any_str *any_str);
+bool			ft_str_is_ascii(t_any_str *any_str);
+bool			ft_str_is_blank(t_any_str *any_str);
+bool			ft_str_is_digit(t_any_str *any_str);
+bool			ft_str_is_lower(t_any_str *any_str);
+bool			ft_str_is_print(t_any_str *any_str);
+bool			ft_str_is_upper(t_any_str *any_str);
 
 /******************************************************************************/
 /* COMPARISON																  */
 /******************************************************************************/
 
-t_i32			ft_str_compare_c_str(t_any_str *str1, char *str2);
-bool			ft_str_equal_c_str(t_any_str *str1, char *str2);
-bool			ft_str_starts_with_c_str(t_any_str *str, char *prefix);
-bool			ft_str_ends_with_c_str(t_any_str *str, char *suffix);
+t_i32			ft_str_compare_c_str(t_any_str *any_str1, char *str2);
+bool			ft_str_equal_c_str(t_any_str *any_str1, char *str2);
+bool			ft_str_starts_with_c_str(t_any_str *any_str, char *prefix);
+bool			ft_str_ends_with_c_str(t_any_str *any_str, char *suffix);
 
-t_i32			ft_str_compare_str(t_any_str *str1, t_any_str *str2);
-bool			ft_str_equal_str(t_any_str *str1, t_any_str *str2);
-bool			ft_str_starts_with_str(t_any_str *str, t_any_str *prefix);
-bool			ft_str_ends_with_str(t_any_str *str, t_any_str *suffix);
+t_i32			ft_str_compare_str(t_any_str *any_str1, t_any_str *any_str2);
+bool			ft_str_equal_str(t_any_str *any_str1, t_any_str *any_str2);
+bool			ft_str_starts_with_str(
+					t_any_str *any_str, t_any_str *any_prefix);
+bool			ft_str_ends_with_str(t_any_str *any_str, t_any_str *any_suffix);
 
 /******************************************************************************/
 /* SEARCH																	  */
@@ -176,26 +168,29 @@ bool			ft_str_ends_with_str(t_any_str *str, t_any_str *suffix);
 	(?) Callback that takes an int
 */
 
-bool			ft_str_contains_char(t_any_str *haystack, char c);
-bool			ft_str_find_char(t_any_str *haystack, char c,
+bool			ft_str_contains_char(t_any_str *any_haystack, char c);
+bool			ft_str_find_char(t_any_str *any_haystack, char c,
 					t_u32 *index);
-bool			ft_str_rfind_char(t_any_str *haystack, char c,
+bool			ft_str_rfind_char(t_any_str *any_haystack, char c,
 					t_u32 *index);
-t_u32			ft_str_count_char(t_any_str *haystack, char c);
+t_u32			ft_str_count_char(t_any_str *any_haystack, char c);
 
-bool			ft_str_contains_str(t_any_str *haystack, t_any_str *needle);
-bool			ft_str_find_str(t_any_str *haystack, t_any_str *needle,
+bool			ft_str_contains_str(
+					t_any_str *any_haystack, t_any_str *any_needle);
+bool			ft_str_find_str(t_any_str *any_haystack, t_any_str *any_needle,
 					t_u32 *index);
-bool			ft_str_rfind_str(t_any_str *haystack, t_any_str *needle,
+bool			ft_str_rfind_str(
+					t_any_str *any_haystack, t_any_str *any_needle,
 					t_u32 *index);
-t_u32			ft_str_count_str(t_any_str *haystack, t_any_str *needle);
+t_u32			ft_str_count_str(
+					t_any_str *any_haystack, t_any_str *any_needle);
 
-bool			ft_str_contains_c_str(t_any_str *haystack, char *needle);
-bool			ft_str_find_c_str(t_any_str *haystack, char *needle,
+bool			ft_str_contains_c_str(t_any_str *any_haystack, char *needle);
+bool			ft_str_find_c_str(t_any_str *any_haystack, char *needle,
 					t_u32 *index);
-bool			ft_str_rfind_c_str(t_any_str *haystack, char *needle,
+bool			ft_str_rfind_c_str(t_any_str *any_haystack, char *needle,
 					t_u32 *index);
-t_u32			ft_str_count_c_str(t_any_str *haystack, char *needle);
+t_u32			ft_str_count_c_str(t_any_str *any_haystack, char *needle);
 
 /******************************************************************************/
 /* SPLITTING																  */
@@ -208,14 +203,14 @@ typedef struct s_str_split_iterator
 	t_borrowed_str	delim;
 }	t_str_split_iterator;
 
-void			ft_str_split_by_str(t_any_str *str, t_any_str *delim,
+void			ft_str_split_by_str(t_any_str *any_str, t_any_str *any_delim,
 					t_str_split_iterator *iterator);
-void			ft_str_split_by_c_str(t_any_str *str, char *delim,
+void			ft_str_split_by_c_str(t_any_str *any_str, char *delim,
 					t_str_split_iterator *iterator);
 
-void			ft_str_rsplit_by_str(t_any_str *str, t_any_str *delim,
+void			ft_str_rsplit_by_str(t_any_str *any_str, t_any_str *any_delim,
 					t_str_split_iterator *iterator);
-void			ft_str_rsplit_by_c_str(t_any_str *str, char *delim,
+void			ft_str_rsplit_by_c_str(t_any_str *any_str, char *delim,
 					t_str_split_iterator *iterator);
 
 /*
@@ -248,10 +243,10 @@ void			ft_str_rsplit_by_c_str(t_any_str *str, char *delim,
 /* CASING																	  */
 /******************************************************************************/
 
-void			ft_str_to_upper(t_any_str *str);
-void			ft_str_to_lower(t_any_str *str);
-void			ft_str_title(t_any_str *str);
-void			ft_str_swap_case(t_any_str *str);
+void			ft_str_to_upper(t_any_str *any_str);
+void			ft_str_to_lower(t_any_str *any_str);
+void			ft_str_title(t_any_str *any_str);
+void			ft_str_swap_case(t_any_str *any_str);
 
 /******************************************************************************/
 /* ALLOCATION																  */
@@ -260,7 +255,7 @@ void			ft_str_swap_case(t_any_str *str);
 void			ft_str_alloc_empty(t_allocated_str *str);
 bool			ft_str_dup_c_str(t_allocated_str *str, char *c_str)
 				__attribute__((warn_unused_result));
-bool			ft_str_dup_str(t_allocated_str *dest, t_any_str *src)
+bool			ft_str_dup_str(t_allocated_str *dest, t_any_str *any_src)
 				__attribute__((warn_unused_result));
 void			ft_str_free(t_allocated_str *str);
 
@@ -282,10 +277,10 @@ bool			ft_str_prepend_c_str(t_allocated_str *str, char *prefix);
 bool			ft_str_insert_c_str(t_allocated_str *str,
 					t_u32 index, char *inserted);
 
-bool			ft_str_append_str(t_allocated_str *str, t_any_str *suffix);
-bool			ft_str_prepend_str(t_allocated_str *str, t_any_str *prefix);
+bool			ft_str_append_str(t_allocated_str *str, t_any_str *any_suffix);
+bool			ft_str_prepend_str(t_allocated_str *str, t_any_str *any_prefix);
 bool			ft_str_insert_str(t_allocated_str *str,
-					t_u32 index, t_any_str *inserted);
+					t_u32 index, t_any_str *any_inserted);
 
 /******************************************************************************/
 /* CROPPING																	  */
@@ -314,10 +309,10 @@ bool			ft_str_strip(t_allocated_str *str, char *set);
 
 bool			ft_str_remove_c_str_prefix(t_allocated_str *str, char *prefix);
 bool			ft_str_remove_str_prefix(t_allocated_str *str,
-					t_any_str *prefix);
+					t_any_str *any_prefix);
 bool			ft_str_remove_c_str_suffix(t_allocated_str *str, char *suffix);
 bool			ft_str_remove_str_suffix(t_allocated_str *str,
-					t_any_str *suffix);
+					t_any_str *any_suffix);
 
 /******************************************************************************/
 /* FORMATTING																  */
@@ -325,7 +320,7 @@ bool			ft_str_remove_str_suffix(t_allocated_str *str,
 
 /* Todo */
 bool			ft_str_replace(t_allocated_str *str,
-					t_any_str *old, t_any_str *new);
+					t_any_str *any_old, t_any_str *any_new);
 bool			ft_str_format(t_allocated_str *str, ...);
 /* ---- */
 
@@ -402,7 +397,7 @@ typedef t_any_iterator		t_any_str_iterator;
 
 /* Todo */
 bool			ft_str_join_with_str(t_allocated_str *dest,
-					t_any_str_iterator *iterator, t_any_str *sep);
+					t_any_str_iterator *iterator, t_any_str *any_sep);
 bool			ft_str_join_with_c_str(t_allocated_str *dest,
 					t_any_str_iterator *iterator, char *sep);
 /* ---- */

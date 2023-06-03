@@ -6,19 +6,20 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:00:48 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 13:04:40 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 19:59:49 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str_internals.h"
+#include "libft/data/str/str.h"
 #include "libft/arithmetic/fixed_types.h"
 #include "libft/data/char.h"
 #include <stdbool.h>
 
-void	ft_str_title(t_any_str *str)
+void	ft_str_title(t_any_str *any_str)
 {
-	t_u32	i;
-	bool	is_prev_blank;
+	t_borrowed_str *const	str = any_str;
+	t_u32					i;
+	bool					is_prev_blank;
 
 	i = 0;
 	is_prev_blank = true;

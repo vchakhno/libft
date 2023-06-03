@@ -6,29 +6,29 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 13:04:46 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:30:31 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:20:27 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str_internals.h"
+#include "libft/data/str/str.h"
 #include "libft/data/iterator/iterator.h"
 
 bool	ft_str_split_iterator_next(t_str_split_iterator *iterator,
 			t_borrowed_str *dest);
 
-void	ft_str_split_by_str(t_any_str *str, t_any_str *delim,
+void	ft_str_split_by_str(t_any_str *any_str, t_any_str *any_delim,
 	t_str_split_iterator *iterator)
 {
 	ft_iterator_base_init(&iterator->base, ft_str_split_iterator_next);
-	iterator->remaining = *str;
-	iterator->delim = *delim;
+	iterator->remaining = *(t_borrowed_str *)any_str;
+	iterator->delim = *(t_borrowed_str *)any_delim;
 }
 
-void	ft_str_split_by_c_str(t_any_str *str, char *delim,
+void	ft_str_split_by_c_str(t_any_str *any_str, char *delim,
 	t_str_split_iterator *iterator)
 {
 	ft_iterator_base_init(&iterator->base, ft_str_split_iterator_next);
-	iterator->remaining = *str;
+	iterator->remaining = *(t_borrowed_str *)any_str;
 	iterator->delim = ft_c_str_borrow(delim);
 }
 

@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 13:57:19 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:23:23 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:37:25 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str_internals.h"
+#include "libft/data/str/str.h"
 #include <stdlib.h>
 
 void	ft_str_alloc_empty(t_allocated_str *str)
@@ -20,10 +20,10 @@ void	ft_str_alloc_empty(t_allocated_str *str)
 	str->capacity = 0;
 }
 
-bool	ft_str_dup_str(t_allocated_str *dest, t_any_str *src)
+bool	ft_str_dup_str(t_allocated_str *dest, t_any_str *any_src)
 {
 	ft_str_alloc_empty(dest);
-	return (ft_str_append_str(dest, src));
+	return (ft_str_append_str(dest, any_src));
 }
 
 bool	ft_str_dup_c_str(t_allocated_str *str, char *c_str)
