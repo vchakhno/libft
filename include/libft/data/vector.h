@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 03:55:42 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 12:14:29 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 18:50:35 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define VECTOR_H
 
 # include <stdbool.h>
-# include <libft/arithmetic/fixed_types.h>
-# include <libft/io/ostream/ostream.h>
+# include "libft/arithmetic/fixed_types.h"
+# include "libft/io/ostream/ostream.h"
 
 typedef struct s_vector
 {

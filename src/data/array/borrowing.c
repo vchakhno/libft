@@ -6,12 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:58:46 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 11:18:06 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 18:55:11 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/data/array/array_internals.h"
-#include <libft/arithmetic/bounds.h>
+#include "libft/arithmetic/bounds.h"
 
 t_borrowed_array	ft_borrowed_array_from_parts(
 	void *elems, t_u32 elem_size, t_u32 size

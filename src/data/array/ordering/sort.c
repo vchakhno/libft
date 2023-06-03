@@ -6,12 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 22:29:30 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 11:19:02 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 18:58:24 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/data/array/array_internals.h"
-#include <libft/data/mem/mem.h>
+#include "libft/data/mem/mem.h"
 
 bool	_ft_array_compare_elems(t_any_array *array,
 			t_comparison_func func, t_u32 i, t_u32 j);

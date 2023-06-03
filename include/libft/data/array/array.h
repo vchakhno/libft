@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:41:31 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 11:17:48 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 18:50:45 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define ARRAY_H
 
 # include <stdbool.h>
-# include <libft/arithmetic/fixed_types.h>
-# include <libft/io/ostream/ostream.h>
+# include "libft/arithmetic/fixed_types.h"
+# include "libft/io/ostream/ostream.h"
 
 typedef struct s_borrowed_array
 {
