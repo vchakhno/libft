@@ -6,20 +6,21 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:41:32 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:22:51 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 19:41:29 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/mem/mem_internals.h"
+#include "libft/data/mem/mem.h"
 
-void	ft_mem_set(t_mem *ptr, t_u32 size, t_byte b)
+void	ft_mem_set(t_mem *mem, t_u32 size, t_byte b)
 {
-	t_u32	i;
+	t_byte *const	bytes = mem;
+	t_u32			i;
 
 	i = 0;
 	while (i < size)
 	{
-		ptr[i] = b;
+		bytes[i] = b;
 		i++;
 	}
 }

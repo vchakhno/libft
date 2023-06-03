@@ -6,21 +6,23 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:41:10 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:22:35 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 19:38:56 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/mem/mem_internals.h"
+#include "libft/data/mem/mem.h"
 
-t_i32	ft_mem_compare(const t_mem *ptr1, const t_mem *ptr2, t_u32 n)
+t_i32	ft_mem_compare(const t_mem *mem1, const t_mem *mem2, t_u32 n)
 {
-	t_u32	i;
+	const t_byte	*bytes1 = mem1;
+	const t_byte	*bytes2 = mem2;
+	t_u32			i;
 
 	i = 0;
 	while (i < n)
 	{
-		if (ptr1[i] != ptr2[i])
-			return (ptr1[i] - ptr2[i]);
+		if (bytes1[i] != bytes2[i])
+			return (bytes1[i] - bytes2[i]);
 		i++;
 	}
 	return (0);
