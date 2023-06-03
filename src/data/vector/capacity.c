@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:10:29 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 18:58:24 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:49 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/data/vector.h"
 #include <stdlib.h>
-#include "libft/data/mem/mem.h"
+#include "libft/data/mem.h"
 
 bool	ft_vector_reserve(t_vector *vec, t_u32 additionnal)
 {

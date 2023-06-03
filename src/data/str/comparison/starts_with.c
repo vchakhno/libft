@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 01:26:05 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 20:11:38 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str.h"
+#include "libft/data/str.h"
 #include "libft/arithmetic/fixed_types.h"
-#include "libft/data/mem/mem.h"
+#include "libft/data/mem.h"
 #include <stdbool.h>
 
 bool	ft_str_starts_with_str(t_any_str *any_str, t_any_str *any_prefix)

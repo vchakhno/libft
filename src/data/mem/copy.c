@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:41:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 19:40:20 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:49 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/mem/mem.h"
+#include "libft/data/mem.h"
 
 void	ft_mem_copy(t_mem *dest, const t_mem *src, t_u32 size)
 {

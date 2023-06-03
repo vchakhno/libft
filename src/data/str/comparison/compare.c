@@ -6,14 +6,14 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 01:13:29 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 20:08:57 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str.h"
+#include "libft/data/str.h"
 #include "libft/arithmetic/fixed_types.h"
 #include "libft/arithmetic/bounds.h"
-#include "libft/data/mem/mem.h"
+#include "libft/data/mem.h"
 
 t_i32	ft_str_compare_str(t_any_str *any_str1, t_any_str *any_str2)
 {

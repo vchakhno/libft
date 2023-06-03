@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:41:46 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 19:29:11 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:48:26 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/iterator/iterator.h"
+#include "libft/data/iterator.h"
 
 bool	ft_iterator_next(t_any_iterator *any_iterator, void *dest)
 {

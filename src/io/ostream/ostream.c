@@ -6,12 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 19:53:16 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/io/ostream/ostream_internals.h"
-#include "libft/data/str/str.h"
+#include "libft/data/str.h"
 
 bool	ft_ostream_has_ended(t_any_ostream *stream)
 {

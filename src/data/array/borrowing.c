@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:58:46 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 19:19:46 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:48:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/array/array.h"
+#include "libft/data/array.h"
 #include "libft/arithmetic/bounds.h"
 
 t_borrowed_array	ft_borrowed_array_from_parts(

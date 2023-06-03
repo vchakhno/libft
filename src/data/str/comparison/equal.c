@@ -6,12 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 01:20:06 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 20:10:53 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str.h"
-#include "libft/data/mem/mem.h"
+#include "libft/data/str.h"
+#include "libft/data/mem.h"
 #include <stdbool.h>
 
 bool	ft_str_equal_str(t_any_str *any_str1, t_any_str *any_str2)

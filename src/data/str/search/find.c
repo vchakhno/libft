@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:53:33 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 20:16:45 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str.h"
+#include "libft/data/str.h"
 #include "libft/arithmetic/fixed_types.h"
-#include "libft/data/mem/mem.h"
+#include "libft/data/mem.h"
 
 bool	ft_str_find_char(t_any_str *any_haystack, char c, t_u32 *index)
 {

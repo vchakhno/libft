@@ -6,12 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 06:35:00 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 20:30:54 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str.h"
-#include "libft/data/mem/mem.h"
+#include "libft/data/str.h"
+#include "libft/data/mem.h"
 
 bool	ft_str_remove_c_str_suffix(t_allocated_str *str, char *suffix)
 {

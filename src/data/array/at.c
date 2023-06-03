@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:11:49 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 19:04:26 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:48:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/array/array.h"
+#include "libft/data/array.h"
 
 void	*ft_array_at(t_any_array *any_array, t_u32 i)
 {

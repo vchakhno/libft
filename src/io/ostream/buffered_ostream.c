@@ -6,12 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 10:09:25 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:49 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/io/ostream/ostream.h"
-#include "libft/data/mem/mem.h"
+#include "libft/data/mem.h"
 
 void	ft_buffered_ostream_init(
 	t_buffered_ostream *stream,

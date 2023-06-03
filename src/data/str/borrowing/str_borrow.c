@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:00:39 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 19:59:01 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str.h"
+#include "libft/data/str.h"
 #include "libft/arithmetic/bounds.h"
 
 t_borrowed_str	ft_str_borrow(t_any_str *any_str)

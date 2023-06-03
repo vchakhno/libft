@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:42:55 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:14:13 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PRINTF_H
 
 # include "libft/io/ostream/ostream.h"
-# include "libft/data/str/str.h"
+# include "libft/data/str.h"
 # include <stddef.h>
 # include <stdbool.h>
 # include <stdarg.h>

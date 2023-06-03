@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 10:03:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 18:59:01 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:48:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/data/vector.h"
-#include "libft/data/array/array.h"
-#include "libft/data/mem/mem.h"
+#include "libft/data/array.h"
+#include "libft/data/mem.h"
 #include "libft/arithmetic/bounds.h"
 
 bool	ft_vector_swap_remove(t_vector *vec, t_u32 i, void *dest)

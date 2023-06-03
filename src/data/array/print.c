@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:16:34 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 19:21:16 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:48:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/array/array.h"
+#include "libft/data/array.h"
 #include "libft/io/ostream/ostream.h"
-#include "libft/data/str/str.h"
+#include "libft/data/str.h"
 #include "libft/io/printf.h"
 
 bool	ft_array_print(

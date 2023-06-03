@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 13:04:46 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 20:19:20 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:48:26 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str/str.h"
-#include "libft/data/iterator/iterator.h"
-#include "libft/data/mem/mem.h"
+#include "libft/data/str.h"
+#include "libft/data/iterator.h"
+#include "libft/data/mem.h"
 
 bool	ft_str_rsplit_iterator_next(t_str_split_iterator *iterator,
 			t_borrowed_str *dest);

@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 11:15:41 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:16:13 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/io/printf.h"
-#include "libft/data/str/str.h"
-#include "libft/data/mem/mem.h"
+#include "libft/data/str.h"
+#include "libft/data/mem.h"
 
 void	ft_str_scanner_discard(t_str_scanner *scanner)
 {

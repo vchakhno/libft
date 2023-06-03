@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 10:20:48 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/31 08:26:55 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:51:30 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ t_i64	ft_i64_clamp(t_i64 min, t_i64 value, t_i64 max)
 {
 	return (ft_i64_min(ft_i64_max(min, value), max));
 }
-

@@ -6,12 +6,12 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:33:04 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 10:10:55 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:47:49 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/io/ostream/ostream.h"
-#include "libft/data/mem/mem.h"
+#include "libft/data/mem.h"
 #include "libft/arithmetic/bounds.h"
 
 void	ft_array_ostream_init(
