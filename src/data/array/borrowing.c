@@ -6,11 +6,11 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:58:46 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 18:55:11 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 19:19:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/array/array_internals.h"
+#include "libft/data/array/array.h"
 #include "libft/arithmetic/bounds.h"
 
 t_borrowed_array	ft_borrowed_array_from_parts(
@@ -24,26 +24,27 @@ t_borrowed_array	ft_borrowed_array_from_parts(
 	return (array);
 }
 
-t_borrowed_array	array_borrow(t_any_array *array)
+t_borrowed_array	array_borrow(t_any_array *any_array)
 {
-	return (*array);
+	return (*(t_borrowed_array *) any_array);
 }
 
 t_borrowed_array	array_borrow_slice__unchecked(
-	t_any_array *array, t_u32 start, t_u32 len
+	t_any_array *any_array, t_u32 start, t_u32 len
 ) {
 	t_borrowed_array	borrowed;
 
-	borrowed.elems = ft_array_at(array, start);
+	borrowed.elems = ft_array_at(any_array, start);
 	borrowed.size = len;
-	borrowed.elem_size = array->elem_size;
+	borrowed.elem_size = ((t_borrowed_array *)any_array)->elem_size;
 	return (borrowed);
 }
 
 t_borrowed_array	array_borrow_slice(
-	t_any_array *array, t_u32 start, t_u32 len
+	t_any_array *any_array, t_u32 start, t_u32 len
 ) {
-	t_borrowed_array	borrowed;
+	t_borrowed_array *const	array = any_array;
+	t_borrowed_array		borrowed;
 
 	start = ft_u32_min(start, array->size);
 	borrowed.elems = ft_array_at(array, start);

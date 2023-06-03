@@ -6,21 +6,22 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 21:47:08 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 19:00:03 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 19:13:39 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/array/array_internals.h"
+#include "libft/data/array/array.h"
 #include "libft/data/mem/mem.h"
 #include "libft/arithmetic/fixed_types.h"
 
-bool	_ft_array_compare_elems(t_any_array *array,
+bool	_ft_array_compare_elems(t_borrowed_array *array,
 			t_comparison_func func, t_u32 i, t_u32 j);
 
-bool	ft_array_max(t_any_array *array, t_comparison_func func, void *dest)
+bool	ft_array_max(t_any_array *any_array, t_comparison_func func, void *dest)
 {
-	t_u32	i;
-	t_u32	max_index;
+	t_borrowed_array *const	array = any_array;
+	t_u32					i;
+	t_u32					max_index;
 
 	if (array->size == 0)
 		return (false);
