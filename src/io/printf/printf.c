@@ -6,25 +6,26 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 04:30:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:16:14 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:28:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/io/printf.h"
 
 static void	ft_printf_impl(
-	t_any_ostream *output, t_str_scanner *scanner, va_list args)
+	t_any_ostream *any_output, t_str_scanner *scanner, va_list args)
 {
-	while (!ft_str_scanner_has_ended(scanner) && !ft_ostream_has_ended(output))
+	while (!ft_str_scanner_has_ended(scanner)
+		&& !ft_ostream_has_ended(any_output))
 	{
 		if (ft_str_scanner_match(scanner, '{'))
 		{
-			ft_try_print_label(output, scanner, args);
+			ft_try_print_label(any_output, scanner, args);
 		}
 		else
 		{
 			ft_str_scanner_advance(scanner);
-			ft_str_scanner_write(scanner, output);
+			ft_str_scanner_write(scanner, any_output);
 		}
 	}
 }

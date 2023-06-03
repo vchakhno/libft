@@ -6,13 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 04:30:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 09:16:14 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:27:40 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/io/printf.h"
 
-typedef void	(*t_label_printer)(t_any_ostream *output, va_list args);
+typedef void	(*t_label_printer)(t_any_ostream *any_output, va_list args);
 typedef struct s_label_info
 {
 	char			*name;
@@ -50,7 +50,7 @@ bool	ft_parse_label(t_str_scanner *scanner, t_label_printer *printer)
 	return (true);
 }
 
-void	ft_try_print_label(t_any_ostream *output, t_str_scanner *scanner,
+void	ft_try_print_label(t_any_ostream *any_output, t_str_scanner *scanner,
 	va_list args)
 {
 	t_label_printer	printer;
@@ -58,10 +58,10 @@ void	ft_try_print_label(t_any_ostream *output, t_str_scanner *scanner,
 	if (ft_parse_label(scanner, &printer))
 	{
 		ft_str_scanner_discard(scanner);
-		printer(output, args);
+		printer(any_output, args);
 	}
 	else
 	{
-		ft_str_scanner_write(scanner, output);
+		ft_str_scanner_write(scanner, any_output);
 	}
 }

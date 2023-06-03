@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:27 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 10:02:08 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:32:06 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 /* OSTREAM_BASE																  */
 /******************************************************************************/
 
-typedef bool			(*t_ostream_write)();
+typedef bool	(*t_ostream_write)();
 typedef struct s_ostream_base
 {
 	t_ostream_write	write;
@@ -43,23 +43,13 @@ void	ft_ostream_base_init(t_ostream_base *stream, t_ostream_write write);
 /* ANY_OSTREAM																  */
 /******************************************************************************/
 
-# ifndef OSTREAM_INTERNALS_H
+typedef void	t_any_ostream;
+typedef void	t_any_str_ostream;
+typedef void	t_any_mem_ostream;
 
-typedef void			t_any_ostream;
-typedef void			t_any_str_ostream;
-typedef void			t_any_mem_ostream;
-
-# else
-
-typedef t_ostream_base	t_any_ostream;
-typedef t_ostream_base	t_any_str_ostream;
-typedef t_ostream_base	t_any_mem_ostream;
-
-# endif
-
-bool	ft_ostream_has_ended(t_any_ostream *stream);
-bool	ft_ostream_write(t_any_ostream *stream, void *elems, t_u32 count);
-bool	ft_ostream_write_byte(t_any_ostream *stream, t_u8 byte);
+bool	ft_ostream_has_ended(t_any_ostream *any_stream);
+bool	ft_ostream_write(t_any_ostream *any_stream, void *elems, t_u32 count);
+bool	ft_ostream_write_byte(t_any_ostream *any_stream, t_u8 byte);
 
 /******************************************************************************/
 /* FD_OSTREAM																  */
@@ -146,11 +136,11 @@ typedef struct s_buffered_ostream
 	void			*buffer;
 	t_u32			buffer_size;
 	t_u32			pos;
-	t_any_ostream	*destination;
+	t_any_ostream	*any_destination;
 }	t_buffered_ostream;
 
 void	ft_buffered_ostream_init(t_buffered_ostream *stream,
-			void *buffer, t_u32 buffer_size, t_any_ostream *destination);
+			void *buffer, t_u32 buffer_size, t_any_ostream *any_destination);
 bool	ft_buffered_ostream_write(t_buffered_ostream *stream,
 			void *ptr, t_u32 size);
 bool	ft_buffered_ostream_flush(t_buffered_ostream *stream);

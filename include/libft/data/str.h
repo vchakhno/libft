@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 20:48:26 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:20:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdbool.h>
 # include "libft/arithmetic/fixed_types.h"
 # include "libft/data/iterator.h"
-# include "libft/io/ostream/ostream.h"
+# include "libft/io/ostream.h"
 
 typedef struct s_borrowed_str
 {
@@ -48,13 +48,13 @@ void			ft_c_str_ncopy(char *dest, const char *src, t_u32 len);
 
 bool			ft_c_str_print(char *c_str);
 bool			ft_c_str_println(char *c_str);
-bool			ft_c_str_oprint(t_any_str_ostream *stream, char *c_str);
-bool			ft_c_str_oprintln(t_any_str_ostream *stream, char *c_str);
+bool			ft_c_str_oprint(t_any_str_ostream *any_stream, char *c_str);
+bool			ft_c_str_oprintln(t_any_str_ostream *any_stream, char *c_str);
 
 bool			ft_str_print(t_any_str *any_str);
 bool			ft_str_println(t_any_str *any_str);
-bool			ft_str_oprint(t_any_str_ostream *stream, t_any_str *any_str);
-bool			ft_str_oprintln(t_any_str_ostream *stream, t_any_str *any_str);
+bool			ft_str_oprint(t_any_str_ostream *any_stream, t_any_str *any_str);
+bool			ft_str_oprintln(t_any_str_ostream *any_stream, t_any_str *any_str);
 
 /******************************************************************************/
 /* BORROWING																  */

@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 11:15:41 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 20:47:59 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:28:29 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	ft_str_scanner_discard(t_str_scanner *scanner)
 	scanner->write_pos = scanner->read_pos;
 }
 
-void	ft_str_scanner_write(t_str_scanner *scanner, t_any_ostream *output)
+void	ft_str_scanner_write(t_str_scanner *scanner, t_any_ostream *any_output)
 {
-	ft_ostream_write(output,
+	ft_ostream_write(any_output,
 		scanner->str.c_str + scanner->write_pos,
 		scanner->read_pos - scanner->write_pos);
 	scanner->write_pos = scanner->read_pos;

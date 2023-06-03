@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:41:31 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 19:18:22 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:08:45 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdbool.h>
 # include "libft/arithmetic/fixed_types.h"
-# include "libft/io/ostream/ostream.h"
+# include "libft/io/ostream.h"
 
 typedef struct s_borrowed_array
 {
@@ -79,16 +79,16 @@ void				ft_array_sort(t_any_array *any_array,
 /* PRINTING																	  */
 /******************************************************************************/
 
-// (const void *elem, t_any_ostream *stream)
+// (const void *elem, t_any_ostream *any_stream)
 typedef bool	(*t_print_func)();
 
 bool				ft_array_print(t_any_array *any_array,
 						t_print_func func, char *sep);
 bool				ft_array_println(t_any_array *any_array,
 						t_print_func func, char *sep);
-bool				ft_array_oprint(t_any_ostream *stream,
+bool				ft_array_oprint(t_any_ostream *any_stream,
 						t_any_array *any_array, t_print_func func, char *sep);
-bool				ft_array_oprintln(t_any_ostream *stream,
+bool				ft_array_oprintln(t_any_ostream *any_stream,
 						t_any_array *any_array, t_print_func func, char *sep);
 
 #endif
