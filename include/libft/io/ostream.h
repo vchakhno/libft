@@ -6,21 +6,26 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:27 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:32:06 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 04:07:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OSTREAM_H
 # define OSTREAM_H
+# include "libft/io/ostream.h"
+# undef OSTREAM_H
+#else
+# ifndef LIBFT_OSTREAM_H
+#  define LIBFT_OSTREAM_H
 
-# include "libft/arithmetic/fixed_types.h"
-# include <stdbool.h>
+#  include "libft/arithmetic/fixed_types.h"
+#  include <stdbool.h>
 
 /*
 	Ostreams are an abstraction over output.
 	They can be useful to generalize fd & str.
-	It's like a nice way to wrap output side effects.
-	It's pretty convenient for functions like printf, or array_print.
+	They're a nice way to wrap output side effects.
+	They're pretty convenient for functions like printf, or array_print.
 	Otherwise it's just weird and not that useful.
 	Half the ostream types in this header are experimental,
 	probably never needed and will be wiped out in the future.
@@ -145,4 +150,5 @@ bool	ft_buffered_ostream_write(t_buffered_ostream *stream,
 			void *ptr, t_u32 size);
 bool	ft_buffered_ostream_flush(t_buffered_ostream *stream);
 
+# endif
 #endif

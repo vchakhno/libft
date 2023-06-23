@@ -6,16 +6,21 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 07:33:00 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:20:46 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 04:10:52 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTING_H
 # define PRINTING_H
+# include "libft/io/printing.h"
+# undef PRINTING_H
+#else
+# ifndef LIBFT_PRINTING_H
+#  define LIBFT_PRINTING_H
 
-# include "libft/arithmetic/fixed_types.h"
-# include "libft/io/ostream.h"
-# include <stdbool.h>
+#  include "libft/arithmetic/fixed_types.h"
+#  include "libft/io/ostream.h"
+#  include <stdbool.h>
 
 t_u32	ft_safe_write(int fd, void *ptr, t_u32 size);
 
@@ -114,4 +119,5 @@ bool	ft_cf128_println(t_cf128 value);
 bool	ft_cf128_oprint(t_any_str_ostream *any_stream, t_cf128 value);
 bool	ft_cf128_oprintln(t_any_str_ostream *any_stream, t_cf128 value);
 
+# endif
 #endif

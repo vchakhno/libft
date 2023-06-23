@@ -6,16 +6,21 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 19:32:05 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 03:56:47 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MEM_H
 # define MEM_H
+# include "libft/data/mem.h"
+# undef MEM_H
+#else
+# ifndef LIBFT_MEM_H
+#  define LIBFT_MEM_H
 
-# include "libft/arithmetic/fixed_types.h"
-# include <stddef.h>
-# include <stdbool.h>
+#  include "libft/arithmetic/fixed_types.h"
+#  include <stddef.h>
+#  include <stdbool.h>
 
 typedef t_u8	t_byte;
 typedef void	t_mem;
@@ -69,4 +74,5 @@ void	ft_mem_swap(t_mem *mem1, t_mem *mem2, t_u32 size);
 void	ft_mem_set(t_mem *mem, t_u32 size, t_byte b);
 void	ft_mem_zero(t_mem *mem, t_u32 size);
 
+# endif
 #endif

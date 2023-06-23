@@ -6,14 +6,19 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 18:43:50 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 06:14:35 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 03:46:00 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FLOAT_MATH_H
 # define FLOAT_MATH_H
+# include "libft/arithmetic/float_math.h"
+# undef FLOAT_MATH_H
+#else
+# ifndef LIBFT_FLOAT_MATH_H
+#  define LIBFT_FLOAT_MATH_H
 
-# include "libft/arithmetic/fixed_types.h"
+#  include "libft/arithmetic/fixed_types.h"
 
 t_f32	ft_f32_trunc(t_f32 value);
 t_f32	ft_f32_fract(t_f32 value);
@@ -39,4 +44,5 @@ t_i16	ft_f128_log10(t_f128 value);
 t_f128	ft_f128_10pow(t_i16 value);
 t_f128	ft_f128_mod(t_f128 value, t_f128 mod);
 
+# endif
 #endif

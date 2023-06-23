@@ -6,16 +6,21 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 03:55:42 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:08:45 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 04:00:10 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VECTOR_H
 # define VECTOR_H
+# include "libft/data/vector.h"
+# undef VECTOR_H
+#else
+# ifndef LIBFT_VECTOR_H
+#  define LIBFT_VECTOR_H
 
-# include <stdbool.h>
-# include "libft/arithmetic/fixed_types.h"
-# include "libft/io/ostream.h"
+#  include <stdbool.h>
+#  include "libft/arithmetic/fixed_types.h"
+#  include "libft/io/ostream.h"
 
 typedef struct s_vector
 {
@@ -62,4 +67,5 @@ bool	ft_vector_swap_remove(t_vector *vec, t_u32 i, void *dest);
 t_u32	ft_vector_swap_remove_multiple(t_vector *vec,
 			t_u32 i, void *dest, t_u32 count);
 
+# endif
 #endif

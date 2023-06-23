@@ -6,16 +6,21 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:41:31 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:08:45 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 03:49:23 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_H
 # define ARRAY_H
+# include "libft/data/array.h"
+# undef ARRAY_H
+#else
+# ifndef LIBFT_ARRAY_H
+#  define LIBFT_ARRAY_H
 
-# include <stdbool.h>
-# include "libft/arithmetic/fixed_types.h"
-# include "libft/io/ostream.h"
+#  include <stdbool.h>
+#  include "libft/arithmetic/fixed_types.h"
+#  include "libft/io/ostream.h"
 
 typedef struct s_borrowed_array
 {
@@ -91,4 +96,5 @@ bool				ft_array_oprint(t_any_ostream *any_stream,
 bool				ft_array_oprintln(t_any_ostream *any_stream,
 						t_any_array *any_array, t_print_func func, char *sep);
 
+# endif
 #endif

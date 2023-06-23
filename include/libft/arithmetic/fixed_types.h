@@ -6,14 +6,19 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 13:31:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/30 01:51:31 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 03:24:10 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_TYPES_H
 # define FIXED_TYPES_H
+# include "libft/arithmetic/fixed_types.h"
+# undef FIXED_TYPES_H
+#else
+# ifndef LIBFT_FIXED_TYPES_H
+#  define LIBFT_FIXED_TYPES_H
 
-# include <stdint.h>
+#  include <stdint.h>
 
 typedef uint8_t						t_u8;
 typedef uint16_t					t_u16;
@@ -35,4 +40,6 @@ typedef _Complex double				t_cf64;
 typedef _Complex long double		t_cf80;
 __attribute__((mode(TC)))
 typedef _Complex float t_cf128;
+
+# endif
 #endif

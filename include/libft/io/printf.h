@@ -6,18 +6,23 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:42:55 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:09:20 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 04:08:33 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_H
 # define PRINTF_H
+# include "libft/io/printf.h"
+# undef PRINTF_H
+#else
+# ifndef LIBFT_PRINTF_H
+#  define LIBFT_PRINTF_H
 
-# include "libft/io/ostream.h"
-# include "libft/data/str.h"
-# include <stddef.h>
-# include <stdbool.h>
-# include <stdarg.h>
+#  include "libft/io/ostream.h"
+#  include "libft/data/str.h"
+#  include <stddef.h>
+#  include <stdbool.h>
+#  include <stdarg.h>
 
 void				ft_printf(char *format, ...);
 void				ft_println(char *format, ...);
@@ -54,4 +59,5 @@ void				ft_c_str_label_printer(
 void				ft_char_label_printer(
 						t_any_ostream *any_output, va_list args);
 
+# endif
 #endif

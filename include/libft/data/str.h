@@ -6,17 +6,22 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:20:46 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 04:00:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_H
 # define STR_H
+# include "libft/data/str.h"
+# undef STR_H
+#else
+# ifndef LIBFT_STR_H
+#  define LIBFT_STR_H
 
-# include <stdbool.h>
-# include "libft/arithmetic/fixed_types.h"
-# include "libft/data/iterator.h"
-# include "libft/io/ostream.h"
+#  include <stdbool.h>
+#  include "libft/arithmetic/fixed_types.h"
+#  include "libft/data/iterator.h"
+#  include "libft/io/ostream.h"
 
 typedef struct s_borrowed_str
 {
@@ -53,8 +58,10 @@ bool			ft_c_str_oprintln(t_any_str_ostream *any_stream, char *c_str);
 
 bool			ft_str_print(t_any_str *any_str);
 bool			ft_str_println(t_any_str *any_str);
-bool			ft_str_oprint(t_any_str_ostream *any_stream, t_any_str *any_str);
-bool			ft_str_oprintln(t_any_str_ostream *any_stream, t_any_str *any_str);
+bool			ft_str_oprint(t_any_str_ostream *any_stream,
+					t_any_str *any_str);
+bool			ft_str_oprintln(t_any_str_ostream *any_stream,
+					t_any_str *any_str);
 
 /******************************************************************************/
 /* BORROWING																  */
@@ -402,4 +409,5 @@ bool			ft_str_join_with_c_str(t_allocated_str *dest,
 					t_any_str_iterator *iterator, char *sep);
 /* ---- */
 
+# endif
 #endif

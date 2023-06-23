@@ -6,14 +6,19 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 10:21:17 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 06:14:09 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 03:22:47 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BOUNDS_H
 # define BOUNDS_H
+# include "libft/arithmetic/bounds.h"
+# undef BOUNDS_H
+#else
+# ifndef LIBFT_BOUNDS_H
+#  define LIBFT_BOUNDS_H
 
-# include "libft/arithmetic/fixed_types.h"
+#  include "libft/arithmetic/fixed_types.h"
 
 /******************************************************************************/
 /* MIN																		  */
@@ -97,4 +102,5 @@ t_f64	ft_f64_abs(t_f64 value);
 t_f80	ft_f80_abs(t_f80 value);
 t_f128	ft_f128_abs(t_f128 value);
 
+# endif
 #endif

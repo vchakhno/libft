@@ -6,14 +6,19 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/03 14:58:13 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/23 03:49:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHAR_H
 # define CHAR_H
+# include "libft/data/char.h"
+# undef CHAR_H
+#else
+# ifndef LIBFT_CHAR_H
+#  define LIBFT_CHAR_H
 
-# include <stdbool.h>
+#  include <stdbool.h>
 
 bool	ft_char_is_alnum(char c);
 bool	ft_char_is_alpha(char c);
@@ -27,4 +32,5 @@ char	ft_char_swap_case(char c);
 char	ft_char_to_lower(char c);
 char	ft_char_to_upper(char c);
 
+# endif
 #endif
