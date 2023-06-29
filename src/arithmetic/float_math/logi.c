@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:08:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/29 05:52:50 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/29 08:10:23 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ t_i32	ft_f32_logi(t_f32 value, t_f32 base)
 	if (value <= 0 || base <= 1)
 		return (0);
 	i = 0;
-	if (value > base)
+	if (value >= base)
 	{
-		while (value > base)
+		while (value >= base)
 		{
 			value /= base;
 			i++;
@@ -46,9 +46,9 @@ t_i32	ft_f64_logi(t_f64 value, t_f64 base)
 	if (value <= 0 || base <= 1)
 		return (0);
 	i = 0;
-	if (value > base)
+	if (value >= base)
 	{
-		while (value > base)
+		while (value >= base)
 		{
 			value /= base;
 			i++;
@@ -72,9 +72,9 @@ t_i32	ft_f80_logi(t_f80 value, t_f80 base)
 	if (value <= 0 || base <= 1)
 		return (0);
 	i = 0;
-	if (value > base)
+	if (value >= base)
 	{
-		while (value > base)
+		while (value >= base)
 		{
 			value /= base;
 			i++;
@@ -98,9 +98,9 @@ t_i32	ft_f128_logi(t_f128 value, t_f128 base)
 	if (value <= 0 || base <= 1)
 		return (0);
 	i = 0;
-	if (value > base)
+	if (value >= base)
 	{
-		while (value > base)
+		while (value >= base)
 		{
 			value /= base;
 			i++;
