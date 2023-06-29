@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:33:56 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/29 05:34:23 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ bool	ft_f64_oprint(t_any_str_ostream *any_stream, t_f64 value)
 		return (ft_c_str_oprint(any_stream, "Infinity"));
 	if (*(t_u64 *)&value > 0x7FFl << 52)
 		return (ft_c_str_oprint(any_stream, "NaN"));
-	log = ft_f64_log10(value);
+	log = ft_f64_ilog(value, 10);
 	if (!ft_f64_print_numerical_part(any_stream, value, log))
 		return (false);
 	if (log < 0 || 3 <= log)

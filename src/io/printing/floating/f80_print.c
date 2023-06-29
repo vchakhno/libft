@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:33:56 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/29 05:34:36 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ bool	ft_f80_oprint(t_any_str_ostream *any_stream, t_f80 value)
 			return (ft_c_str_oprint(any_stream, "Infinity"));
 		return (ft_c_str_oprint(any_stream, "NaN"));
 	}
-	log = ft_f80_log10(value);
+	log = ft_f80_ilog(value, 10);
 	if (!ft_f80_print_numerical_part(any_stream, value, log))
 		return (false);
 	if (log < 0 || 3 <= log)

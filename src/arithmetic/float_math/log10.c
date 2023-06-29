@@ -6,113 +6,113 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:08:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/05/18 07:20:48 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/29 05:37:16 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/arithmetic/float_math.h"
 #include "libft/arithmetic/bounds.h"
 
-t_i8	ft_f32_log10(t_f32 value)
+t_i32	ft_f32_ilog(t_f32 value, t_f32 base)
 {
-	t_i8	i;
-	t_f32	clone;
+	t_i32	i;
 
-	if (value == 0)
+	if (value <= 0 || base <= 1)
 		return (0);
 	i = 0;
-	clone = 1;
-	if (ft_f32_abs(value) < 1)
+	if (value > base)
 	{
-		while (clone > ft_f32_abs(value))
+		while (value > base)
 		{
-			clone /= 10;
+			value /= base;
+			i++;
+		}
+	}
+	else if (value < 1)
+	{
+		while (value < 1)
+		{
+			value *= base;
 			i--;
 		}
-		return (i);
 	}
-	while (clone < ft_f32_abs(value))
-	{
-		clone *= 10;
-		i++;
-	}
-	return (i - (clone != ft_f32_abs(value)));
+	return (i);
 }
 
-t_i16	ft_f64_log10(t_f64 value)
+t_i32	ft_f64_ilog(t_f64 value, t_f64 base)
 {
-	t_i16	i;
-	t_f64	clone;
+	t_i32	i;
 
-	if (value == 0)
+	if (value <= 0 || base <= 1)
 		return (0);
 	i = 0;
-	clone = 1;
-	if (ft_f64_abs(value) < 1)
+	if (value > base)
 	{
-		while (clone > ft_f64_abs(value))
+		while (value > base)
 		{
-			clone /= 10;
+			value /= base;
+			i++;
+		}
+	}
+	else if (value < 1)
+	{
+		while (value < 1)
+		{
+			value *= base;
 			i--;
 		}
-		return (i);
 	}
-	while (clone < ft_f64_abs(value))
-	{
-		clone *= 10;
-		i++;
-	}
-	return (i - (clone != ft_f64_abs(value)));
+	return (i);
 }
 
-t_i16	ft_f80_log10(t_f80 value)
+t_i32	ft_f80_ilog(t_f80 value, t_f80 base)
 {
-	t_i16	i;
-	t_f80	clone;
+	t_i32	i;
 
-	if (value == 0)
+	if (value <= 0 || base <= 1)
 		return (0);
 	i = 0;
-	clone = 1;
-	if (ft_f80_abs(value) < 1)
+	if (value > base)
 	{
-		while (clone > ft_f80_abs(value))
+		while (value > base)
 		{
-			clone /= 10;
+			value /= base;
+			i++;
+		}
+	}
+	else if (value < 1)
+	{
+		while (value < 1)
+		{
+			value *= base;
 			i--;
 		}
-		return (i);
 	}
-	while (clone < ft_f80_abs(value))
-	{
-		clone *= 10;
-		i++;
-	}
-	return (i - (clone != ft_f80_abs(value)));
+	return (i);
 }
 
-t_i16	ft_f128_log10(t_f128 value)
+t_i32	ft_f128_ilog(t_f128 value, t_f128 base)
 {
-	t_i16	i;
-	t_f128	clone;
+	t_i32	i;
 
-	if (value == 0)
+	if (value <= 0 || base <= 1)
 		return (0);
 	i = 0;
-	clone = 1;
-	if (ft_f128_abs(value) < 1)
+	if (value > base)
 	{
-		while (clone > ft_f128_abs(value))
+		while (value > base)
 		{
-			clone /= 10;
+			value /= base;
+			i++;
+		}
+	}
+	else if (value < 1)
+	{
+		while (value < 1)
+		{
+			value *= base;
 			i--;
 		}
-		return (i);
 	}
-	while (clone < ft_f128_abs(value))
-	{
-		clone *= 10;
-		i++;
-	}
-	return (i - (clone != ft_f128_abs(value)));
+	return (i);
 }
