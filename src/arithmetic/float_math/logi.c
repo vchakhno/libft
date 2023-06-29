@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   log10.c                                            :+:      :+:    :+:   */
+/*   logi.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:08:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/29 05:37:16 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/29 05:52:50 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/arithmetic/float_math.h"
 #include "libft/arithmetic/bounds.h"
 
-t_i32	ft_f32_ilog(t_f32 value, t_f32 base)
+t_i32	ft_f32_logi(t_f32 value, t_f32 base)
 {
 	t_i32	i;
 
@@ -39,7 +39,7 @@ t_i32	ft_f32_ilog(t_f32 value, t_f32 base)
 	return (i);
 }
 
-t_i32	ft_f64_ilog(t_f64 value, t_f64 base)
+t_i32	ft_f64_logi(t_f64 value, t_f64 base)
 {
 	t_i32	i;
 
@@ -65,7 +65,7 @@ t_i32	ft_f64_ilog(t_f64 value, t_f64 base)
 	return (i);
 }
 
-t_i32	ft_f80_ilog(t_f80 value, t_f80 base)
+t_i32	ft_f80_logi(t_f80 value, t_f80 base)
 {
 	t_i32	i;
 
@@ -91,7 +91,7 @@ t_i32	ft_f80_ilog(t_f80 value, t_f80 base)
 	return (i);
 }
 
-t_i32	ft_f128_ilog(t_f128 value, t_f128 base)
+t_i32	ft_f128_logi(t_f128 value, t_f128 base)
 {
 	t_i32	i;
 

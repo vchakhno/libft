@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/29 05:34:50 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/06/29 05:58:31 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static bool	ft_f128_print_numerical_part(
 	t_i16	snapped_log;
 
 	snapped_log = (log - 2 * (log < 0)) / 3 * 3;
-	mask = ft_f128_10pow(log);
+	mask = ft_f128_powi(10, log);
 	i = 0;
 	while (i < 4)
 	{
@@ -67,7 +67,7 @@ bool	ft_f128_oprint(t_any_str_ostream *any_stream, t_f128 value)
 		return (ft_c_str_oprint(any_stream, "Infinity"));
 	if (((t_u16 *)&value)[7] == 0x7FFF)
 		return (ft_c_str_oprint(any_stream, "NaN"));
-	log = ft_f128_ilog(value, 10);
+	log = ft_f128_logi(value, 10);
 	if (!ft_f128_print_numerical_part(any_stream, value, log))
 		return (false);
 	if (log < 0 || 3 <= log)

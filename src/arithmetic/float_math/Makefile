@@ -1,6 +1,6 @@
 ARITHMETIC_FLOAT_MATH_SRCS = \
-	10pow.c \
+	powi.c \
 	fract.c \
-	log10.c \
+	logi.c \
 	mod.c \
 	trunc.c \
