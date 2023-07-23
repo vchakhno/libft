@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:42:55 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/23 04:08:33 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/23 04:27:51 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,13 @@ bool				ft_str_scanner_match_c_str(t_str_scanner *scanner,
 void				ft_str_scanner_write(t_str_scanner *scanner,
 						t_any_ostream *any_output);
 
+typedef void	(*t_label_printer)(t_any_ostream *any_output, va_list args);
+typedef struct s_label_info
+{
+	char			*name;
+	t_label_printer	printer;
+}	t_label_info;
+
 void				ft_try_print_label(t_any_ostream *any_output,
 						t_str_scanner *scanner, va_list args);
 
@@ -57,6 +64,40 @@ void				ft_str_label_printer(
 void				ft_c_str_label_printer(
 						t_any_ostream *any_output, va_list args);
 void				ft_char_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_i8_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_i16_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_i32_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_i64_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_u8_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_u16_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_u32_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_u64_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_prog_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_f32_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_f64_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_f80_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_f128_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_cf32_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_cf64_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_cf80_label_printer(
+						t_any_ostream *any_output, va_list args);
+void				ft_cf128_label_printer(
 						t_any_ostream *any_output, va_list args);
 
 # endif

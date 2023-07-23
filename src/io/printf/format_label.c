@@ -6,25 +6,25 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 04:30:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:27:40 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/23 04:27:17 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/io/printf.h"
 
-typedef void	(*t_label_printer)(t_any_ostream *any_output, va_list args);
-typedef struct s_label_info
-{
-	char			*name;
-	t_label_printer	printer;
-}	t_label_info;
-
 bool	ft_match_label_types(t_str_scanner *scanner, t_label_printer *printer)
 {
 	static t_label_info	map[] = {
-	{"str", ft_str_label_printer},
-	{"c_str", ft_c_str_label_printer},
-	{"char", ft_char_label_printer},
+	{"char", ft_char_label_printer}, {"prog", ft_prog_label_printer},
+	{"str", ft_str_label_printer}, {"c_str", ft_c_str_label_printer},
+	{"i8", ft_i8_label_printer}, {"i16", ft_i16_label_printer},
+	{"i32", ft_i32_label_printer}, {"i64", ft_i64_label_printer},
+	{"u8", ft_u8_label_printer}, {"u16", ft_u16_label_printer},
+	{"u32", ft_u32_label_printer}, {"u64", ft_u64_label_printer},
+	{"f32", ft_f32_label_printer}, {"f64", ft_f64_label_printer},
+	{"f80", ft_f80_label_printer}, {"f128", ft_f128_label_printer},
+	{"cf32", ft_cf32_label_printer}, {"cf64", ft_cf64_label_printer},
+	{"cf80", ft_cf80_label_printer}, {"cf128", ft_cf128_label_printer},
 	};
 	int					i;
 
@@ -50,8 +50,8 @@ bool	ft_parse_label(t_str_scanner *scanner, t_label_printer *printer)
 	return (true);
 }
 
-void	ft_try_print_label(t_any_ostream *any_output, t_str_scanner *scanner,
-	va_list args)
+void	ft_try_print_label(
+	t_any_ostream *any_output, t_str_scanner *scanner, va_list args)
 {
 	t_label_printer	printer;
 
