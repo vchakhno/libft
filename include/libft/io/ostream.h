@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:27 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/23 04:07:59 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/23 17:53:16 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,30 +98,6 @@ bool	ft_fixed_str_ostream_write(t_fixed_str_ostream *stream,
 			char *str, t_u32 n);
 
 /******************************************************************************/
-/* ARRAY_OSTREAM															  */
-/******************************************************************************/
-
-/*
-	Writes to uuh, an array. Should probably be updated to t_any_array?
-	It's like vector_push_multiple but without reallocation and in ostream form.
-	A bit weird actually. I probably will never use the ostream form...
-*/
-
-typedef struct s_array_ostream
-{
-	t_ostream_base	base;
-	void			*array;
-	t_u32			elem_size;
-	t_u32			capacity;
-	t_u32			pos;
-}	t_array_ostream;
-
-void	ft_array_ostream_init(t_array_ostream *stream,
-			void *array, t_u32 elem_size, t_u32 array_capacity);
-bool	ft_array_ostream_write(t_array_ostream *stream,
-			void *elems, t_u32 count);
-
-/******************************************************************************/
 /* BUFFERED_OSTREAM															  */
 /******************************************************************************/
 
@@ -149,6 +125,20 @@ void	ft_buffered_ostream_init(t_buffered_ostream *stream,
 bool	ft_buffered_ostream_write(t_buffered_ostream *stream,
 			void *ptr, t_u32 size);
 bool	ft_buffered_ostream_flush(t_buffered_ostream *stream);
+
+/******************************************************************************/
+/* LINE BUFFERED_OSTREAM													  */
+/******************************************************************************/
+
+/*
+	Used for live text output (including stdout and stderr).
+*/
+
+void	ft_line_buffered_ostream_init(t_buffered_ostream *stream,
+			void *buffer, t_u32 buffer_size, t_any_ostream *any_destination);
+bool	ft_line_buffered_ostream_write(t_buffered_ostream *stream,
+			void *ptr, t_u32 size);
+bool	ft_line_buffered_ostream_flush(t_buffered_ostream *stream);
 
 # endif
 #endif
