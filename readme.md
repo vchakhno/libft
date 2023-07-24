@@ -8,19 +8,19 @@ Of course, as it is public, you're free to take inspiration or use it in your ow
 
 ## Features
 
-[x] `t_str`: Borrowed strings with functions to compare, match, search, split
-[x] `t_string`: Dynamic strings with functions to add/insert, pop/remove, strip
-[x] `t_array`: Borrowed generic arrays with functions to search, sort
-[x] `t_vector`: Dynamic arrays with functions to add/insert, pop/remove
-[x] Memory manipulation (memset, memcopy...)
-[x] Bounding functions for all primitive types (min, max, abs, clamp)
-[x] Float manipulaton (fmod, trunc...) with support for high precision floats (80 bits and 128 bits)
-[x] `t_output`: Extendable output system, currently supporting line-buffering and standard buffering
-[x] Custom printf and println, supports all primitive types, as well as complex numbers, and arrays
-[x] String and char checking (is_upper...)
-[ ] Input (reading lines from a file...)
-[ ] String parsing
-[ ] Geometry: vectors (geometrical), rectangles, points, intersections...
+- [x] `t_str`: Borrowed strings with functions to compare, match, search, split
+- [x] `t_string`: Dynamic strings with functions to add/insert, pop/remove, strip
+- [x] `t_array`: Borrowed generic arrays with functions to search, sort
+- [x] `t_vector`: Dynamic arrays with functions to add/insert, pop/remove
+- [x] Memory manipulation (memset, memcopy...)
+- [x] Bounding functions for all primitive types (min, max, abs, clamp)
+- [x] Float manipulaton (fmod, trunc...) with support for high precision floats (80 bits and 128 bits)
+- [x] `t_output`: Extendable output system, currently supporting line-buffering and standard buffering
+- [x] Custom printf and println, supports all primitive types, as well as complex numbers, and arrays
+- [x] String and char checking (is_upper...)
+- [ ] Input (reading lines from a file...)
+- [ ] String parsing
+- [ ] Geometry: vectors (geometrical), rectangles, points, intersections...
 
 ## Documentation
 
