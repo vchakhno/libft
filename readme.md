@@ -11,7 +11,7 @@ Of course, as it is public, you're free to take inspiration or use it in your ow
 - [x] `t_str`: Borrowed strings with functions to compare, match, search, split
 - [x] `t_string`: Dynamic strings with functions to add/insert, pop/remove, strip
 - [x] `t_array`: Borrowed generic arrays with functions to search, sort
-- [x] `t_vector`: Dynamic arrays with functions to add/insert, pop/remove
+- [x] `t_vector`: Dynamic generic arrays with functions to add/insert, pop/remove
 - [x] Memory manipulation (memset, memcopy...)
 - [x] Bounding functions for all primitive types (min, max, abs, clamp)
 - [x] Float manipulaton (fmod, trunc...) with support for high precision floats (80 bits and 128 bits)
