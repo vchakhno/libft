@@ -8,19 +8,20 @@ Of course, as it is public, you're free to take inspiration or use it in your ow
 
 ## Features
 
-- Dynamic strings (and many functions to manipulate them, inspired from python's API)
-- Bounding functions for all primitive types (min, max, abs, clamp)
-- Memory manipulation (memset, memcopy...)
-- Float manipulaton (fmod, trunc...) with support for high precision floats (80 bits and 128 bits)
-- Printing of all primitive types, as well as complex numbers
-- Char checking (is_upper...)
-
-## Planned / Ongoing
-
-- Dynamic vector type
-- Parsing
-- A proper printf (right now the custom printf is very limited)
+[x] `t_str`: Borrowed strings with functions to compare, match, search, split
+[x] `t_string`: Dynamic strings with functions to add/insert, pop/remove, strip
+[x] `t_array`: Borrowed generic arrays with functions to search, sort
+[x] `t_vector`: Dynamic arrays with functions to add/insert, pop/remove
+[x] Memory manipulation (memset, memcopy...)
+[x] Bounding functions for all primitive types (min, max, abs, clamp)
+[x] Float manipulaton (fmod, trunc...) with support for high precision floats (80 bits and 128 bits)
+[x] `t_output`: Extendable output system, currently supporting line-buffering and standard buffering
+[x] Custom printf and println, supports all primitive types, as well as complex numbers, and arrays
+[x] String and char checking (is_upper...)
+[ ] Input (reading lines from a file...)
+[ ] String parsing
+[ ] Geometry: vectors (geometrical), rectangles, points, intersections...
 
 ## Documentation
 
-None for now. The docs folder is outdated, and doesn't provide much anyways.
+None for now. Contact me on discord for any questions. Login: velimir_
