@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_from.c                                         :+:      :+:    :+:   */
+/*   select_slice.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 10:21:04 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 06:16:26 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/24 01:02:00 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/07/24 05:48:05 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str.h"
+#include "libft/data/string.h"
+#include "libft/data/mem.h"
 
-t_str	ft_str_from(char *c_str, t_u32 len)
+void	ft_string_select_slice(t_string *string, t_u32 start, t_u32 len)
 {
-	return ((t_str){.c_str = c_str, .len = len});
-}
-
-t_str	ft_str_from_c_str(char *c_str)
-{
-	return ((t_str){.c_str = c_str, .len = ft_c_str_len(c_str)});
+	ft_mem_copy(string->c_str, string->c_str + start, len);
+	string->len = len;
 }

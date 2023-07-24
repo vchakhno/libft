@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_from.c                                         :+:      :+:    :+:   */
+/*   strip.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 10:21:04 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 06:16:26 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/28 06:35:00 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/07/24 05:56:13 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str.h"
+#include "libft/data/string.h"
+#include "libft/data/mem.h"
 
-t_str	ft_str_from(char *c_str, t_u32 len)
+bool	ft_string_strip(t_string *string, char *stripped)
 {
-	return ((t_str){.c_str = c_str, .len = len});
-}
-
-t_str	ft_str_from_c_str(char *c_str)
-{
-	return ((t_str){.c_str = c_str, .len = ft_c_str_len(c_str)});
+	ft_string_rstrip(string, stripped);
+	ft_string_lstrip(string, stripped);
+	return (true);
 }

@@ -12,5 +12,5 @@ DATA_SRCS = \
 	${addprefix iterator/,$(DATA_ITERATOR_SRCS)} \
 	${addprefix mem/,$(DATA_MEM_SRCS)} \
 	${addprefix str/,$(DATA_STR_SRCS)} \
+	${addprefix string/,$(DATA_STRING_SRCS)} \
 	${addprefix vector/,$(DATA_VECTOR_SRCS)} \
-	# ${addprefix string/,$(DATA_STRING_SRCS)} \

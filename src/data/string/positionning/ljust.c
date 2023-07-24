@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_from.c                                         :+:      :+:    :+:   */
+/*   ljust.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 10:21:04 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 06:16:26 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/28 04:47:55 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/07/24 05:52:40 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/str.h"
+#include "libft/data/string.h"
+#include "libft/data/mem.h"
 
-t_str	ft_str_from(char *c_str, t_u32 len)
+bool	ft_string_ljust(t_string *string, t_u32 size, char filler)
 {
-	return ((t_str){.c_str = c_str, .len = len});
-}
-
-t_str	ft_str_from_c_str(char *c_str)
-{
-	return ((t_str){.c_str = c_str, .len = ft_c_str_len(c_str)});
+	if (string->len >= size)
+		return (true);
+	if (!ft_string_reserve(string, string->len - size))
+		return (false);
+	ft_mem_set(string->c_str + string->len, size - string->len, filler);
+	string->len = size;
+	return (true);
 }
