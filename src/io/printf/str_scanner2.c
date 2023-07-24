@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 11:15:41 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:55:09 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 18:22:23 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_str_scanner_write(t_str_scanner *scanner, t_output *output)
 
 bool	ft_str_scanner_match_c_str(t_str_scanner *scanner, char *c_str)
 {
-	size_t	len;
+	t_u32	len;
 
 	len = ft_c_str_len(c_str);
 	if (len > scanner->str.len - scanner->read_pos)
