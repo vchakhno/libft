@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 20:27:02 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:52:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 05:24:57 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 void	ft_str_label_printer(t_output *output, va_list args)
 {
-	ft_str_oprint(output, va_arg(args, t_any_str *));
+	ft_str_oprint(output, va_arg(args, t_str));
 }

@@ -1,10 +1,7 @@
 DATA_STR_SRCS = \
-	adding/append.c \
-	adding/insert.c \
-	adding/prepend.c \
-	borrowing/borrowed_str_from_parts.c \
-	borrowing/c_str_borrow.c \
-	borrowing/str_borrow.c \
+	creation/str_from.c \
+	creation/c_str_get_slice.c \
+	creation/str_get_slice.c \
 	c_str/len.c \
 	c_str/ncopy.c \
 	casing/swap_case.c \
@@ -23,11 +20,6 @@ DATA_STR_SRCS = \
 	comparison/ends_with.c \
 	comparison/equal.c \
 	comparison/starts_with.c \
-	cropping/remove_slice.c \
-	cropping/select_slice.c \
-	positionning/center.c \
-	positionning/ljust.c \
-	positionning/rjust.c \
 	printing/c_str_print.c \
 	printing/str_print.c \
 	search/contains.c \
@@ -36,10 +28,3 @@ DATA_STR_SRCS = \
 	search/rfind.c \
 	splitting/rsplit.c \
 	splitting/split.c \
-	stripping/lstrip.c \
-	stripping/remove_prefix.c \
-	stripping/remove_suffix.c \
-	stripping/rstrip.c \
-	stripping/strip.c \
-	allocation.c \
-	capacity.c \

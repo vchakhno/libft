@@ -26,10 +26,7 @@ void	ft_libuf_output_init(
 
 bool	ft_libuf_output_write(t_libuf_output *output, void *ptr, t_u32 size)
 {
-	t_borrowed_str	str;
-
-	str = ft_borrowed_str_from_parts(ptr, size);
-	if (!ft_str_contains_char(&str, '\n'))
+	if (!ft_str_contains_char(ft_str_from(ptr, size), '\n'))
 		return (ft_buf_output_write(output, ptr, size));
 	if (size <= output->buffer_size - output->pos)
 	{
