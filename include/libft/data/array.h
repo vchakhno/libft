@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:41:31 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 02:42:57 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 03:55:09 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 #  include <stdbool.h>
 #  include "libft/arithmetic/fixed_types.h"
-#  include "libft/io/ostream.h"
+#  include "libft/io/output.h"
 
 typedef struct s_array
 {
@@ -77,14 +77,14 @@ void	ft_array_sort(t_array array,
 /* PRINTING																	  */
 /******************************************************************************/
 
-// (const void *elem, t_any_ostream *any_stream)
+// (const void *elem, t_output *output)
 typedef bool	(*t_print_func)();
 
 bool	ft_array_print(t_array array, t_print_func func, char *sep);
 bool	ft_array_println(t_array array, t_print_func func, char *sep);
-bool	ft_array_oprint(t_any_ostream *any_stream,
+bool	ft_array_oprint(t_output *output,
 			t_array array, t_print_func func, char *sep);
-bool	ft_array_oprintln(t_any_ostream *any_stream,
+bool	ft_array_oprintln(t_output *output,
 			t_array array, t_print_func func, char *sep);
 
 # endif

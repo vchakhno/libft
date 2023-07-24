@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 04:30:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/23 04:27:17 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 03:52:28 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,17 @@ bool	ft_parse_label(t_str_scanner *scanner, t_label_printer *printer)
 }
 
 void	ft_try_print_label(
-	t_any_ostream *any_output, t_str_scanner *scanner, va_list args)
-{
+	t_output *output, t_str_scanner *scanner, va_list args
+) {
 	t_label_printer	printer;
 
 	if (ft_parse_label(scanner, &printer))
 	{
 		ft_str_scanner_discard(scanner);
-		printer(any_output, args);
+		printer(output, args);
 	}
 	else
 	{
-		ft_str_scanner_write(scanner, any_output);
+		ft_str_scanner_write(scanner, output);
 	}
 }

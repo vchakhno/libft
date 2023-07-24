@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:30:03 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 03:59:42 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,36 +26,36 @@ bool	ft_cf64_println(t_cf64 value)
 	return (ft_cf64_oprintln(ft_stdout(), value));
 }
 
-bool	ft_cf64_oprint(t_any_str_ostream *any_stream, t_cf64 value)
+bool	ft_cf64_oprint(t_output *output, t_cf64 value)
 {
 	t_f64	imaginary;
 
-	ft_f64_oprint(any_stream, (t_f64) value);
+	ft_f64_oprint(output, (t_f64) value);
 	imaginary = ((t_f64 *)&value)[1];
 	if (*(t_u64 *)&imaginary >> 63)
 	{
-		if (!ft_c_str_oprint(any_stream, " - "))
+		if (!ft_c_str_oprint(output, " - "))
 			return (false);
 		imaginary = -imaginary;
 	}
 	else
 	{
-		if (!ft_c_str_oprint(any_stream, " + "))
+		if (!ft_c_str_oprint(output, " + "))
 			return (false);
 	}
-	ft_f64_oprint(any_stream, imaginary);
+	ft_f64_oprint(output, imaginary);
 	if (*(t_u64 *)&imaginary >> 52 == 0x7FF)
 	{
-		if (!ft_c_str_oprint(any_stream, " * "))
+		if (!ft_c_str_oprint(output, " * "))
 			return (false);
 	}
-	ft_ostream_write_byte(any_stream, 'i');
+	ft_output_write_byte(output, 'i');
 	return (true);
 }
 
-bool	ft_cf64_oprintln(t_any_str_ostream *any_stream, t_cf64 value)
+bool	ft_cf64_oprintln(t_output *output, t_cf64 value)
 {
-	if (!ft_cf64_oprint(any_stream, value))
+	if (!ft_cf64_oprint(output, value))
 		return (false);
-	return (ft_ostream_write(any_stream, "\n", 1));
+	return (ft_output_write(output, "\n", 1));
 }

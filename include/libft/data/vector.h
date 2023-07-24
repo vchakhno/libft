@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 03:55:42 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 02:43:46 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 03:55:09 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 #  include <stdbool.h>
 #  include "libft/arithmetic/fixed_types.h"
-#  include "libft/io/ostream.h"
+#  include "libft/io/output.h"
 #  include "libft/data/array.h"
 
 typedef struct s_vector

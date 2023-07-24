@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ostream.c                                          :+:      :+:    :+:   */
+/*   output.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:23:53 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 03:52:22 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/io/ostream.h"
+#include "libft/io/output.h"
 #include "libft/data/str.h"
 
-bool	ft_ostream_has_ended(t_any_ostream *any_stream)
+void	ft_output_init(t_output *output, t_output_write write)
 {
-	return (((t_ostream_base *)any_stream)->ended);
+	output->write = write;
+	output->ended = false;
 }
 
-bool	ft_ostream_write(t_any_ostream *any_stream, void *elems, t_u32 count)
+bool	ft_output_has_ended(t_output *output)
 {
-	t_ostream_base *const	stream = any_stream;
+	return (output->ended);
+}
 
-	if (!stream->write(stream, elems, count))
+bool	ft_output_write(t_output *output, void *elems, t_u32 count)
+{
+	if (!output->write(output, elems, count))
 	{
-		stream->ended = true;
+		output->ended = true;
 		return (false);
 	}
 	return (true);
 }
 
-bool	ft_ostream_write_byte(t_any_ostream *any_stream, t_u8 byte)
+bool	ft_output_write_byte(t_output *output, t_u8 byte)
 {
-	t_ostream_base *const	stream = any_stream;
-
-	if (!stream->write(stream, &byte, 1))
+	if (!output->write(output, &byte, 1))
 	{
-		stream->ended = true;
+		output->ended = true;
 		return (false);
 	}
 	return (true);

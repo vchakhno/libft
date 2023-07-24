@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/29 05:56:55 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 03:59:45 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "libft/arithmetic/float_math.h"
 
 static bool	ft_f32_print_numerical_part(
-	t_any_ostream *any_stream, t_f32 value, t_i8 log
+	t_output *output, t_f32 value, t_i8 log
 ) {
 	t_i8	i;
 	t_f32	mask;
@@ -28,14 +28,14 @@ static bool	ft_f32_print_numerical_part(
 	i = 0;
 	while (i < 4)
 	{
-		if (!ft_ostream_write_byte(
-				any_stream, ft_f32_mod(value / mask, 10) + '0'))
+		if (!ft_output_write_byte(
+				output, ft_f32_mod(value / mask, 10) + '0'))
 			return (false);
 		if (log - i < snapped_log
 			&& ft_f32_abs(ft_f32_mod(value, mask * 10) < mask / 1000))
 			return (true);
 		if (log - i == snapped_log)
-			if (!ft_ostream_write(any_stream, ".", 1))
+			if (!ft_output_write(output, ".", 1))
 				return (false);
 		mask /= 10.000001f;
 		i++;
@@ -53,36 +53,36 @@ bool	ft_f32_println(t_f32 value)
 	return (ft_f32_oprintln(ft_stdout(), value));
 }
 
-bool	ft_f32_oprint(t_any_str_ostream *any_stream, t_f32 value)
+bool	ft_f32_oprint(t_output *output, t_f32 value)
 {
 	t_i8	log;
 
 	if (*(t_u32 *)&value >> 31)
 	{
-		if (!ft_ostream_write(any_stream, "-", 1))
+		if (!ft_output_write(output, "-", 1))
 			return (false);
 		value = -value;
 	}
 	if (*(t_u32 *)&value == 0xFF << 23)
-		return (ft_c_str_oprint(any_stream, "Infinity"));
+		return (ft_c_str_oprint(output, "Infinity"));
 	if (*(t_u32 *)&value > 0xFF << 23)
-		return (ft_c_str_oprint(any_stream, "NaN"));
+		return (ft_c_str_oprint(output, "NaN"));
 	log = ft_f32_logi(value, 10);
-	if (!ft_f32_print_numerical_part(any_stream, value, log))
+	if (!ft_f32_print_numerical_part(output, value, log))
 		return (false);
 	if (log < 0 || 3 <= log)
 	{
-		if (!ft_ostream_write(any_stream, "e", 1))
+		if (!ft_output_write(output, "e", 1))
 			return (false);
-		if (!ft_i8_oprint(any_stream, (log - 2 * (log < 0)) / 3 * 3))
+		if (!ft_i8_oprint(output, (log - 2 * (log < 0)) / 3 * 3))
 			return (false);
 	}
 	return (true);
 }
 
-bool	ft_f32_oprintln(t_any_str_ostream *any_stream, t_f32 value)
+bool	ft_f32_oprintln(t_output *output, t_f32 value)
 {
-	if (!ft_f32_oprint(any_stream, value))
+	if (!ft_f32_oprint(output, value))
 		return (false);
-	return (ft_ostream_write(any_stream, "\n", 1));
+	return (ft_output_write(output, "\n", 1));
 }

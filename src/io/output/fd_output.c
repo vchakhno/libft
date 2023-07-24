@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fd_ostream.c                                       :+:      :+:    :+:   */
+/*   fd_output.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:15 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 21:08:45 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 03:52:50 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/io/ostream.h"
+#include "libft/io/output.h"
 #include "libft/io/printing.h"
 
-void	ft_fd_ostream_init(t_fd_ostream *stream, int fd)
+void	ft_fd_output_init(t_fd_output *output, int fd)
 {
-	ft_ostream_base_init(&stream->base, ft_fd_ostream_write);
-	stream->fd = fd;
+	ft_output_init(&output->output, ft_fd_output_write);
+	output->fd = fd;
 }
 
-bool	ft_fd_ostream_write(t_fd_ostream *stream, char *str, t_u32 n)
+bool	ft_fd_output_write(t_fd_output *output, char *str, t_u32 n)
 {
-	return (ft_safe_write(stream->fd, str, n) == n);
+	return (ft_safe_write(output->fd, str, n) == n);
 }
