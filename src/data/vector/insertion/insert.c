@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 10:01:53 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 20:48:14 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 02:45:11 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ bool	ft_vector_insert_multiple(
 		ft_mem_copy(vec->elems, old_elems, i * vec->elem_size);
 	}
 	ft_mem_move(
-		ft_array_at(vec, i + count),
+		ft_array_at(vec->array, i + count),
 		old_elems + i * vec->elem_size,
 		(vec->size - i) * vec->elem_size);
 	if (old_elems != vec->elems)
 		free(old_elems);
-	ft_mem_copy(ft_array_at(vec, i), values, count * vec->elem_size);
+	ft_mem_copy(ft_array_at(vec->array, i), values, count * vec->elem_size);
 	vec->size += count;
 	return (true);
 }

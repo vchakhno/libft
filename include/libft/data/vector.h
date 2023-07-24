@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 03:55:42 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/23 04:00:10 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/07/24 02:43:46 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,19 @@
 #  include <stdbool.h>
 #  include "libft/arithmetic/fixed_types.h"
 #  include "libft/io/ostream.h"
+#  include "libft/data/array.h"
 
 typedef struct s_vector
 {
-	void		*elems;
-	t_u32		size;
-	t_u32		elem_size;
-	t_u32		capacity;
+	union {
+		t_array			array;
+		struct {
+			void		*elems;
+			t_u32		size;
+			t_u32		elem_size;
+		};
+	};
+	t_u32				capacity;
 }	t_vector;
 
 /******************************************************************************/
