@@ -21,6 +21,8 @@
 #  include "libft/arithmetic/fixed_types.h"
 #  include <stdbool.h>
 
+t_u32	ft_safe_write(int fd, void *ptr, t_u32 size);
+
 /******************************************************************************/
 /* OUTPUT BASE																  */
 /******************************************************************************/

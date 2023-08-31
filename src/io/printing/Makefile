@@ -15,4 +15,3 @@ IO_PRINTING_SRCS = \
 	unsigned/u16_print.c \
 	unsigned/u32_print.c \
 	unsigned/u64_print.c \
-	safe_write.c \

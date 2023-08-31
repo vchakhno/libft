@@ -3,3 +3,4 @@ IO_OUTPUT_SRCS = \
 	fd_output.c \
 	libuf_output.c \
 	output.c \
+	safe_write.c \

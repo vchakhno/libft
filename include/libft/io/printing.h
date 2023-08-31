@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 07:33:00 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:55:09 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/08/18 00:09:05 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 #  include "libft/arithmetic/fixed_types.h"
 #  include "libft/io/output.h"
 #  include <stdbool.h>
-
-t_u32	ft_safe_write(int fd, void *ptr, t_u32 size);
 
 /******************************************************************************/
 /* PRINTING FIXED TYPES														  */
