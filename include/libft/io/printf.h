@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:42:55 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 18:24:01 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:27:47 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,9 @@ bool		ft_str_scanner_has_ended(t_str_scanner *scanner);
 void		ft_str_scanner_advance(t_str_scanner *scanner);
 void		ft_str_scanner_discard(t_str_scanner *scanner);
 bool		ft_str_scanner_match(t_str_scanner *scanner, char c);
-bool		ft_str_scanner_match_c_str(t_str_scanner *scanner,
-				char *c_str);
-void		ft_str_scanner_write(t_str_scanner *scanner,
-				t_output *output);
+bool		ft_str_scanner_match_c_str(
+				t_str_scanner *scanner, char *c_str);
+void		ft_str_scanner_write(t_str_scanner *scanner, t_output *output);
 
 typedef void	(*t_label_printer)(t_output *output, va_list args);
 typedef struct s_label_info
