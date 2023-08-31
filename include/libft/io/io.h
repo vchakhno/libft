@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 06:11:48 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:55:09 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/08/18 00:06:24 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # ifndef LIBFT_IO_H
 #  define LIBFT_IO_H
 
+#  include "libft/io/input.h"
 #  include "libft/io/output.h"
 #  include "libft/io/parsing/parsing.h"
 #  include "libft/io/printf.h"
