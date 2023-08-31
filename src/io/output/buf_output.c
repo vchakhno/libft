@@ -19,7 +19,7 @@ void	ft_buf_output_init(
 ) {
 	ft_output_init(&output->output, ft_buf_output_write);
 	output->buffer = buffer;
-	output->buffer_size = buffer_size;
+	output->capacity = buffer_size;
 	output->pos = 0;
 	output->dest = dest;
 }
@@ -28,17 +28,17 @@ bool	ft_buf_output_write(t_buf_output *output, void *ptr, t_u32 size)
 {
 	t_u32	written;
 
-	if (size < output->buffer_size - output->pos)
+	if (output->pos + size < output->capacity)
 	{
 		ft_mem_copy(output->buffer + output->pos, ptr, size);
 		output->pos += size;
 	}
-	else if (size < 2 * output->buffer_size - output->pos)
+	else if (output->pos + size < 2 * output->capacity)
 	{
-		written = output->buffer_size - output->pos;
+		written = output->capacity - output->pos;
 		ft_mem_copy(output->buffer + output->pos, ptr, written);
 		if (!ft_output_write(output->dest,
-				output->buffer, output->buffer_size))
+				output->buffer, output->capacity))
 			return (false);
 		ft_mem_copy(output->buffer, ptr + written, size - written);
 		output->pos = size - written;

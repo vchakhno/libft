@@ -24,9 +24,9 @@ bool	ft_output_has_ended(t_output *output)
 	return (output->ended);
 }
 
-bool	ft_output_write(t_output *output, void *elems, t_u32 count)
+bool	ft_output_write(t_output *output, void *ptr, t_u32 size)
 {
-	if (!output->write(output, elems, count))
+	if (!output->write(output, ptr, size))
 	{
 		output->ended = true;
 		return (false);

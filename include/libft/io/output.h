@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:27 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:59:05 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:56:45 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_output
 
 void	ft_output_init(t_output *output, t_output_write write);
 bool	ft_output_has_ended(t_output *output);
-bool	ft_output_write(t_output *output, void *elems, t_u32 count);
+bool	ft_output_write(t_output *output, void *ptr, t_u32 size);
 bool	ft_output_write_byte(t_output *output, t_u8 byte);
 
 /******************************************************************************/
@@ -56,7 +56,7 @@ typedef struct s_fd_output
 }	t_fd_output;
 
 void	ft_fd_output_init(t_fd_output *output, int fd);
-bool	ft_fd_output_write(t_fd_output *output, char *str, t_u32 n);
+bool	ft_fd_output_write(t_fd_output *output, void *ptr, t_u32 size);
 
 /******************************************************************************/
 /* BUFFERED OUTPUT															  */
@@ -76,7 +76,7 @@ typedef struct s_buf_output
 {
 	t_output	output;
 	void		*buffer;
-	t_u32		buffer_size;
+	t_u32		capacity;
 	t_u32		pos;
 	t_output	*dest;
 }	t_buf_output;

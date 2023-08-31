@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft/io/output.h"
-#include "libft/io/printing.h"
 
 void	ft_fd_output_init(t_fd_output *output, int fd)
 {
@@ -19,7 +18,7 @@ void	ft_fd_output_init(t_fd_output *output, int fd)
 	output->fd = fd;
 }
 
-bool	ft_fd_output_write(t_fd_output *output, char *str, t_u32 n)
+bool	ft_fd_output_write(t_fd_output *output, void *ptr, t_u32 size)
 {
-	return (ft_safe_write(output->fd, str, n) == n);
+	return (ft_safe_write(output->fd, ptr, size) == size);
 }
