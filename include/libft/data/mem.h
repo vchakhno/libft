@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/23 03:56:47 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/09/15 23:56:27 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ typedef void	t_ptr;
 bool	ft_mem_malloc(t_ptr *ptr, t_u32 size)
 		__attribute__((warn_unused_result));
 bool	ft_mem_calloc(t_ptr *ptr, t_u32 count, t_u32 size)
+		__attribute__((warn_unused_result));
+bool	ft_mem_dup(t_ptr *ptr, t_mem *src, t_u32 size)
 		__attribute__((warn_unused_result));
 
 /******************************************************************************/
