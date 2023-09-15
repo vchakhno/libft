@@ -40,7 +40,8 @@ typedef struct s_string
 /* ALLOCATION																  */
 /******************************************************************************/
 
-void	ft_string_alloc_empty(t_string *string);
+bool	ft_string_alloc(t_string *string, t_u32 capacity)
+		__attribute__((warn_unused_result));
 bool	ft_string_from_c_str(t_string *string, char *c_str)
 		__attribute__((warn_unused_result));
 bool	ft_string_from_str(t_string *dest, t_str src)
@@ -52,6 +53,8 @@ void	ft_string_free(t_string *string);
 /******************************************************************************/
 
 bool	ft_string_reserve(t_string *string, t_u32 additionnal)
+		__attribute__((warn_unused_result));
+bool	ft_string_reserve_exact(t_string *string, t_u32 additionnal)
 		__attribute__((warn_unused_result));
 bool	ft_string_compact(t_string *string)
 		__attribute__((warn_unused_result));

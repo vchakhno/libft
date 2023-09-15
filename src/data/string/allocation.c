@@ -6,30 +6,35 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 13:57:19 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 05:49:20 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/09/16 00:08:04 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/data/string.h"
+#include "libft/data/mem.h"
 #include <stdlib.h>
 
-void	ft_string_alloc_empty(t_string *string)
+bool	ft_string_alloc(t_string *string, t_u32 capacity)
 {
-	string->c_str = NULL;
+	if (!ft_mem_malloc(&string->c_str, capacity))
+		return (false);
 	string->len = 0;
-	string->capacity = 0;
+	string->capacity = capacity;
+	return (true);
 }
 
-bool	ft_string_from_str(t_string *dest, t_str src)
+bool	ft_string_from_str(t_string *string, t_str str)
 {
-	ft_string_alloc_empty(dest);
-	return (ft_string_append_str(dest, src));
+	if (!ft_mem_dup(&string->c_str, str.c_str, str.len))
+		return (false);
+	string->len = str.len;
+	string->capacity = str.len;
+	return (true);
 }
 
 bool	ft_string_from_c_str(t_string *string, char *c_str)
 {
-	ft_string_alloc_empty(string);
-	return (ft_string_append_c_str(string, c_str));
+	return (ft_string_from_str(string, ft_str_from_c_str(c_str)));
 }
 
 void	ft_string_free(t_string *string)
