@@ -65,7 +65,4 @@ fclean: clean
 
 re: fclean all
 
-show_sources:
-	@echo $(SRCS)
-
-.PHONY: all clean fclean re show_sources
+.PHONY: all clean fclean re
