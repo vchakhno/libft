@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 05:35:02 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/09/16 03:44:54 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,7 +198,7 @@ void	ft_str_rsplit_by_c_str(t_str str, char *delim,
 		t_str_split_iterator	iterator;
 		t_str_slice				word;
 		
-ft_str_split_by_c_str(str, ", ", &iterator);
+		ft_str_split_by_c_str(str, ", ", &iterator);
 		while (ft_iterator_next(&iterator, &word))
 		{
 			
@@ -209,7 +209,7 @@ ft_str_split_by_c_str(str, ", ", &iterator);
 		t_str_split_iterator	iterator;
 		t_vec					words;
 
-ft_str_split_by_c_str(str, ", ", &iterator);
+		ft_str_split_by_c_str(str, ", ", &iterator);
 		if (!ft_vec_collect(&words, sizeof(t_str_slice), &iterator))
 		{
 			// Error goes here
