@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 08:01:34 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 10:04:40 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # ifndef LIBFT_STRING_H
 #  define LIBFT_STRING_H
 
+#  define LIBFT_STRING_GROWTH_FACTOR 2
 #  include <stdbool.h>
 #  include "libft/arithmetic/fixed_types.h"
 #  include "libft/data/iter.h"

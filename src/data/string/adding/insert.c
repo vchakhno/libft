@@ -6,25 +6,15 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:59:53 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 08:27:30 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 10:12:05 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/data/string.h"
 #include "libft/data/mem.h"
+#include "libft/arithmetic/bounds.h"
 #include <stdlib.h>
 #include <stdbool.h>
-
-// Adjusts to upper power of two, with minimum 2^1 (=2)
-static	t_u32	ft_pow2_capacity(t_u32 capacity)
-{
-	t_u32	i;
-
-	i = 1;
-	while (capacity >> i)
-		i++;
-	return (1 << i);
-}
 
 bool	ft_string_insert_str(t_string *string, t_u32 index, t_str inserted)
 {
@@ -32,18 +22,18 @@ bool	ft_string_insert_str(t_string *string, t_u32 index, t_str inserted)
 	char	*new_c_str;
 
 	if (string->len + inserted.len <= string->capacity)
-		ft_mem_move(
-			string->c_str + index + inserted.len,
+		ft_mem_move(string->c_str + index + inserted.len,
 			string->c_str + index,
 			string->len - index);
 	else
 	{
-		new_capacity = ft_pow2_capacity(string->len + inserted.len);
+		new_capacity = ft_u32_max(
+				string->len + inserted.len,
+				string->capacity * LIBFT_STRING_GROWTH_FACTOR);
 		if (!ft_mem_malloc(&new_c_str, new_capacity))
 			return (false);
 		ft_mem_copy(new_c_str, string->c_str, index);
-		ft_mem_copy(
-			new_c_str + index + inserted.len,
+		ft_mem_copy(new_c_str + index + inserted.len,
 			string->c_str + index,
 			string->len - index);
 		free(string->c_str);
