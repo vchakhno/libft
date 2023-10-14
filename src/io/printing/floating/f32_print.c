@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:59:45 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:15:55 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 #include "libft/io/printf.h"
 #include "libft/arithmetic/float_math.h"
 
-static bool	ft_f32_print_numerical_part(
-	t_output *output, t_f32 value, t_i8 log
-) {
+static bool	ft_f32_print_numerical_part(t_f32 value, t_output *output, t_i8 log)
+{
 	t_i8	i;
 	t_f32	mask;
 	t_i8	snapped_log;
@@ -45,15 +44,15 @@ static bool	ft_f32_print_numerical_part(
 
 bool	ft_f32_print(t_f32 value)
 {
-	return (ft_f32_oprint(ft_stdout(), value));
+	return (ft_f32_oprint(value, ft_stdout()));
 }
 
 bool	ft_f32_println(t_f32 value)
 {
-	return (ft_f32_oprintln(ft_stdout(), value));
+	return (ft_f32_oprintln(value, ft_stdout()));
 }
 
-bool	ft_f32_oprint(t_output *output, t_f32 value)
+bool	ft_f32_oprint(t_f32 value, t_output *output)
 {
 	t_i8	log;
 
@@ -64,25 +63,25 @@ bool	ft_f32_oprint(t_output *output, t_f32 value)
 		value = -value;
 	}
 	if (*(t_u32 *)&value == 0xFF << 23)
-		return (ft_c_str_oprint(output, "Infinity"));
+		return (ft_c_str_oprint("Infinity", output));
 	if (*(t_u32 *)&value > 0xFF << 23)
-		return (ft_c_str_oprint(output, "NaN"));
+		return (ft_c_str_oprint("NaN", output));
 	log = ft_f32_logi(value, 10);
-	if (!ft_f32_print_numerical_part(output, value, log))
+	if (!ft_f32_print_numerical_part(value, output, log))
 		return (false);
 	if (log < 0 || 3 <= log)
 	{
 		if (!ft_output_write(output, "e", 1))
 			return (false);
-		if (!ft_i8_oprint(output, (log - 2 * (log < 0)) / 3 * 3))
+		if (!ft_i8_oprint((log - 2 * (log < 0)) / 3 * 3, output))
 			return (false);
 	}
 	return (true);
 }
 
-bool	ft_f32_oprintln(t_output *output, t_f32 value)
+bool	ft_f32_oprintln(t_f32 value, t_output *output)
 {
-	if (!ft_f32_oprint(output, value))
+	if (!ft_f32_oprint(value, output))
 		return (false);
 	return (ft_output_write(output, "\n", 1));
 }

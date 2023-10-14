@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 20:27:02 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:52:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:04:53 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
 
 void	ft_u8_label_printer(t_output *output, va_list args)
 {
-	ft_u8_oprint(output, va_arg(args, t_u32));
+	ft_u8_oprint(va_arg(args, t_u32), output);
 }
 
 void	ft_u16_label_printer(t_output *output, va_list args)
 {
-	ft_u16_oprint(output, va_arg(args, t_u32));
+	ft_u16_oprint(va_arg(args, t_u32), output);
 }
 
 void	ft_u32_label_printer(t_output *output, va_list args)
 {
-	ft_u32_oprint(output, va_arg(args, t_u32));
+	ft_u32_oprint(va_arg(args, t_u32), output);
 }
 
 void	ft_u64_label_printer(t_output *output, va_list args)
 {
-	ft_u64_oprint(output, va_arg(args, t_u64));
+	ft_u64_oprint(va_arg(args, t_u64), output);
 }

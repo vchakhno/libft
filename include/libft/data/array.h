@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:41:31 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:55:09 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 10:56:17 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ typedef bool	(*t_print_func)();
 
 bool	ft_array_print(t_array array, t_print_func func, char *sep);
 bool	ft_array_println(t_array array, t_print_func func, char *sep);
-bool	ft_array_oprint(t_output *output,
-			t_array array, t_print_func func, char *sep);
-bool	ft_array_oprintln(t_output *output,
-			t_array array, t_print_func func, char *sep);
+bool	ft_array_oprint(t_array array,
+			t_output *output, t_print_func func, char *sep);
+bool	ft_array_oprintln(t_array array,
+			t_output *output, t_print_func func, char *sep);
 
 # endif
 #endif

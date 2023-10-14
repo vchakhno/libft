@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:59:43 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:08:07 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,44 +18,44 @@
 
 bool	ft_cf80_print(t_cf80 value)
 {
-	return (ft_cf80_oprint(ft_stdout(), value));
+	return (ft_cf80_oprint(value, ft_stdout()));
 }
 
 bool	ft_cf80_println(t_cf80 value)
 {
-	return (ft_cf80_oprintln(ft_stdout(), value));
+	return (ft_cf80_oprintln(value, ft_stdout()));
 }
 
-bool	ft_cf80_oprint(t_output *output, t_cf80 value)
+bool	ft_cf80_oprint(t_cf80 value, t_output *output)
 {
 	t_f80	imaginary;
 
-	ft_f80_oprint(output, (t_f80) value);
+	ft_f80_oprint((t_f80) value, output);
 	imaginary = ((t_f80 *)&value)[1];
 	if (((t_u16 *)&imaginary)[4] >> 15)
 	{
-		if (!ft_c_str_oprint(output, " - "))
+		if (!ft_c_str_oprint(" - ", output))
 			return (false);
 		imaginary = -imaginary;
 	}
 	else
 	{
-		if (!ft_c_str_oprint(output, " + "))
+		if (!ft_c_str_oprint(" + ", output))
 			return (false);
 	}
-	ft_f80_oprint(output, imaginary);
+	ft_f80_oprint(imaginary, output);
 	if (((t_u16 *)&imaginary)[4] == 0x7FFF)
 	{
-		if (!ft_c_str_oprint(output, " * "))
+		if (!ft_c_str_oprint(" * ", output))
 			return (false);
 	}
 	ft_output_write_byte(output, 'i');
 	return (true);
 }
 
-bool	ft_cf80_oprintln(t_output *output, t_cf80 value)
+bool	ft_cf80_oprintln(t_cf80 value, t_output *output)
 {
-	if (!ft_cf80_oprint(output, value))
+	if (!ft_cf80_oprint(value, output))
 		return (false);
 	return (ft_output_write(output, "\n", 1));
 }

@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 10:20:42 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 10:57:08 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ void		ft_c_str_ncopy(char *dest, const char *src, t_u32 len);
 
 bool		ft_c_str_print(char *c_str);
 bool		ft_c_str_println(char *c_str);
-bool		ft_c_str_oprint(t_output *output, char *c_str);
-bool		ft_c_str_oprintln(t_output *output, char *c_str);
+bool		ft_c_str_oprint(char *c_str, t_output *output);
+bool		ft_c_str_oprintln(char *c_str, t_output *output);
 
 bool		ft_str_print(t_str str);
 bool		ft_str_println(t_str str);
-bool		ft_str_oprint(t_output *output, t_str str);
-bool		ft_str_oprintln(t_output *output, t_str str);
+bool		ft_str_oprint(t_str str, t_output *output);
+bool		ft_str_oprintln(t_str str, t_output *output);
 
 /******************************************************************************/
 /* CREATION																	  */

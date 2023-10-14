@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 20:27:02 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:52:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:02:59 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ static void	get_prog_name(int argc, char **argv)
 void	ft_prog_label_printer(t_output *output, va_list args)
 {
 	(void) args;
-	ft_c_str_oprint(output, *prog_name());
+	ft_c_str_oprint(*prog_name(), output);
 }

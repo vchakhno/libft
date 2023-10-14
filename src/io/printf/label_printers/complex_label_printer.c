@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 20:27:02 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:52:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:02:16 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
 
 void	ft_cf32_label_printer(t_output *output, va_list args)
 {
-	ft_cf32_oprint(output, va_arg(args, t_cf32));
+	ft_cf32_oprint(va_arg(args, t_cf32), output);
 }
 
 void	ft_cf64_label_printer(t_output *output, va_list args)
 {
-	ft_cf64_oprint(output, va_arg(args, t_cf64));
+	ft_cf64_oprint(va_arg(args, t_cf64), output);
 }
 
 void	ft_cf80_label_printer(t_output *output, va_list args)
 {
-	ft_cf80_oprint(output, va_arg(args, t_cf80));
+	ft_cf80_oprint(va_arg(args, t_cf80), output);
 }
 
 void	ft_cf128_label_printer(t_output *output, va_list args)
 {
-	ft_cf128_oprint(output, va_arg(args, t_cf128));
+	ft_cf128_oprint(va_arg(args, t_cf128), output);
 }

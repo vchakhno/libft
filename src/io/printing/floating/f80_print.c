@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:59:49 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:31:52 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "libft/arithmetic/float_math.h"
 
 static bool	ft_f80_print_numerical_part(
-	t_output *output, t_f80 value, t_i16 log
+	t_f80 value, t_output *output, t_i16 log
 ) {
 	t_i16	i;
 	t_f80	mask;
@@ -45,15 +45,15 @@ static bool	ft_f80_print_numerical_part(
 
 bool	ft_f80_print(t_f80 value)
 {
-	return (ft_f80_oprint(ft_stdout(), value));
+	return (ft_f80_oprint(value, ft_stdout()));
 }
 
 bool	ft_f80_println(t_f80 value)
 {
-	return (ft_f80_oprintln(ft_stdout(), value));
+	return (ft_f80_oprintln(value, ft_stdout()));
 }
 
-bool	ft_f80_oprint(t_output *output, t_f80 value)
+bool	ft_f80_oprint(t_f80 value, t_output *output)
 {
 	t_i16	log;
 
@@ -66,25 +66,25 @@ bool	ft_f80_oprint(t_output *output, t_f80 value)
 	if (((t_u16 *)&value)[4] == 0x7FFF)
 	{
 		if (*(t_u64 *)&value << 1 == 0)
-			return (ft_c_str_oprint(output, "Infinity"));
-		return (ft_c_str_oprint(output, "NaN"));
+			return (ft_c_str_oprint("Infinity", output));
+		return (ft_c_str_oprint("NaN", output));
 	}
 	log = ft_f80_logi(value, 10);
-	if (!ft_f80_print_numerical_part(output, value, log))
+	if (!ft_f80_print_numerical_part(value, output, log))
 		return (false);
 	if (log < 0 || 3 <= log)
 	{
 		if (!ft_output_write(output, "e", 1))
 			return (false);
-		if (!ft_i16_oprint(output, (log - 2 * (log < 0)) / 3 * 3))
+		if (!ft_i16_oprint((log - 2 * (log < 0)) / 3 * 3, output))
 			return (false);
 	}
 	return (true);
 }
 
-bool	ft_f80_oprintln(t_output *output, t_f80 value)
+bool	ft_f80_oprintln(t_f80 value, t_output *output)
 {
-	if (!ft_f80_oprint(output, value))
+	if (!ft_f80_oprint(value, output))
 		return (false);
 	return (ft_output_write(output, "\n", 1));
 }
