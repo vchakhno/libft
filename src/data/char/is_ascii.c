@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:39:46 by velimir           #+#    #+#             */
-/*   Updated: 2023/07/31 05:57:34 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 09:39:37 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 bool	ft_char_is_ascii(char c)
 {
-	return (0 <= c && c <= 127);
+	return (~c & 1 << (__CHAR_BIT__ - 1));
 }
