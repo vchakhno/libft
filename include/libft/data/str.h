@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 09:04:54 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 10:20:42 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,7 +216,7 @@ t_str_iter	ft_str_rsplit_by_c_str(t_str str, char *delim);
 			// Error goes here
 		}
 		// ...
-ft_vec_free(&words);
+		ft_vec_free(words);
 */
 
 /******************************************************************************/

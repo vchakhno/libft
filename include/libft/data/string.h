@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 10:04:40 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 10:20:50 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ bool	ft_string_from_c_str(t_string *string, char *c_str)
 		__attribute__((warn_unused_result));
 bool	ft_string_from_str(t_string *dest, t_str src)
 		__attribute__((warn_unused_result));
-void	ft_string_free(t_string *string);
+void	ft_string_free(t_string string);
 
 /******************************************************************************/
 /* CAPACITY																	  */
