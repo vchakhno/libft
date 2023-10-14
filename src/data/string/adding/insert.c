@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:59:53 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/09/16 00:47:22 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 08:27:30 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ bool	ft_string_insert_str(t_string *string, t_u32 index, t_str inserted)
 
 bool	ft_string_insert_c_str(t_string *string, t_u32 index, char *inserted)
 {
-	return (ft_string_insert_str(string, index, ft_str_from_c_str(inserted)));
+	return (ft_string_insert_str(string, index, ft_str(inserted)));
 }

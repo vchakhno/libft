@@ -1,5 +1,5 @@
 DATA_STR_SRCS = \
-	creation/str_from.c \
+	creation/str.c \
 	creation/c_str_get_slice.c \
 	creation/str_get_slice.c \
 	c_str/len.c \

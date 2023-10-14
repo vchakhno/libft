@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 11:15:41 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 05:25:36 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 08:27:52 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_str_scanner_init(t_str_scanner *scanner, char *str)
 {
-	scanner->str = ft_str_from_c_str(str);
+	scanner->str = ft_str(str);
 	scanner->read_pos = 0;
 	scanner->write_pos = 0;
 }

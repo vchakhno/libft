@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 13:57:19 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/09/16 00:08:04 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 08:27:19 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ bool	ft_string_from_str(t_string *string, t_str str)
 
 bool	ft_string_from_c_str(t_string *string, char *c_str)
 {
-	return (ft_string_from_str(string, ft_str_from_c_str(c_str)));
+	return (ft_string_from_str(string, ft_str(c_str)));
 }
 
 void	ft_string_free(t_string *string)

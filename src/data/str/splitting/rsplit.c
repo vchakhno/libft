@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 13:04:46 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 08:07:03 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 08:27:02 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_str_rsplit_by_c_str(t_str str, char *delim, t_str_split_iter *iter)
 {
 	iter->next = ft_str_rsplit_iter_next;
 	iter->remaining = str;
-	iter->delim = ft_str_from_c_str(delim);
+	iter->delim = ft_str(delim);
 }
 
 bool	ft_str_rsplit_iter_next(t_str_split_iter *iter, t_str *dest)

@@ -26,7 +26,7 @@ void	ft_libuf_output_init(
 
 bool	ft_libuf_output_write(t_libuf_output *output, void *ptr, t_u32 size)
 {
-	if (!ft_str_contains_char(ft_str_from(ptr, size), '\n'))
+	if (!ft_str_contains_char((t_str){ptr, size}, '\n'))
 		return (ft_buf_output_write(output, ptr, size));
 	if (size <= output->capacity - output->pos)
 	{

@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 06:35:00 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 05:53:41 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 08:27:42 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool	ft_string_lstrip(t_string *string, char *set)
 	t_str	borrowed_set;
 	t_u32	start;
 
-	borrowed_set = ft_str_from_c_str(set);
+	borrowed_set = ft_str(set);
 	start = 0;
 	while (start < string->len)
 	{

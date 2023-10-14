@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 07:59:53 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/09/16 00:48:17 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 08:27:36 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ bool	ft_string_prepend_str(t_string *string, t_str prefix)
 
 bool	ft_string_prepend_c_str(t_string *string, char *prefix)
 {
-	return (ft_string_prepend_str(string, ft_str_from_c_str(prefix)));
+	return (ft_string_prepend_str(string, ft_str(prefix)));
 }

@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 08:06:11 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 08:38:52 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,7 @@ bool	ft_str_oprintln(t_output *output, t_str str);
 /* CREATION																	  */
 /******************************************************************************/
 
-t_str	ft_str_from(char *c_str, t_u32 len);
-t_str	ft_str_from_c_str(char *c_str);
+t_str	ft_str(char *c_str);
 t_str	ft_c_str_get_slice__unchecked(char *c_str, t_u32 start, t_u32 len);
 t_str	ft_c_str_get_slice(char *c_str, t_u32 start, t_u32 len);
 t_str	ft_str_get_slice__unchecked(t_str str, t_u32 start, t_u32 len);
@@ -195,7 +194,7 @@ void	ft_str_rsplit_by_c_str(t_str str, char *delim, t_str_split_iter *iter);
 	Example usage:
 
 		t_str_split_iter	iter;
-		t_str_slice				word;
+		t_str_slice			word;
 		
 		ft_str_split_by_c_str(str, ", ", &iter);
 		while (ft_iter_next(&iter, &word))
@@ -206,7 +205,7 @@ void	ft_str_rsplit_by_c_str(t_str str, char *delim, t_str_split_iter *iter);
 	Example 2:
 	
 		t_str_split_iter	iter;
-		t_vec					words;
+		t_vec				words;
 
 		ft_str_split_by_c_str(str, ", ", &iter);
 		if (!ft_vec_collect(&words, sizeof(t_str_slice), &iter))
