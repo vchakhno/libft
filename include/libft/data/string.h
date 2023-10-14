@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 05:56:36 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 08:01:34 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 #  include <stdbool.h>
 #  include "libft/arithmetic/fixed_types.h"
-#  include "libft/data/iterator.h"
+#  include "libft/data/iter.h"
 #  include "libft/io/output.h"
 #  include "libft/data/str.h"
 
@@ -112,13 +112,13 @@ bool	ft_string_format(t_string *string, ...);
 /* JOINING																	  */
 /******************************************************************************/
 
-typedef t_any_iterator		t_str_iterator;
-
 /* Todo */
-bool	ft_string_join_with_str(t_string *dest,
-			t_str_iterator *iterator, t_str sep);
-bool	ft_string_join_with_c_str(t_string *dest,
-			t_str_iterator *iterator, char *sep);
+/*
+typedef t_iter		t_str_iter;
+
+bool	ft_string_join_with_str(t_string *dest, t_str_iter *iter, t_str sep);
+bool	ft_string_join_with_c_str(t_string *dest, t_str_iter *iter, char *sep);
+*/
 /* ---- */
 
 # endif

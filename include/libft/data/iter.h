@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iterator_base.c                                    :+:      :+:    :+:   */
+/*   iter.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 12:41:46 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/06/03 20:48:26 by vchakhno         ###   ########.fr       */
+/*   Created: 2023/02/20 12:42:59 by vchakhno          #+#    #+#             */
+/*   Updated: 2023/10/14 08:05:12 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/data/iterator.h"
+#ifndef ITER_H
+# define ITER_H
+# include "libft/data/iter.h"
+# undef ITER_H
+#else
+# ifndef LIBFT_ITER_H
+#  define LIBFT_ITER_H
 
-void	ft_iterator_base_init(t_iterator_base *iterator, t_iterator_next next)
+#  include <stdbool.h>
+
+//	(t_iter	*iter, void *dest)
+typedef bool	(*t_iter_next)();
+
+typedef struct s_iter
 {
-	iterator->next = next;
-}
+	t_iter_next	next;
+}	t_iter;
+
+# endif
+#endif

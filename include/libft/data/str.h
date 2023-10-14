@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/09/16 03:44:54 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 08:06:11 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 #  include <stdbool.h>
 #  include "libft/arithmetic/fixed_types.h"
-#  include "libft/data/iterator.h"
+#  include "libft/data/iter.h"
 #  include "libft/io/output.h"
 
 typedef struct s_str
@@ -175,42 +175,41 @@ t_u32	ft_str_count_c_str(t_str haystack, char *needle);
 /* SPLITTING																  */
 /******************************************************************************/
 
-typedef struct s_str_split_iterator
+typedef struct s_str_split_iter
 {
-	t_iterator_base	base;
-	t_str			remaining;
-	t_str			delim;
-}	t_str_split_iterator;
+	union {
+		t_iter_next		next;
+		t_iter			iter;
+	};
+	t_str				remaining;
+	t_str				delim;
+}	t_str_split_iter;
 
-void	ft_str_split_by_str(t_str str, t_str any_delim,
-			t_str_split_iterator *iterator);
-void	ft_str_split_by_c_str(t_str str, char *delim,
-			t_str_split_iterator *iterator);
+void	ft_str_split_by_str(t_str str, t_str delim, t_str_split_iter *iter);
+void	ft_str_split_by_c_str(t_str str, char *delim, t_str_split_iter *iter);
 
-void	ft_str_rsplit_by_str(t_str str, t_str any_delim,
-			t_str_split_iterator *iterator);
-void	ft_str_rsplit_by_c_str(t_str str, char *delim,
-			t_str_split_iterator *iterator);
+void	ft_str_rsplit_by_str(t_str str, t_str delim, t_str_split_iter *iter);
+void	ft_str_rsplit_by_c_str(t_str str, char *delim, t_str_split_iter *iter);
 
 /*
 	Example usage:
 
-		t_str_split_iterator	iterator;
+		t_str_split_iter	iter;
 		t_str_slice				word;
 		
-		ft_str_split_by_c_str(str, ", ", &iterator);
-		while (ft_iterator_next(&iterator, &word))
+		ft_str_split_by_c_str(str, ", ", &iter);
+		while (ft_iter_next(&iter, &word))
 		{
 			
 		}
 
 	Example 2:
 	
-		t_str_split_iterator	iterator;
+		t_str_split_iter	iter;
 		t_vec					words;
 
-		ft_str_split_by_c_str(str, ", ", &iterator);
-		if (!ft_vec_collect(&words, sizeof(t_str_slice), &iterator))
+		ft_str_split_by_c_str(str, ", ", &iter);
+		if (!ft_vec_collect(&words, sizeof(t_str_slice), &iter))
 		{
 			// Error goes here
 		}
