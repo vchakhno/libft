@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 03:55:42 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:55:09 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 09:14:12 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # ifndef LIBFT_VECTOR_H
 #  define LIBFT_VECTOR_H
 
+#  define LIBFT_VECTOR_GROWTH_FACTOR 2
 #  include <stdbool.h>
 #  include "libft/arithmetic/fixed_types.h"
 #  include "libft/io/output.h"
