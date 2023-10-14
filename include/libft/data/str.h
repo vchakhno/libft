@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 08:38:52 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 09:04:54 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,59 +33,59 @@ typedef struct s_str
 /* C_STR																	  */
 /******************************************************************************/
 
-t_u32	ft_c_str_len(const char *c_str);
-void	ft_c_str_ncopy(char *dest, const char *src, t_u32 len);
+t_u32		ft_c_str_len(const char *c_str);
+void		ft_c_str_ncopy(char *dest, const char *src, t_u32 len);
 
 /******************************************************************************/
 /* PRINTING																	  */
 /******************************************************************************/
 
-bool	ft_c_str_print(char *c_str);
-bool	ft_c_str_println(char *c_str);
-bool	ft_c_str_oprint(t_output *output, char *c_str);
-bool	ft_c_str_oprintln(t_output *output, char *c_str);
+bool		ft_c_str_print(char *c_str);
+bool		ft_c_str_println(char *c_str);
+bool		ft_c_str_oprint(t_output *output, char *c_str);
+bool		ft_c_str_oprintln(t_output *output, char *c_str);
 
-bool	ft_str_print(t_str str);
-bool	ft_str_println(t_str str);
-bool	ft_str_oprint(t_output *output, t_str str);
-bool	ft_str_oprintln(t_output *output, t_str str);
+bool		ft_str_print(t_str str);
+bool		ft_str_println(t_str str);
+bool		ft_str_oprint(t_output *output, t_str str);
+bool		ft_str_oprintln(t_output *output, t_str str);
 
 /******************************************************************************/
 /* CREATION																	  */
 /******************************************************************************/
 
-t_str	ft_str(char *c_str);
-t_str	ft_c_str_get_slice__unchecked(char *c_str, t_u32 start, t_u32 len);
-t_str	ft_c_str_get_slice(char *c_str, t_u32 start, t_u32 len);
-t_str	ft_str_get_slice__unchecked(t_str str, t_u32 start, t_u32 len);
-t_str	ft_str_get_slice(t_str str, t_u32 start, t_u32 len);
+t_str		ft_str(char *c_str);
+t_str		ft_c_str_get_slice__unchecked(char *c_str, t_u32 start, t_u32 len);
+t_str		ft_c_str_get_slice(char *c_str, t_u32 start, t_u32 len);
+t_str		ft_str_get_slice__unchecked(t_str str, t_u32 start, t_u32 len);
+t_str		ft_str_get_slice(t_str str, t_u32 start, t_u32 len);
 
 /******************************************************************************/
 /* CHECKING																	  */
 /******************************************************************************/
 
-bool	ft_str_is_alnum(t_str str);
-bool	ft_str_is_alpha(t_str str);
-bool	ft_str_is_ascii(t_str str);
-bool	ft_str_is_blank(t_str str);
-bool	ft_str_is_digit(t_str str);
-bool	ft_str_is_lower(t_str str);
-bool	ft_str_is_print(t_str str);
-bool	ft_str_is_upper(t_str str);
+bool		ft_str_is_alnum(t_str str);
+bool		ft_str_is_alpha(t_str str);
+bool		ft_str_is_ascii(t_str str);
+bool		ft_str_is_blank(t_str str);
+bool		ft_str_is_digit(t_str str);
+bool		ft_str_is_lower(t_str str);
+bool		ft_str_is_print(t_str str);
+bool		ft_str_is_upper(t_str str);
 
 /******************************************************************************/
 /* COMPARISON																  */
 /******************************************************************************/
 
-t_i32	ft_str_compare_c_str(t_str str1, char *str2);
-bool	ft_str_equal_c_str(t_str str1, char *str2);
-bool	ft_str_starts_with_c_str(t_str str, char *prefix);
-bool	ft_str_ends_with_c_str(t_str str, char *suffix);
+t_i32		ft_str_compare_c_str(t_str str1, char *str2);
+bool		ft_str_equal_c_str(t_str str1, char *str2);
+bool		ft_str_starts_with_c_str(t_str str, char *prefix);
+bool		ft_str_ends_with_c_str(t_str str, char *suffix);
 
-t_i32	ft_str_compare_str(t_str str1, t_str str2);
-bool	ft_str_equal_str(t_str str1, t_str str2);
-bool	ft_str_starts_with_str(t_str str, t_str prefix);
-bool	ft_str_ends_with_str(t_str str, t_str suffix);
+t_i32		ft_str_compare_str(t_str str1, t_str str2);
+bool		ft_str_equal_str(t_str str1, t_str str2);
+bool		ft_str_starts_with_str(t_str str, t_str prefix);
+bool		ft_str_ends_with_str(t_str str, t_str suffix);
 
 /******************************************************************************/
 /* SEARCH																	  */
@@ -155,40 +155,43 @@ bool	ft_str_ends_with_str(t_str str, t_str suffix);
 	(?) Callback that takes an int
 */
 
-bool	ft_str_contains_char(t_str haystack, char c);
-bool	ft_str_find_char(t_str haystack, char c, t_u32 *index);
-bool	ft_str_rfind_char(t_str haystack, char c, t_u32 *index);
-t_u32	ft_str_count_char(t_str haystack, char c);
+bool		ft_str_contains_char(t_str haystack, char c);
+bool		ft_str_find_char(t_str haystack, char c, t_u32 *index);
+bool		ft_str_rfind_char(t_str haystack, char c, t_u32 *index);
+t_u32		ft_str_count_char(t_str haystack, char c);
 
-bool	ft_str_contains_str(t_str haystack, t_str needle);
-bool	ft_str_find_str(t_str haystack, t_str needle, t_u32 *index);
-bool	ft_str_rfind_str(t_str haystack, t_str needle, t_u32 *index);
-t_u32	ft_str_count_str(t_str haystack, t_str needle);
+bool		ft_str_contains_str(t_str haystack, t_str needle);
+bool		ft_str_find_str(t_str haystack, t_str needle, t_u32 *index);
+bool		ft_str_rfind_str(t_str haystack, t_str needle, t_u32 *index);
+t_u32		ft_str_count_str(t_str haystack, t_str needle);
 
-bool	ft_str_contains_c_str(t_str haystack, char *needle);
-bool	ft_str_find_c_str(t_str haystack, char *needle, t_u32 *index);
-bool	ft_str_rfind_c_str(t_str haystack, char *needle, t_u32 *index);
-t_u32	ft_str_count_c_str(t_str haystack, char *needle);
+bool		ft_str_contains_c_str(t_str haystack, char *needle);
+bool		ft_str_find_c_str(t_str haystack, char *needle, t_u32 *index);
+bool		ft_str_rfind_c_str(t_str haystack, char *needle, t_u32 *index);
+t_u32		ft_str_count_c_str(t_str haystack, char *needle);
 
 /******************************************************************************/
 /* SPLITTING																  */
 /******************************************************************************/
 
-typedef struct s_str_split_iter
+typedef struct s_str_iter	t_str_iter;
+typedef bool				(*t_str_iter_next)(t_str_iter *iter, t_str *word);
+
+typedef struct s_str_iter
 {
 	union {
-		t_iter_next		next;
-		t_iter			iter;
+		t_str_iter_next		next;
+		t_iter				iter;
 	};
-	t_str				remaining;
-	t_str				delim;
-}	t_str_split_iter;
+	t_str					remaining;
+	t_str					delim;
+}	t_str_iter;
 
-void	ft_str_split_by_str(t_str str, t_str delim, t_str_split_iter *iter);
-void	ft_str_split_by_c_str(t_str str, char *delim, t_str_split_iter *iter);
+t_str_iter	ft_str_split_by_str(t_str str, t_str delim);
+t_str_iter	ft_str_split_by_c_str(t_str str, char *delim);
 
-void	ft_str_rsplit_by_str(t_str str, t_str delim, t_str_split_iter *iter);
-void	ft_str_rsplit_by_c_str(t_str str, char *delim, t_str_split_iter *iter);
+t_str_iter	ft_str_rsplit_by_str(t_str str, t_str delim);
+t_str_iter	ft_str_rsplit_by_c_str(t_str str, char *delim);
 
 /*
 	Example usage:
@@ -220,10 +223,10 @@ ft_vec_free(&words);
 /* CASING																	  */
 /******************************************************************************/
 
-void	ft_str_to_upper(t_str str);
-void	ft_str_to_lower(t_str str);
-void	ft_str_title(t_str str);
-void	ft_str_swap_case(t_str str);
+void		ft_str_to_upper(t_str str);
+void		ft_str_to_lower(t_str str);
+void		ft_str_title(t_str str);
+void		ft_str_swap_case(t_str str);
 
 # endif
 #endif
