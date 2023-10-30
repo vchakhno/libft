@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:32:27 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/08/31 19:26:22 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:59:31 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #  define LIBFT_INPUT_H
 
 #  include "libft/arithmetic/fixed_types.h"
+#  include "libft/data/string.h"
 #  include <stdbool.h>
 
 /******************************************************************************/
@@ -39,7 +40,7 @@ bool	ft_input_read(t_input *input, void *ptr, t_u32 size);
 bool	ft_input_read_upto(\
 	t_input *input, void *ptr, t_u32 capacity, t_u32 *out_size\
 );
-bool	ft_input_read_byte(t_input *input, t_u8 byte);
+bool	ft_input_read_byte(t_input *input, t_u8 *byte);
 
 /******************************************************************************/
 /* FD_INPUT																	  */
