@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:38:25 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/08/19 02:58:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/14 13:59:37 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ bool	ft_input_read_upto(
 	return (true);
 }
 
-bool	ft_input_read_byte(t_input *input, t_u8 byte)
+bool	ft_input_read_byte(t_input *input, t_u8 *byte)
 {
-	return (ft_input_read(input, &byte, 1));
+	return (ft_input_read(input, byte, 1));
 }

@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 04:30:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 18:36:48 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/10/30 08:07:34 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ void	ft_oprintln(t_output *output, char *format, ...)
 	va_start(args, format);
 	ft_str_scanner_init(&scanner, format);
 	ft_printf_impl(output, &scanner, args);
-	ft_c_str_print("\n");
+	ft_output_write(output, "\n", 1);
 	va_end(args);
 }
