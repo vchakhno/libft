@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:58:20 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 10:20:50 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/12/18 12:42:54 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@
 #  include "libft/data/iter.h"
 #  include "libft/io/output.h"
 #  include "libft/data/str.h"
+
+// Dynamically allocated string
+// Ends with `\0` to ensure compatibility
+
+// `capacity` includes the `\0`, `len` does not
+// so `len` goes up to `capacity - 1`
 
 typedef struct s_string
 {
@@ -52,6 +58,9 @@ void	ft_string_free(t_string string);
 /******************************************************************************/
 /* CAPACITY																	  */
 /******************************************************************************/
+
+// Reserves space for a subsequent append of size `additionnal`
+// so `string->size + additionnal + 1` must be smaller than `string->capacity`
 
 bool	ft_string_reserve(t_string *string, t_u32 additionnal)
 		__attribute__((warn_unused_result));

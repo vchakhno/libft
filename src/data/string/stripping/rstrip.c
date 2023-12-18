@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 06:35:00 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 08:27:48 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:03:58 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ bool	ft_string_rstrip(t_string *string, char *stripped)
 		end++;
 	}
 	string->len -= end;
+	string->c_str[string->len] = '\0';
 	return (true);
 }

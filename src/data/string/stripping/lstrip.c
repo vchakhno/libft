@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 06:35:00 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 08:27:42 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:01:14 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ bool	ft_string_lstrip(t_string *string, char *set)
 		start++;
 	}
 	string->len -= start;
-	ft_mem_copy(string->c_str, string->c_str + start, string->len);
+	ft_mem_copy(string->c_str, string->c_str + start, string->len + 1);
 	return (true);
 }

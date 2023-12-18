@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 13:57:19 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 10:20:20 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:11:37 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ bool	ft_string_alloc(t_string *string, t_u32 capacity)
 
 bool	ft_string_from_str(t_string *string, t_str str)
 {
-	if (!ft_mem_dup(&string->c_str, str.c_str, str.len))
+	if (!ft_mem_malloc(&string->c_str, str.len + 1))
 		return (false);
+	ft_mem_copy(string->c_str, str.c_str, str.len);
+	string->c_str[str.len] = '\0';
 	string->len = str.len;
-	string->capacity = str.len;
+	string->capacity = str.len + 1;
 	return (true);
 }
 
