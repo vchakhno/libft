@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:42:55 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/08/21 18:27:47 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/12/23 00:01:21 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,11 @@
 
 void		ft_printf(char *format, ...);
 void		ft_println(char *format, ...);
+void		ft_eprintf(char *format, ...);
+void		ft_eprintln(char *format, ...);
 void		ft_oprintf(t_output *output, char *format, ...);
 void		ft_oprintln(t_output *output, char *format, ...);
+void		ft_voprintf(t_output *output, char *format, va_list args);
 
 t_output	*ft_stdout(void);
 t_output	*ft_stderr(void);

@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 11:31:52 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/12/22 23:52:01 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,6 @@ static bool	ft_f80_print_numerical_part(
 	return (true);
 }
 
-bool	ft_f80_print(t_f80 value)
-{
-	return (ft_f80_oprint(value, ft_stdout()));
-}
-
-bool	ft_f80_println(t_f80 value)
-{
-	return (ft_f80_oprintln(value, ft_stdout()));
-}
-
 bool	ft_f80_oprint(t_f80 value, t_output *output)
 {
 	t_i16	log;
@@ -80,11 +70,4 @@ bool	ft_f80_oprint(t_f80 value, t_output *output)
 			return (false);
 	}
 	return (true);
-}
-
-bool	ft_f80_oprintln(t_f80 value, t_output *output)
-{
-	if (!ft_f80_oprint(value, output))
-		return (false);
-	return (ft_output_write(output, "\n", 1));
 }

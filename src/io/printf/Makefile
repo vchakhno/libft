@@ -7,7 +7,9 @@ IO_PRINTF_SRCS = \
 	label_printers/unsigned_label_printer.c \
 	label_printers/floating_label_printer.c \
 	label_printers/complex_label_printer.c \
+	eprintf.c \
 	format_label.c \
+	oprintf.c \
 	printf.c \
 	stderr.c \
 	stdout.c \

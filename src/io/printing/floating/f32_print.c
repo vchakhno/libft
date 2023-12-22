@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:53:45 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/10/14 11:15:55 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/12/22 23:52:22 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,6 @@ static bool	ft_f32_print_numerical_part(t_f32 value, t_output *output, t_i8 log)
 	return (true);
 }
 
-bool	ft_f32_print(t_f32 value)
-{
-	return (ft_f32_oprint(value, ft_stdout()));
-}
-
-bool	ft_f32_println(t_f32 value)
-{
-	return (ft_f32_oprintln(value, ft_stdout()));
-}
-
 bool	ft_f32_oprint(t_f32 value, t_output *output)
 {
 	t_i8	log;
@@ -77,11 +67,4 @@ bool	ft_f32_oprint(t_f32 value, t_output *output)
 			return (false);
 	}
 	return (true);
-}
-
-bool	ft_f32_oprintln(t_f32 value, t_output *output)
-{
-	if (!ft_f32_oprint(value, output))
-		return (false);
-	return (ft_output_write(output, "\n", 1));
 }
