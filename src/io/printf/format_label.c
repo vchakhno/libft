@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 04:30:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:52:28 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/12/23 00:13:03 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 bool	ft_match_label_types(t_str_scanner *scanner, t_label_printer *printer)
 {
-	static t_label_info	map[] = {
+	static t_label_info	map[] = {{"bool", ft_bool_label_printer},
 	{"char", ft_char_label_printer}, {"prog", ft_prog_label_printer},
 	{"str", ft_str_label_printer}, {"c_str", ft_c_str_label_printer},
 	{"i8", ft_i8_label_printer}, {"i16", ft_i16_label_printer},

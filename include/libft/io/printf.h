@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:42:55 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/12/23 00:01:21 by vchakhno         ###   ########.fr       */
+/*   Updated: 2023/12/23 00:13:39 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct s_label_info
 void		ft_try_print_label(t_output *output,
 				t_str_scanner *scanner, va_list args);
 
+void		ft_bool_label_printer(t_output *output, va_list args);
 void		ft_str_label_printer(t_output *output, va_list args);
 void		ft_c_str_label_printer(t_output *output, va_list args);
 void		ft_char_label_printer(t_output *output, va_list args);

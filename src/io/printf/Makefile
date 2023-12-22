@@ -1,4 +1,5 @@
 IO_PRINTF_SRCS = \
+	label_printers/bool_label_printer.c \
 	label_printers/char_label_printer.c \
 	label_printers/prog_label_printer.c \
 	label_printers/c_str_label_printer.c \
