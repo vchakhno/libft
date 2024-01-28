@@ -6,7 +6,7 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:42:55 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/12/23 00:13:39 by vchakhno         ###   ########.fr       */
+/*   Updated: 2024/01/28 03:50:44 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void		ft_eprintln(char *format, ...);
 void		ft_oprintf(t_output *output, char *format, ...);
 void		ft_oprintln(t_output *output, char *format, ...);
 void		ft_voprintf(t_output *output, char *format, va_list args);
+
+#  define FT_STDOUT_BUFFER_SIZE	1024
 
 t_output	*ft_stdout(void);
 t_output	*ft_stderr(void);

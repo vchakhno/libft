@@ -6,15 +6,13 @@
 /*   By: vchakhno <vchakhno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 04:30:22 by vchakhno          #+#    #+#             */
-/*   Updated: 2023/07/24 03:59:39 by vchakhno         ###   ########.fr       */
+/*   Updated: 2024/01/28 03:50:15 by vchakhno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/io/printf.h"
 #include "libft/io/output.h"
 #include <unistd.h>
-
-#define FT_STDOUT_BUFFER_SIZE	1024
 
 static t_libuf_output	*ft_stdout_libuf(void)
 {
